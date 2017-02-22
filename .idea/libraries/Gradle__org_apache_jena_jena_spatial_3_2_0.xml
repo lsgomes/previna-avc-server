@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.jena:jena-spatial:3.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.jena/jena-spatial/3.2.0/775b901aec72933303c44bd69fbed4b9b406fc47/jena-spatial-3.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.jena/jena-spatial/3.2.0/ee98d5ae5a34e64971401ebacd2a065d2e0f3c45/jena-spatial-3.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
