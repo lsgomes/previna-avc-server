@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gradle.iml" filepath="$PROJECT_DIR$/.idea/modules/gradle.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/previna-avc-server.iml" filepath="$PROJECT_DIR$/.idea/modules/previna-avc-server.iml" group="previna-avc-server" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/previna-avc-server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/previna-avc-server_main.iml" group="previna-avc-server" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/previna-avc-server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/previna-avc-server_test.iml" group="previna-avc-server" />
-      <module fileurl="file://$PROJECT_DIR$/gradle/scala.iml" filepath="$PROJECT_DIR$/gradle/scala.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/scala.iml" filepath="$PROJECT_DIR$/app/scala.iml" />
     </modules>
   </component>
 </project>
