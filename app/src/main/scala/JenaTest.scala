@@ -10,7 +10,7 @@ import org.apache.jena.util.FileManager
 import org.apache.jena.vocabulary.VCARD
 import org.apache.jena.ontology.OntDocumentManager
 
-object obj extends App {
+object JenaTest extends App {
 
   val namespace = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#"
 
@@ -58,7 +58,6 @@ object obj extends App {
   val resourcePerson = modelOntology.getResource( namespace + "Person" )
 
   modelOntology.listIndividuals().toList.forEach(println)
-  modelOntology.imp
   val personLucas = modelOntology.createIndividual("Person Lucas", resourcePerson)
 
   val hasAge = modelOntology.getProperty(namespace + "hasAge")

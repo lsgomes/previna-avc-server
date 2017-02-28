@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.semweb4j:rdfreactor.runtime:5.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.semweb4j/rdfreactor.runtime/5.0.1/96fbd7a8dd677cff3f931fd1f5e69cacdaf1ecc7/rdfreactor.runtime-5.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.semweb4j/rdfreactor.runtime/5.0.1/eb91194841305ee9060d5c8e0226ca3bf3dd7e1d/rdfreactor.runtime-5.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

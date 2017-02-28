@@ -17,4 +17,25 @@ dependencies {
 
     compile group: 'org.apache.jena', name: 'apache-jena-libs', version: '3.2.0'
     compile group: 'org.apache.jena', name: 'apache-jena-fuseki', version: '2.5.0'
+
+    compile group: 'net.sourceforge.owlapi', name: 'owlapi-distribution', version: '3.5.6'
+
+    compile group: 'org.semweb4j', name: 'dist', version: '5.0.1'
+
+    compile group: 'com.sun.codemodel', name: 'codemodel', version: '2.6'
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.24'
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.24'
+
+    // https://mvnrepository.com/artifact/org.okkam.owl/jaob-core
+    compile group: 'org.okkam.owl', name: 'jaob', version: '1.0'
+
+    compile group: 'org.okkam.owl', name: 'jaob-core', version: '1.0'
+
+    // https://mvnrepository.com/artifact/org.okkam.owl/jaob-maven-plugin
+    compile group: 'org.okkam.owl', name: 'jaob-maven-plugin', version: '1.0'
+
 }

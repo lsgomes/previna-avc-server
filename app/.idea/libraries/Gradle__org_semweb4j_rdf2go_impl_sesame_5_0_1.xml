@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.semweb4j:rdf2go.impl.sesame:5.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.semweb4j/rdf2go.impl.sesame/5.0.1/22808cd986971bb2ba897fd8b61fc0131979df4b/rdf2go.impl.sesame-5.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.semweb4j/rdf2go.impl.sesame/5.0.1/3a3d399c0556a9d20424a2aab45848adf6d57bc4/rdf2go.impl.sesame-5.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
