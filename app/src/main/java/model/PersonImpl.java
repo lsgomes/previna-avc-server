@@ -8,6 +8,8 @@ import com.yoshtec.owl.annotations.OwlDataProperty;
 import com.yoshtec.owl.annotations.OwlDataType;
 import com.yoshtec.owl.annotations.OwlIndividualId;
 import com.yoshtec.owl.annotations.OwlObjectProperty;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 @OwlClassImplementation({
     Person.class
@@ -201,4 +203,12 @@ public class PersonImpl
         this.hasDevice = hasDevice;
     }
 
+    // a toString method that can be used in any class.
+    // uses reflection to dynamically print java class field
+    // values one line at a time.
+    // requires the Apache Commons ToStringBuilder class.
+    public String toString()
+    {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
 }

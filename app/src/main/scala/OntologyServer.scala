@@ -1,25 +1,20 @@
 /**
   * Created by dossluca on 27/02/2017.
   */
-import java.io.{File, FileInputStream, FileReader, FileWriter}
-import java.util
+import java.io.{File, FileWriter}
 import java.util.HashSet
-import java.util.Collection
-import javax.annotation.{PostConstruct, Resource}
+import javax.annotation.PostConstruct
 import javax.inject.Singleton
-import javax.ws.rs.core.MediaType
-import javax.ws.rs.{GET, Path, Produces}
+import javax.ws.rs._
+import javax.ws.rs.core.{MediaType, Response}
 
-import org.slf4j.Logger
-import com.yoshtec.owl.marshall.Marshaller
-import com.yoshtec.owl.marshall.UnMarshaller
+import com.yoshtec.owl.marshall.{Marshaller, UnMarshaller}
 import model.PersonImpl
 import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.model.{IRI, OWLOntology, OWLOntologyManager}
-import org.slf4j.LoggerFactory
-import uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl
+import org.slf4j.{Logger, LoggerFactory}
 
-import scala.collection.JavaConverters
+import scala.collection.JavaConverters._
 
 @Singleton
 @Path("/rest")
@@ -27,8 +22,10 @@ class OntologyServer {
 
   var logger: Logger = _
 
-  val ONTOLOGY_LOCATION = "stroke_v2.owl"
-  val INDIVIDUALS_LOCATION = "individuals.owl"
+  val ONTOLOGY_LOCATION = "ontology/stroke_v2.owl"
+  val INDIVIDUALS_LOCATION = "ontology/individuals.owl"
+
+  val INDIVIDUALS_IRI = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals"
 
   var manager: OWLOntologyManager = _
 
@@ -36,7 +33,7 @@ class OntologyServer {
 
   var unmarshaller: UnMarshaller = _
 
-  var individuals: util.HashSet[PersonImpl] = _
+  var individuals: HashSet[PersonImpl] = new HashSet[PersonImpl]
 
   @PostConstruct
   def setupOntologyServer: Unit = {
@@ -45,7 +42,10 @@ class OntologyServer {
 
     logger.info("Starting Ontology Server.")
 
+    //val autoIRIMapper = new AutoIRIMapper(new File("ontology"), false)
+
     manager = OWLManager.createOWLOntologyManager()
+    //manager.addIRIMapper(autoIRIMapper)
 
     marshaller = new Marshaller()
 
@@ -65,25 +65,40 @@ class OntologyServer {
     logger.info("REST call /individuals")
   }
 
-  def loadOntology(ontology: String): OWLOntology = {
-    logger.info("Loading ontology: " + ontology)
+  def loadOntology(ontologyName: String): Option[OWLOntology] = {
 
-    val file = new File(ontology)
+    var ontology: Option[OWLOntology] = None
 
-    manager.loadOntologyFromOntologyDocument(file)
+    val file = new File(ontologyName)
+
+    if (file.exists()) {
+      logger.info("Loading ontology: " + ontologyName)
+      ontology = Some(manager.loadOntologyFromOntologyDocument(file))
+    } else {
+      logger.info("Cannot load ontology: file '" + ontologyName + "' does not exist.")
+    }
+
+    ontology
   }
 
   def loadIndividuals(): Unit = {
 
     val ontology = loadOntology(INDIVIDUALS_LOCATION)
 
+    //manager.setOntologyDocumentIRI(ontology, IRI.create(INDIVIDUALS_IRI))
+
+    if (!ontology.isDefined) {
+      logger.info("Cannot load individuals: individuals ontology not loaded")
+      return
+    }
+
     logger.info("Loading individuals: " + ontology)
 
-    individuals = unmarshaller.unmarshal(ontology).asInstanceOf[HashSet[PersonImpl]]
+    individuals = unmarshaller.unmarshal(ontology.get).asInstanceOf[HashSet[PersonImpl]]
 
     logger.info("Individuals size: " + individuals.size())
 
-    individuals.forEach(i => logger.info(i.getIndividualName))
+    individuals.forEach(i => logger.info(i.toString))
   }
 
    @GET
@@ -91,26 +106,45 @@ class OntologyServer {
    def saveIndividuals(): Unit = {
      logger.info("Saving individuals. size: " + individuals.size())
 
+     individuals.forEach(i => logger.info(i.toString))
+
      val writer = new FileWriter(INDIVIDUALS_LOCATION)
 
-     marshaller.marshal(individuals, IRI.create(INDIVIDUALS_LOCATION), writer, true)
+     marshaller.marshal(individuals, IRI.create(INDIVIDUALS_IRI), IRI.create(INDIVIDUALS_LOCATION), writer, true)
 
      writer.close()
    }
 
-  @GET
+  @POST
   @Path("/addIndividual")
-  def addIndividual(): Unit = {
-    logger.info("Adding individual")
+  @Consumes(Array[String](MediaType.APPLICATION_JSON))
+  def addIndividual(person: PersonImpl): Response = {
+    logger.info("Adding individual:")
 
-    val person = new PersonImpl()
-    person.setHasAge(21)
-    person.setIndividualName("lucas2")
-    person.setHasRiskLevel(3.0)
+    logger.info(person.toString)
 
     individuals.add(person)
 
     saveIndividuals()
+
+    Response.status(201).entity("Individual successfully added").build();
+  }
+
+  @GET
+  @Path("/getIndividual")
+  @Produces(Array[String](MediaType.APPLICATION_JSON))
+  def getIndividual(@QueryParam("name") name:String): PersonImpl = {
+
+    var individual: PersonImpl = null
+
+    for (person: PersonImpl <- individuals.asScala) {
+      if (person.getIndividualName.equals(name)) {
+        logger.info("Getting individual: " + person.toString)
+        individual = person
+      }
+    }
+
+    individual
   }
 
 }
