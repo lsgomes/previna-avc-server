@@ -63,13 +63,37 @@
     
 
 
-    <!-- #http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3 -->
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5 -->
 
-    <owl:NamedIndividual rdf:about="#http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
-        <stroke:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">24</stroke:hasAge>
-        <stroke:hasRiskLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8.0</stroke:hasRiskLevel>
+        <stroke:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15</stroke:hasAge>
+        <stroke:hasRiskLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</stroke:hasRiskLevel>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <stroke:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">11</stroke:hasAge>
+        <stroke:hasRiskLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#double">99.0</stroke:hasRiskLevel>
+    </owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <stroke:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">15</stroke:hasAge>
+        <stroke:hasRiskLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</stroke:hasRiskLevel>
+    </owl:NamedIndividual>
+	
+	<owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <stroke:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</stroke:hasAge>
+        <stroke:hasRiskLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#double">99.0</stroke:hasRiskLevel>
+    </owl:NamedIndividual>
+	
+	
 </rdf:RDF>
 
 

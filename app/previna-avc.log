@@ -4049,3 +4049,1572 @@ org.coode.owlapi.obo12.parser.TokenMgrError: Lexical error at line 1, column 22.
   hasLogin=<null>
   hasDevice=<null>
 ]
+18:34:21.697 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1917ms to org.eclipse.jetty.util.log.Slf4jLog
+18:34:21.882 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+18:34:21.941 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+18:34:21.941 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+18:34:21.946 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+18:34:23.020 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@2aa3cd93{/,null,AVAILABLE}
+18:34:23.278 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@b6b1987{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+18:34:23.279 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @3503ms
+18:34:30.803 [qtp905735620-14] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+18:34:31.641 [qtp905735620-14] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+18:34:31.800 [qtp905735620-14] WARN  o.semanticweb.owlapi.util.SAXParsers initParserWithOWLAPIStandards - http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl
+18:34:31.801 [qtp905735620-14] WARN  o.semanticweb.owlapi.util.SAXParsers initParserWithOWLAPIStandards - entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl
+18:34:31.844 [qtp905735620-14] INFO  o.s.o.r.rdfxml.parser.OWLRDFConsumer dumpRemainingTriples - dumping remaining triples
+18:34:31.845 [qtp905735620-14] INFO  o.s.o.r.rdfxml.parser.OWLRDFConsumer dumpRemainingTriples - done dumping remaining triples
+18:34:31.857 [qtp905735620-14] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+18:34:31.861 [qtp905735620-14] WARN  o.semanticweb.owlapi.util.SAXParsers initParserWithOWLAPIStandards - http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl
+18:34:31.861 [qtp905735620-14] WARN  o.semanticweb.owlapi.util.SAXParsers initParserWithOWLAPIStandards - entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl
+18:34:31.929 [qtp905735620-14] WARN  o.semanticweb.owlapi.util.SAXParsers initParserWithOWLAPIStandards - http://www.oracle.com/xml/jaxp/properties/entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl
+18:34:31.930 [qtp905735620-14] WARN  o.semanticweb.owlapi.util.SAXParsers initParserWithOWLAPIStandards - entityExpansionLimit not supported by parser type org.apache.xerces.jaxp.SAXParserImpl
+18:34:32.348 [qtp905735620-14] INFO  o.s.o.r.rdfxml.parser.OWLRDFConsumer dumpRemainingTriples - dumping remaining triples
+18:34:32.349 [qtp905735620-14] INFO  o.s.o.r.rdfxml.parser.OWLRDFConsumer dumpRemainingTriples - done dumping remaining triples
+18:34:32.399 [qtp905735620-14] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>) VersionIRI(<null>))) [Axioms: 7 Logical Axioms: 3] First 20 axioms: {ClassAssertion(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person> <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3>) Declaration(DataProperty(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskLevel>)) Declaration(DataProperty(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasAge>)) Declaration(Class(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person>)) Declaration(NamedIndividual(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3>)) DataPropertyAssertion(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskLevel> <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3> "8.0"^^xsd:double) DataPropertyAssertion(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasAge> <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3> "24"^^xsd:int) })
+18:34:32.417 [qtp905735620-14] WARN  org.eclipse.jetty.server.HttpChannel handleException - /rest/individuals
+javax.servlet.ServletException: A MultiException has 2 exceptions.  They are:
+1. java.lang.NoSuchMethodError: org.semanticweb.owlapi.model.OWLNamedIndividual.getTypes(Lorg/semanticweb/owlapi/model/OWLOntology;)Ljava/util/Set;
+2. java.lang.IllegalStateException: Unable to perform operation: post construct on OntologyServer
+
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:489)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:841)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:543)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1592)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1239)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:168)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:481)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1561)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:166)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1141)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.server.Server.handle(Server.java:564)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:320)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:110)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:672)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:590)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.glassfish.hk2.api.MultiException: A MultiException has 2 exceptions.  They are:
+1. java.lang.NoSuchMethodError: org.semanticweb.owlapi.model.OWLNamedIndividual.getTypes(Lorg/semanticweb/owlapi/model/OWLOntology;)Ljava/util/Set;
+2. java.lang.IllegalStateException: Unable to perform operation: post construct on OntologyServer
+
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:392)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:487)
+	at org.jvnet.hk2.internal.SingletonContext$1.compute(SingletonContext.java:83)
+	at org.jvnet.hk2.internal.SingletonContext$1.compute(SingletonContext.java:71)
+	at org.glassfish.hk2.utilities.cache.Cache$OriginThreadAwareFuture$1.call(Cache.java:97)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.glassfish.hk2.utilities.cache.Cache$OriginThreadAwareFuture.run(Cache.java:154)
+	at org.glassfish.hk2.utilities.cache.Cache.compute(Cache.java:199)
+	at org.jvnet.hk2.internal.SingletonContext.findOrCreate(SingletonContext.java:122)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:774)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:737)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.getService(ServiceLocatorImpl.java:707)
+	at org.glassfish.jersey.internal.inject.Injections.getOrCreate(Injections.java:172)
+	at org.glassfish.jersey.server.model.MethodHandler$ClassBasedMethodHandler.getInstance(MethodHandler.java:284)
+	at org.glassfish.jersey.server.internal.routing.PushMethodHandlerRouter.apply(PushMethodHandlerRouter.java:74)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:109)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:92)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:61)
+	at org.glassfish.jersey.process.internal.Stages.process(Stages.java:197)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:318)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	... 26 common frames omitted
+Caused by: java.lang.NoSuchMethodError: org.semanticweb.owlapi.model.OWLNamedIndividual.getTypes(Lorg/semanticweb/owlapi/model/OWLOntology;)Ljava/util/Set;
+	at com.yoshtec.owl.marshall.UnMarshaller.unmarshall(UnMarshaller.java:239)
+	at com.yoshtec.owl.marshall.UnMarshaller.unmarshal(UnMarshaller.java:188)
+	at OntologyServer.loadIndividuals(OntologyServer.scala:112)
+	at OntologyServer.setupOntologyServer(OntologyServer.scala:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.hk2.utilities.reflection.ReflectionHelper.invoke(ReflectionHelper.java:1287)
+	at org.jvnet.hk2.internal.ClazzCreator.postConstructMe(ClazzCreator.java:333)
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:375)
+	... 59 common frames omitted
+20:03:29.578 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @893ms to org.eclipse.jetty.util.log.Slf4jLog
+20:03:29.753 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+20:03:29.816 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+20:03:29.817 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+20:03:29.825 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+20:03:30.827 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@78b1cc93{/,null,AVAILABLE}
+20:03:49.251 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @822ms to org.eclipse.jetty.util.log.Slf4jLog
+20:03:49.365 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+20:03:49.421 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+20:03:49.422 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+20:03:49.427 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+20:03:50.292 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@78b1cc93{/,null,AVAILABLE}
+20:03:50.647 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@784b990c{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+20:03:50.647 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2221ms
+20:05:13.760 [qtp1849201180-15] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+20:05:13.921 [qtp1849201180-15] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+20:05:14.153 [qtp1849201180-15] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+20:05:14.287 [qtp1849201180-15] WARN  org.eclipse.jetty.server.HttpChannel handleException - /rest/individuals
+javax.servlet.ServletException: A MultiException has 2 exceptions.  They are:
+1. org.semanticweb.owlapi.io.UnparsableOntologyException: Problem parsing file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl
+Could not parse ontology.  Either a suitable parser could not be found, or parsing failed.  See parser logs below for explanation.
+The following parsers were tried:
+1) RDFXMLParser
+2) OWLXMLParser
+3) OWLFunctionalSyntaxOWLParser
+4) TurtleOntologyParser
+5) KRSS2OWLParser
+6) ManchesterOWLSyntaxOntologyParser
+7) OBOFormatOWLAPIParser
+8) OWLOBO12Parser
+
+
+Detailed logs:
+--------------------------------------------------------------------------------
+Parser: RDFXMLParser
+org.semanticweb.owlapi.rdf.syntax.RDFParserException: [line=68:column=116] IRI '#http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3' cannot be resolved against current base IRI http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals reason is: Illegal character in fragment at index 70: #http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3
+
+--------------------------------------------------------------------------------
+Parser: OWLXMLParser
+Attribute not found: IRI (Line 51)
+
+--------------------------------------------------------------------------------
+Parser: OWLFunctionalSyntaxOWLParser
+Encountered " <ERROR> "< "" at line 1, column 1.
+Was expecting:
+    "Ontology" ...
+     (Line 0)
+
+--------------------------------------------------------------------------------
+Parser: TurtleOntologyParser
+uk.ac.manchester.cs.owl.owlapi.turtle.parser.ParseException: Encountered "" at line 1, column 1.
+Was expecting one of:
+    
+
+--------------------------------------------------------------------------------
+Parser: KRSS2OWLParser
+de.uulm.ecs.ai.owlapi.krssparser.ParseException: Encountered " ">" "<?xml version=\"1.0\"?> "" at line 1, column 1.
+Was expecting:
+    <EOF> 
+    
+
+--------------------------------------------------------------------------------
+Parser: ManchesterOWLSyntaxOntologyParser
+Encountered '<?xml version="1.0"?>' at line 1 column 1.  Expected either 'Ontology:' or 'Prefix:' (Line 1)
+
+--------------------------------------------------------------------------------
+Parser: OBOFormatOWLAPIParser
+LINENO: 1 - Could not find tag separator ':' in line.
+LINE: <?xml version="1.0"?>
+
+--------------------------------------------------------------------------------
+Parser: OWLOBO12Parser
+org.coode.owlapi.obo12.parser.TokenMgrError: Lexical error at line 1, column 22.  Encountered: "\n" (10), after : ""
+
+
+2. java.lang.IllegalStateException: Unable to perform operation: post construct on OntologyServer
+
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:489)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:841)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:543)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1592)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1239)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:168)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:481)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1561)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:166)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1141)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.server.Server.handle(Server.java:564)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:320)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:110)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:672)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:590)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.glassfish.hk2.api.MultiException: A MultiException has 2 exceptions.  They are:
+1. org.semanticweb.owlapi.io.UnparsableOntologyException: Problem parsing file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl
+Could not parse ontology.  Either a suitable parser could not be found, or parsing failed.  See parser logs below for explanation.
+The following parsers were tried:
+1) RDFXMLParser
+2) OWLXMLParser
+3) OWLFunctionalSyntaxOWLParser
+4) TurtleOntologyParser
+5) KRSS2OWLParser
+6) ManchesterOWLSyntaxOntologyParser
+7) OBOFormatOWLAPIParser
+8) OWLOBO12Parser
+
+
+Detailed logs:
+--------------------------------------------------------------------------------
+Parser: RDFXMLParser
+org.semanticweb.owlapi.rdf.syntax.RDFParserException: [line=68:column=116] IRI '#http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3' cannot be resolved against current base IRI http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals reason is: Illegal character in fragment at index 70: #http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3
+
+--------------------------------------------------------------------------------
+Parser: OWLXMLParser
+Attribute not found: IRI (Line 51)
+
+--------------------------------------------------------------------------------
+Parser: OWLFunctionalSyntaxOWLParser
+Encountered " <ERROR> "< "" at line 1, column 1.
+Was expecting:
+    "Ontology" ...
+     (Line 0)
+
+--------------------------------------------------------------------------------
+Parser: TurtleOntologyParser
+uk.ac.manchester.cs.owl.owlapi.turtle.parser.ParseException: Encountered "" at line 1, column 1.
+Was expecting one of:
+    
+
+--------------------------------------------------------------------------------
+Parser: KRSS2OWLParser
+de.uulm.ecs.ai.owlapi.krssparser.ParseException: Encountered " ">" "<?xml version=\"1.0\"?> "" at line 1, column 1.
+Was expecting:
+    <EOF> 
+    
+
+--------------------------------------------------------------------------------
+Parser: ManchesterOWLSyntaxOntologyParser
+Encountered '<?xml version="1.0"?>' at line 1 column 1.  Expected either 'Ontology:' or 'Prefix:' (Line 1)
+
+--------------------------------------------------------------------------------
+Parser: OBOFormatOWLAPIParser
+LINENO: 1 - Could not find tag separator ':' in line.
+LINE: <?xml version="1.0"?>
+
+--------------------------------------------------------------------------------
+Parser: OWLOBO12Parser
+org.coode.owlapi.obo12.parser.TokenMgrError: Lexical error at line 1, column 22.  Encountered: "\n" (10), after : ""
+
+
+2. java.lang.IllegalStateException: Unable to perform operation: post construct on OntologyServer
+
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:392)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:487)
+	at org.jvnet.hk2.internal.SingletonContext$1.compute(SingletonContext.java:83)
+	at org.jvnet.hk2.internal.SingletonContext$1.compute(SingletonContext.java:71)
+	at org.glassfish.hk2.utilities.cache.Cache$OriginThreadAwareFuture$1.call(Cache.java:97)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.glassfish.hk2.utilities.cache.Cache$OriginThreadAwareFuture.run(Cache.java:154)
+	at org.glassfish.hk2.utilities.cache.Cache.compute(Cache.java:199)
+	at org.jvnet.hk2.internal.SingletonContext.findOrCreate(SingletonContext.java:122)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:774)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:737)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.getService(ServiceLocatorImpl.java:707)
+	at org.glassfish.jersey.internal.inject.Injections.getOrCreate(Injections.java:172)
+	at org.glassfish.jersey.server.model.MethodHandler$ClassBasedMethodHandler.getInstance(MethodHandler.java:284)
+	at org.glassfish.jersey.server.internal.routing.PushMethodHandlerRouter.apply(PushMethodHandlerRouter.java:74)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:109)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:92)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:61)
+	at org.glassfish.jersey.process.internal.Stages.process(Stages.java:197)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:318)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	... 26 common frames omitted
+Caused by: org.semanticweb.owlapi.io.UnparsableOntologyException: Problem parsing file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl
+Could not parse ontology.  Either a suitable parser could not be found, or parsing failed.  See parser logs below for explanation.
+The following parsers were tried:
+1) RDFXMLParser
+2) OWLXMLParser
+3) OWLFunctionalSyntaxOWLParser
+4) TurtleOntologyParser
+5) KRSS2OWLParser
+6) ManchesterOWLSyntaxOntologyParser
+7) OBOFormatOWLAPIParser
+8) OWLOBO12Parser
+
+
+Detailed logs:
+--------------------------------------------------------------------------------
+Parser: RDFXMLParser
+org.semanticweb.owlapi.rdf.syntax.RDFParserException: [line=68:column=116] IRI '#http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3' cannot be resolved against current base IRI http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals reason is: Illegal character in fragment at index 70: #http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3
+
+--------------------------------------------------------------------------------
+Parser: OWLXMLParser
+Attribute not found: IRI (Line 51)
+
+--------------------------------------------------------------------------------
+Parser: OWLFunctionalSyntaxOWLParser
+Encountered " <ERROR> "< "" at line 1, column 1.
+Was expecting:
+    "Ontology" ...
+     (Line 0)
+
+--------------------------------------------------------------------------------
+Parser: TurtleOntologyParser
+uk.ac.manchester.cs.owl.owlapi.turtle.parser.ParseException: Encountered "" at line 1, column 1.
+Was expecting one of:
+    
+
+--------------------------------------------------------------------------------
+Parser: KRSS2OWLParser
+de.uulm.ecs.ai.owlapi.krssparser.ParseException: Encountered " ">" "<?xml version=\"1.0\"?> "" at line 1, column 1.
+Was expecting:
+    <EOF> 
+    
+
+--------------------------------------------------------------------------------
+Parser: ManchesterOWLSyntaxOntologyParser
+Encountered '<?xml version="1.0"?>' at line 1 column 1.  Expected either 'Ontology:' or 'Prefix:' (Line 1)
+
+--------------------------------------------------------------------------------
+Parser: OBOFormatOWLAPIParser
+LINENO: 1 - Could not find tag separator ':' in line.
+LINE: <?xml version="1.0"?>
+
+--------------------------------------------------------------------------------
+Parser: OWLOBO12Parser
+org.coode.owlapi.obo12.parser.TokenMgrError: Lexical error at line 1, column 22.  Encountered: "\n" (10), after : ""
+
+
+	at uk.ac.manchester.cs.owl.owlapi.ParsableOWLOntologyFactory.loadOWLOntology(ParsableOWLOntologyFactory.java:242)
+	at uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:866)
+	at uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntologyFromOntologyDocument(OWLOntologyManagerImpl.java:805)
+	at uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntologyFromOntologyDocument(OWLOntologyManagerImpl.java:820)
+	at OntologyServer.loadOntology(OntologyServer.scala:91)
+	at OntologyServer.loadIndividuals(OntologyServer.scala:101)
+	at OntologyServer.setupOntologyServer(OntologyServer.scala:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.hk2.utilities.reflection.ReflectionHelper.invoke(ReflectionHelper.java:1287)
+	at org.jvnet.hk2.internal.ClazzCreator.postConstructMe(ClazzCreator.java:333)
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:375)
+	... 59 common frames omitted
+20:05:49.441 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @709ms to org.eclipse.jetty.util.log.Slf4jLog
+20:05:49.532 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+20:05:49.582 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+20:05:49.583 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+20:05:49.588 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+20:05:50.584 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@78b1cc93{/,null,AVAILABLE}
+20:05:50.895 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@784b990c{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+20:05:50.896 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2168ms
+20:05:57.214 [qtp1849201180-13] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+20:05:57.384 [qtp1849201180-13] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+20:05:57.545 [qtp1849201180-13] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+20:05:57.614 [qtp1849201180-13] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 7 Logical Axioms: 3])
+20:05:57.616 [qtp1849201180-13] INFO  OntologyServer loadIndividuals - Individuals size: 1
+20:05:57.625 [qtp1849201180-13] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@35205d84[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:05:57.755 [qtp1849201180-13] INFO  OntologyServer loadReasoner - isConsistent: true
+20:05:57.757 [qtp1849201180-13] INFO  OntologyServer getIndividuals - REST call /individuals
+20:08:00.216 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1774ms to org.eclipse.jetty.util.log.Slf4jLog
+20:08:00.308 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+20:08:00.360 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+20:08:00.360 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+20:08:00.364 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+20:08:01.284 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@48aca48b{/,null,AVAILABLE}
+20:08:01.518 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@9a7a808{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+20:08:01.519 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @3082ms
+20:08:33.005 [qtp464064894-28] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+20:08:33.238 [qtp464064894-28] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+20:08:33.429 [qtp464064894-28] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+20:08:33.508 [qtp464064894-28] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 7 Logical Axioms: 3])
+20:09:18.053 [qtp464064894-28] INFO  OntologyServer loadIndividuals - Individuals size: 1
+20:09:18.109 [qtp464064894-28] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@76a9716a[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:09:20.625 [qtp464064894-28] INFO  OntologyServer loadReasoner - isConsistent: true
+20:09:24.159 [qtp464064894-28] INFO  OntologyServer getIndividuals - REST call /individuals
+20:09:35.675 [qtp464064894-27] INFO  OntologyServer saveIndividuals - Saving individuals. size: 1
+20:09:35.677 [qtp464064894-27] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@76a9716a[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:16:34.580 [qtp464064894-27] INFO  OntologyServer saveIndividuals - Saving individuals. size: 1
+20:16:34.581 [qtp464064894-27] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@76a9716a[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:34:56.804 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1232ms to org.eclipse.jetty.util.log.Slf4jLog
+20:34:56.982 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+20:34:57.097 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+20:34:57.098 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+20:34:57.109 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+20:34:58.307 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+20:34:58.720 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+20:34:58.720 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @3155ms
+20:35:12.974 [qtp1800659519-16] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+20:35:13.210 [qtp1800659519-16] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+20:35:13.408 [qtp1800659519-16] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+20:35:13.514 [qtp1800659519-16] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 7 Logical Axioms: 3])
+20:35:13.516 [qtp1800659519-16] INFO  OntologyServer loadIndividuals - Individuals size: 1
+20:35:13.530 [qtp1800659519-16] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@7998e65f[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:35:13.706 [qtp1800659519-16] INFO  OntologyServer loadReasoner - isConsistent: true
+20:35:13.710 [qtp1800659519-16] INFO  OntologyServer getIndividuals - REST call /individuals
+20:35:49.258 [qtp1800659519-25] INFO  OntologyServer addIndividual - Adding individual:
+20:35:49.258 [qtp1800659519-25] INFO  OntologyServer addIndividual - model.PersonImpl@75b3ef8d[
+  hasAge=20
+  hasRiskFactor=[]
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=lucas4
+  hasLogin=<null>
+  hasDevice=[]
+]
+20:35:49.259 [qtp1800659519-25] INFO  OntologyServer saveIndividuals - Saving individuals. size: 2
+20:35:49.259 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@7998e65f[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:35:49.259 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@75b3ef8d[
+  hasAge=20
+  hasRiskFactor=[]
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=lucas4
+  hasLogin=<null>
+  hasDevice=[]
+]
+20:36:25.681 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @896ms to org.eclipse.jetty.util.log.Slf4jLog
+20:36:25.849 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+20:36:25.913 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+20:36:25.914 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+20:36:25.918 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+20:36:26.853 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+20:36:27.128 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+20:36:27.128 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2350ms
+20:36:37.632 [qtp1800659519-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+20:36:37.832 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+20:36:38.056 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+20:36:38.147 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 11 Logical Axioms: 6])
+20:36:38.150 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Individuals size: 2
+20:36:38.165 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@9445063[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/lucas4
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:36:38.166 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@bbc3615[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:36:38.324 [qtp1800659519-26] INFO  OntologyServer loadReasoner - isConsistent: true
+20:36:38.327 [qtp1800659519-26] INFO  OntologyServer getIndividuals - REST call /individuals
+20:37:30.232 [qtp1800659519-24] INFO  OntologyServer saveIndividuals - Saving individuals. size: 2
+20:37:30.233 [qtp1800659519-24] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@9445063[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/lucas4
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:37:30.234 [qtp1800659519-24] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@bbc3615[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:38:12.925 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1028ms to org.eclipse.jetty.util.log.Slf4jLog
+20:38:13.065 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+20:38:13.152 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+20:38:13.152 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+20:38:13.157 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+20:38:14.423 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+20:38:14.732 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+20:38:14.732 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2841ms
+20:38:19.671 [qtp1800659519-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+20:38:19.873 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+20:38:20.056 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+20:38:20.126 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 11 Logical Axioms: 6])
+20:38:20.129 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Individuals size: 2
+20:38:20.139 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@48407b80[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/lucas4
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:38:20.140 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@17e82611[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:38:20.282 [qtp1800659519-26] INFO  OntologyServer loadReasoner - isConsistent: true
+20:38:20.284 [qtp1800659519-26] INFO  OntologyServer getIndividuals - REST call /individuals
+20:46:49.200 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @769ms to org.eclipse.jetty.util.log.Slf4jLog
+20:46:49.312 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+20:46:49.369 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+20:46:49.370 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+20:46:49.374 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+20:46:50.085 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+20:46:50.325 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+20:46:50.326 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @1899ms
+20:47:05.434 [qtp1800659519-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+20:47:05.630 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+20:47:05.845 [qtp1800659519-26] INFO  OntologyServer loadOntology - Cannot load ontology: file 'ontology/individuals.owl' does not exist.
+20:47:05.845 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Cannot load individuals: individuals ontology not loaded
+20:47:06.029 [qtp1800659519-26] INFO  OntologyServer loadReasoner - isConsistent: true
+20:47:06.033 [qtp1800659519-26] INFO  OntologyServer getIndividuals - REST call /individuals
+20:48:21.026 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @862ms to org.eclipse.jetty.util.log.Slf4jLog
+20:48:21.138 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+20:48:21.206 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+20:48:21.206 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+20:48:21.210 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+20:48:22.190 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+20:48:22.458 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+20:48:22.459 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2301ms
+20:48:25.414 [qtp1800659519-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+20:48:25.660 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+20:48:25.858 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+20:48:25.939 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl>))) [Axioms: 11 Logical Axioms: 6])
+20:48:25.942 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Individuals size: 2
+20:48:25.953 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@761aac9a[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:48:25.954 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@7f07a1c5[
+  hasAge=21
+  hasRiskFactor=<null>
+  hasRiskLevel=3.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/individuals.owl#lucas2
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:48:26.127 [qtp1800659519-26] INFO  OntologyServer loadReasoner - isConsistent: true
+20:48:26.131 [qtp1800659519-26] INFO  OntologyServer getIndividuals - REST call /individuals
+20:48:38.252 [qtp1800659519-25] INFO  OntologyServer saveIndividuals - Saving individuals. size: 2
+20:48:38.253 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@761aac9a[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:48:38.254 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@7f07a1c5[
+  hasAge=21
+  hasRiskFactor=<null>
+  hasRiskLevel=3.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/individuals.owl#lucas2
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:49:10.691 [qtp1800659519-24] INFO  OntologyServer saveIndividuals - Saving individuals. size: 2
+20:49:10.692 [qtp1800659519-24] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@761aac9a[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:49:10.692 [qtp1800659519-24] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@7f07a1c5[
+  hasAge=21
+  hasRiskFactor=<null>
+  hasRiskLevel=3.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/individuals.owl#lucas2
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:50:55.849 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1402ms to org.eclipse.jetty.util.log.Slf4jLog
+20:50:56.064 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+20:50:56.146 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+20:50:56.147 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+20:50:56.155 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+20:50:57.104 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+20:50:57.407 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+20:50:57.408 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2967ms
+20:51:16.324 [qtp1800659519-12] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+20:51:16.503 [qtp1800659519-12] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+20:51:16.693 [qtp1800659519-12] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+20:51:16.775 [qtp1800659519-12] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl>))) [Axioms: 11 Logical Axioms: 6])
+20:51:16.778 [qtp1800659519-12] INFO  OntologyServer loadIndividuals - Individuals size: 2
+20:51:16.790 [qtp1800659519-12] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@7c40cdf3[
+  hasAge=21
+  hasRiskFactor=<null>
+  hasRiskLevel=3.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/individuals.owl#lucas2
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:51:16.791 [qtp1800659519-12] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@5aa7e10[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:51:16.974 [qtp1800659519-12] INFO  OntologyServer loadReasoner - isConsistent: true
+20:51:16.978 [qtp1800659519-12] INFO  OntologyServer getIndividuals - REST call /individuals
+20:51:27.321 [qtp1800659519-25] INFO  OntologyServer saveIndividuals - Saving individuals. size: 2
+20:51:27.322 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@7c40cdf3[
+  hasAge=21
+  hasRiskFactor=<null>
+  hasRiskLevel=3.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/individuals.owl#lucas2
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:51:27.323 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@5aa7e10[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:52:06.439 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1498ms to org.eclipse.jetty.util.log.Slf4jLog
+20:52:06.841 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+20:52:06.935 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+20:52:06.936 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+20:52:06.941 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+20:52:08.012 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+20:52:08.406 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+20:52:08.407 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @3476ms
+20:52:15.757 [qtp1800659519-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+20:52:15.988 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+20:52:16.211 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+20:52:16.300 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 11 Logical Axioms: 6])
+20:52:16.304 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Individuals size: 2
+20:52:16.314 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@1e106955[
+  hasAge=21
+  hasRiskFactor=<null>
+  hasRiskLevel=3.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/individuals.owl#lucas2
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:52:16.314 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@245d9b6a[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:52:16.506 [qtp1800659519-26] INFO  OntologyServer loadReasoner - isConsistent: true
+20:52:16.511 [qtp1800659519-26] INFO  OntologyServer getIndividuals - REST call /individuals
+20:52:51.495 [qtp1800659519-12] INFO  OntologyServer saveIndividuals - Saving individuals. size: 2
+20:52:51.496 [qtp1800659519-12] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@1e106955[
+  hasAge=21
+  hasRiskFactor=<null>
+  hasRiskLevel=3.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/individuals.owl#lucas2
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:52:51.497 [qtp1800659519-12] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@245d9b6a[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:54:05.753 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @845ms to org.eclipse.jetty.util.log.Slf4jLog
+20:54:05.930 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+20:54:05.992 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+20:54:05.993 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+20:54:05.997 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+20:54:06.899 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+20:54:07.230 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+20:54:07.230 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2328ms
+20:54:13.066 [qtp1800659519-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+20:54:13.253 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+20:54:13.427 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+20:54:13.496 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 11 Logical Axioms: 6])
+20:54:13.499 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Individuals size: 2
+20:54:13.508 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@3bd68bf6[
+  hasAge=21
+  hasRiskFactor=<null>
+  hasRiskLevel=3.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/individuals.owl#lucas2
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:54:13.509 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@6f5b63f9[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:54:13.682 [qtp1800659519-26] INFO  OntologyServer loadReasoner - isConsistent: true
+20:54:13.684 [qtp1800659519-26] INFO  OntologyServer getIndividuals - REST call /individuals
+20:54:34.164 [qtp1800659519-25] INFO  OntologyServer addIndividual - Adding individual:
+20:54:34.164 [qtp1800659519-25] INFO  OntologyServer addIndividual - model.PersonImpl@44857bbf[
+  hasAge=15
+  hasRiskFactor=[]
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=lucas5
+  hasLogin=<null>
+  hasDevice=[]
+]
+20:54:34.165 [qtp1800659519-25] INFO  OntologyServer saveIndividuals - Saving individuals. size: 3
+20:54:34.165 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@3bd68bf6[
+  hasAge=21
+  hasRiskFactor=<null>
+  hasRiskLevel=3.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/individuals.owl#lucas2
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:54:34.165 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@6f5b63f9[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+20:54:34.166 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@44857bbf[
+  hasAge=15
+  hasRiskFactor=[]
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=lucas5
+  hasLogin=<null>
+  hasDevice=[]
+]
+21:02:09.862 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1512ms to org.eclipse.jetty.util.log.Slf4jLog
+21:02:09.969 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+21:02:10.017 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+21:02:10.018 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+21:02:10.022 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+21:02:10.951 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@45099dd3{/,null,AVAILABLE}
+21:02:11.228 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@5dc3fcb7{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+21:02:11.229 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2882ms
+21:02:17.595 [qtp270095066-21] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+21:02:17.819 [qtp270095066-21] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+21:02:18.045 [qtp270095066-21] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+21:02:18.132 [qtp270095066-21] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 15 Logical Axioms: 9])
+21:02:18.136 [qtp270095066-21] INFO  OntologyServer loadIndividuals - Individuals size: 3
+21:02:18.147 [qtp270095066-21] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@69152a13[
+  hasAge=21
+  hasRiskFactor=<null>
+  hasRiskLevel=3.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/individuals.owl#lucas2
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:02:18.147 [qtp270095066-21] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@675a0fd0[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:02:18.148 [qtp270095066-21] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@62da4ac5[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:02:18.333 [qtp270095066-21] INFO  OntologyServer loadReasoner - isConsistent: true
+21:02:18.337 [qtp270095066-21] INFO  OntologyServer getIndividuals - REST call /individuals
+21:03:33.767 [qtp270095066-16] INFO  OntologyServer saveIndividuals - Saving individuals. size: 3
+21:03:33.769 [qtp270095066-16] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@69152a13[
+  hasAge=21
+  hasRiskFactor=<null>
+  hasRiskLevel=3.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/individuals.owl#lucas2
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:03:33.769 [qtp270095066-16] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@675a0fd0[
+  hasAge=24
+  hasRiskFactor=<null>
+  hasRiskLevel=8.0
+  hasSex=<null>
+  individualName=file:/C:/Users/dossluca/Desktop/IdeaProjects/previna-avc-server/app/ontology/individuals.owl#lucas3
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:03:33.770 [qtp270095066-16] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@62da4ac5[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:12:58.345 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @818ms to org.eclipse.jetty.util.log.Slf4jLog
+21:12:58.459 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+21:12:58.520 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+21:12:58.520 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+21:12:58.525 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+21:12:59.580 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+21:12:59.857 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+21:12:59.858 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2335ms
+21:13:05.280 [qtp1800659519-16] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+21:13:05.488 [qtp1800659519-16] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+21:13:05.709 [qtp1800659519-16] INFO  OntologyServer loadOntology - Cannot load ontology: file 'ontology/individuals.owl' does not exist.
+21:13:05.709 [qtp1800659519-16] INFO  OntologyServer loadIndividuals - Cannot load individuals: individuals ontology not loaded
+21:13:05.878 [qtp1800659519-16] INFO  OntologyServer loadReasoner - isConsistent: true
+21:13:05.881 [qtp1800659519-16] INFO  OntologyServer getIndividuals - REST call /individuals
+21:13:20.245 [qtp1800659519-25] INFO  OntologyServer saveIndividuals - Saving individuals. size: 0
+21:14:00.403 [qtp1800659519-26] INFO  OntologyServer addIndividual - Adding individual:
+21:14:00.411 [qtp1800659519-26] INFO  OntologyServer addIndividual - model.PersonImpl@4e05e26c[
+  hasAge=15
+  hasRiskFactor=[]
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=lucas5
+  hasLogin=<null>
+  hasDevice=[]
+]
+21:14:00.411 [qtp1800659519-26] INFO  OntologyServer saveIndividuals - Saving individuals. size: 1
+21:14:00.412 [qtp1800659519-26] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@4e05e26c[
+  hasAge=15
+  hasRiskFactor=[]
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=lucas5
+  hasLogin=<null>
+  hasDevice=[]
+]
+21:14:23.664 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @880ms to org.eclipse.jetty.util.log.Slf4jLog
+21:14:23.832 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+21:14:23.897 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+21:14:23.898 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+21:14:23.905 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+21:14:24.804 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+21:14:25.136 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+21:14:25.136 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2357ms
+21:14:31.975 [qtp1800659519-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+21:14:32.163 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+21:14:32.341 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+21:14:32.411 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 7 Logical Axioms: 3])
+21:14:32.413 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Individuals size: 1
+21:14:32.424 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@72f3a62f[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:14:32.580 [qtp1800659519-26] INFO  OntologyServer loadReasoner - isConsistent: true
+21:14:32.582 [qtp1800659519-26] INFO  OntologyServer getIndividuals - REST call /individuals
+21:15:17.060 [qtp1800659519-18] INFO  OntologyServer saveIndividuals - Saving individuals. size: 1
+21:15:17.062 [qtp1800659519-18] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@72f3a62f[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:15:40.980 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @935ms to org.eclipse.jetty.util.log.Slf4jLog
+21:15:41.113 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+21:15:41.171 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+21:15:41.172 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+21:15:41.176 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+21:15:42.087 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+21:15:42.339 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+21:15:42.339 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2300ms
+21:17:13.393 [qtp1800659519-27] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+21:17:13.572 [qtp1800659519-27] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+21:17:13.745 [qtp1800659519-27] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+21:17:13.823 [qtp1800659519-27] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 7 Logical Axioms: 3])
+21:17:13.826 [qtp1800659519-27] INFO  OntologyServer loadIndividuals - Individuals size: 1
+21:17:13.836 [qtp1800659519-27] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@4587bcb6[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:17:13.982 [qtp1800659519-27] INFO  OntologyServer loadReasoner - isConsistent: true
+21:17:13.985 [qtp1800659519-27] INFO  OntologyServer getIndividuals - REST call /individuals
+21:18:00.423 [qtp1800659519-25] INFO  OntologyServer saveIndividuals - Saving individuals. size: 1
+21:18:00.425 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@4587bcb6[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:40:01.510 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1344ms to org.eclipse.jetty.util.log.Slf4jLog
+21:40:01.666 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+21:40:01.804 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+21:40:01.805 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+21:40:01.812 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+21:40:02.870 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+21:40:03.317 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+21:40:03.318 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @3164ms
+21:40:09.363 [qtp1800659519-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+21:40:09.612 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+21:40:09.903 [qtp1800659519-26] INFO  OntologyServer loadOntology - Cannot load ontology: file 'ontology/individuals.owl' does not exist.
+21:40:09.904 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Cannot load individuals: individuals ontology not loaded
+21:40:10.095 [qtp1800659519-26] INFO  OntologyServer loadReasoner - isConsistent: true
+21:40:10.098 [qtp1800659519-26] INFO  OntologyServer getIndividuals - REST call /individuals
+21:40:42.615 [qtp1800659519-25] INFO  OntologyServer addIndividual - Adding individual:
+21:40:42.623 [qtp1800659519-25] INFO  OntologyServer addIndividual - model.PersonImpl@5cb71e2[
+  hasAge=15
+  hasRiskFactor=[]
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=lucas5
+  hasLogin=<null>
+  hasDevice=[]
+]
+21:40:42.623 [qtp1800659519-25] INFO  OntologyServer saveIndividuals - Saving individuals. size: 1
+21:40:42.624 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@5cb71e2[
+  hasAge=15
+  hasRiskFactor=[]
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=lucas5
+  hasLogin=<null>
+  hasDevice=[]
+]
+21:41:10.141 [qtp1800659519-24] INFO  OntologyServer saveIndividuals - Saving individuals. size: 1
+21:41:10.141 [qtp1800659519-24] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@5cb71e2[
+  hasAge=15
+  hasRiskFactor=[]
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=lucas5
+  hasLogin=<null>
+  hasDevice=[]
+]
+21:41:53.909 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @921ms to org.eclipse.jetty.util.log.Slf4jLog
+21:41:54.024 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+21:41:54.096 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+21:41:54.097 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+21:41:54.109 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+21:41:55.071 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+21:41:55.382 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+21:41:55.383 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2400ms
+21:42:00.211 [qtp1800659519-16] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+21:42:00.454 [qtp1800659519-16] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+21:42:00.656 [qtp1800659519-16] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+21:42:00.742 [qtp1800659519-16] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 7 Logical Axioms: 3])
+21:42:00.746 [qtp1800659519-16] INFO  OntologyServer loadIndividuals - Individuals size: 1
+21:42:00.759 [qtp1800659519-16] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@406c216d[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:42:00.977 [qtp1800659519-16] INFO  OntologyServer loadReasoner - isConsistent: true
+21:42:00.980 [qtp1800659519-16] INFO  OntologyServer getIndividuals - REST call /individuals
+21:42:24.924 [qtp1800659519-24] INFO  OntologyServer saveIndividuals - Saving individuals. size: 1
+21:42:24.926 [qtp1800659519-24] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@406c216d[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:46:45.953 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @2066ms to org.eclipse.jetty.util.log.Slf4jLog
+21:46:46.263 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+21:46:46.352 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+21:46:46.352 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+21:46:46.357 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+21:46:47.517 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@45099dd3{/,null,AVAILABLE}
+21:46:47.827 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@5dc3fcb7{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+21:46:47.828 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @3954ms
+21:46:52.840 [qtp270095066-17] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+21:46:53.050 [qtp270095066-17] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+21:46:53.252 [qtp270095066-17] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+21:46:53.342 [qtp270095066-17] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 7 Logical Axioms: 3])
+21:46:53.345 [qtp270095066-17] INFO  OntologyServer loadIndividuals - Individuals size: 1
+21:46:53.359 [qtp270095066-17] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@69d2deb4[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:46:53.582 [qtp270095066-17] INFO  OntologyServer loadReasoner - isConsistent: true
+21:46:53.585 [qtp270095066-17] INFO  OntologyServer getIndividuals - REST call /individuals
+21:47:00.350 [qtp270095066-27] INFO  OntologyServer saveIndividuals - Saving individuals. size: 1
+21:47:00.352 [qtp270095066-27] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@69d2deb4[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:52:05.056 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1113ms to org.eclipse.jetty.util.log.Slf4jLog
+21:52:05.282 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+21:52:05.362 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+21:52:05.363 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+21:52:05.369 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+21:52:06.535 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@45099dd3{/,null,AVAILABLE}
+21:52:19.103 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1145ms to org.eclipse.jetty.util.log.Slf4jLog
+21:52:19.265 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+21:52:19.354 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+21:52:19.355 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+21:52:19.360 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+21:52:20.389 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@45099dd3{/,null,AVAILABLE}
+21:52:20.721 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@40ab8a8{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+21:52:20.722 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2770ms
+21:52:25.212 [qtp270095066-28] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+21:52:25.430 [qtp270095066-28] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+21:52:25.664 [qtp270095066-28] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+21:52:25.739 [qtp270095066-28] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 7 Logical Axioms: 3])
+21:55:59.734 [qtp270095066-28] INFO  OntologyServer loadIndividuals - Individuals size: 1
+21:56:00.129 [qtp270095066-28] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@1d81745[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+21:56:04.577 [qtp270095066-28] INFO  OntologyServer loadReasoner - isConsistent: true
+21:56:08.085 [qtp270095066-28] INFO  OntologyServer getIndividuals - REST call /individuals
+21:57:06.228 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @849ms to org.eclipse.jetty.util.log.Slf4jLog
+21:57:06.337 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+21:57:06.401 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+21:57:06.402 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+21:57:06.406 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+21:57:07.308 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+21:57:07.577 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+21:57:07.578 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2204ms
+21:57:10.821 [qtp1800659519-14] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+21:57:11.006 [qtp1800659519-14] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+21:57:11.188 [qtp1800659519-14] INFO  OntologyServer loadOntology - Cannot load ontology: file 'ontology/individuals.owl' does not exist.
+21:57:11.188 [qtp1800659519-14] INFO  OntologyServer loadIndividuals - Cannot load individuals: individuals ontology not loaded
+21:57:11.211 [qtp1800659519-14] WARN  org.eclipse.jetty.server.HttpChannel handleException - /rest/addIndividual
+javax.servlet.ServletException: A MultiException has 2 exceptions.  They are:
+1. java.util.NoSuchElementException: None.get
+2. java.lang.IllegalStateException: Unable to perform operation: post construct on OntologyServer
+
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:489)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:841)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:543)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1592)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1239)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:168)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:481)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1561)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:166)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1141)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.server.Server.handle(Server.java:564)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:320)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:110)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:672)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:590)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.glassfish.hk2.api.MultiException: A MultiException has 2 exceptions.  They are:
+1. java.util.NoSuchElementException: None.get
+2. java.lang.IllegalStateException: Unable to perform operation: post construct on OntologyServer
+
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:392)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:487)
+	at org.jvnet.hk2.internal.SingletonContext$1.compute(SingletonContext.java:83)
+	at org.jvnet.hk2.internal.SingletonContext$1.compute(SingletonContext.java:71)
+	at org.glassfish.hk2.utilities.cache.Cache$OriginThreadAwareFuture$1.call(Cache.java:97)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.glassfish.hk2.utilities.cache.Cache$OriginThreadAwareFuture.run(Cache.java:154)
+	at org.glassfish.hk2.utilities.cache.Cache.compute(Cache.java:199)
+	at org.jvnet.hk2.internal.SingletonContext.findOrCreate(SingletonContext.java:122)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:774)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:737)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.getService(ServiceLocatorImpl.java:707)
+	at org.glassfish.jersey.internal.inject.Injections.getOrCreate(Injections.java:172)
+	at org.glassfish.jersey.server.model.MethodHandler$ClassBasedMethodHandler.getInstance(MethodHandler.java:284)
+	at org.glassfish.jersey.server.internal.routing.PushMethodHandlerRouter.apply(PushMethodHandlerRouter.java:74)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:109)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:92)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:61)
+	at org.glassfish.jersey.process.internal.Stages.process(Stages.java:197)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:318)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	... 26 common frames omitted
+Caused by: java.util.NoSuchElementException: None.get
+	at scala.None$.get(Option.scala:349)
+	at scala.None$.get(Option.scala:347)
+	at OntologyServer.loadReasoner(OntologyServer.scala:72)
+	at OntologyServer.setupOntologyServer(OntologyServer.scala:65)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.hk2.utilities.reflection.ReflectionHelper.invoke(ReflectionHelper.java:1287)
+	at org.jvnet.hk2.internal.ClazzCreator.postConstructMe(ClazzCreator.java:333)
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:375)
+	... 59 common frames omitted
+21:59:47.558 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1218ms to org.eclipse.jetty.util.log.Slf4jLog
+21:59:47.731 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+21:59:47.802 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+21:59:47.803 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+21:59:47.809 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+21:59:49.014 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@45099dd3{/,null,AVAILABLE}
+21:59:49.349 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@40ab8a8{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+21:59:49.349 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @3015ms
+21:59:53.038 [qtp270095066-28] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+21:59:53.289 [qtp270095066-28] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+21:59:53.523 [qtp270095066-28] INFO  OntologyServer loadOntology - Cannot load ontology: file 'ontology/individuals.owl' does not exist.
+21:59:53.523 [qtp270095066-28] INFO  OntologyServer loadIndividuals - Cannot load individuals: individuals ontology not loaded
+22:00:14.738 [qtp270095066-28] WARN  org.eclipse.jetty.server.HttpChannel handleException - /rest/addIndividual
+javax.servlet.ServletException: A MultiException has 2 exceptions.  They are:
+1. java.util.NoSuchElementException: None.get
+2. java.lang.IllegalStateException: Unable to perform operation: post construct on OntologyServer
+
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:489)
+	at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+	at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:841)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:543)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1592)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1239)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:168)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:481)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1561)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:166)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1141)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.server.Server.handle(Server.java:564)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:320)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:110)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:672)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:590)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.glassfish.hk2.api.MultiException: A MultiException has 2 exceptions.  They are:
+1. java.util.NoSuchElementException: None.get
+2. java.lang.IllegalStateException: Unable to perform operation: post construct on OntologyServer
+
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:392)
+	at org.jvnet.hk2.internal.SystemDescriptor.create(SystemDescriptor.java:487)
+	at org.jvnet.hk2.internal.SingletonContext$1.compute(SingletonContext.java:83)
+	at org.jvnet.hk2.internal.SingletonContext$1.compute(SingletonContext.java:71)
+	at org.glassfish.hk2.utilities.cache.Cache$OriginThreadAwareFuture$1.call(Cache.java:97)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.glassfish.hk2.utilities.cache.Cache$OriginThreadAwareFuture.run(Cache.java:154)
+	at org.glassfish.hk2.utilities.cache.Cache.compute(Cache.java:199)
+	at org.jvnet.hk2.internal.SingletonContext.findOrCreate(SingletonContext.java:122)
+	at org.jvnet.hk2.internal.Utilities.createService(Utilities.java:2022)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:774)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.internalGetService(ServiceLocatorImpl.java:737)
+	at org.jvnet.hk2.internal.ServiceLocatorImpl.getService(ServiceLocatorImpl.java:707)
+	at org.glassfish.jersey.internal.inject.Injections.getOrCreate(Injections.java:172)
+	at org.glassfish.jersey.server.model.MethodHandler$ClassBasedMethodHandler.getInstance(MethodHandler.java:284)
+	at org.glassfish.jersey.server.internal.routing.PushMethodHandlerRouter.apply(PushMethodHandlerRouter.java:74)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:109)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage._apply(RoutingStage.java:112)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:92)
+	at org.glassfish.jersey.server.internal.routing.RoutingStage.apply(RoutingStage.java:61)
+	at org.glassfish.jersey.process.internal.Stages.process(Stages.java:197)
+	at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:318)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+	at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+	... 26 common frames omitted
+Caused by: java.util.NoSuchElementException: None.get
+	at scala.None$.get(Option.scala:349)
+	at scala.None$.get(Option.scala:347)
+	at OntologyServer.loadReasoner(OntologyServer.scala:72)
+	at OntologyServer.setupOntologyServer(OntologyServer.scala:65)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.hk2.utilities.reflection.ReflectionHelper.invoke(ReflectionHelper.java:1287)
+	at org.jvnet.hk2.internal.ClazzCreator.postConstructMe(ClazzCreator.java:333)
+	at org.jvnet.hk2.internal.ClazzCreator.create(ClazzCreator.java:375)
+	... 59 common frames omitted
+22:00:37.717 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1436ms to org.eclipse.jetty.util.log.Slf4jLog
+22:00:37.894 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+22:00:37.964 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+22:00:37.972 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+22:00:37.980 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+22:00:39.137 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@45099dd3{/,null,AVAILABLE}
+22:00:50.411 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1045ms to org.eclipse.jetty.util.log.Slf4jLog
+22:00:50.551 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+22:00:50.619 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+22:00:50.619 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+22:00:50.631 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+22:00:51.684 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@45099dd3{/,null,AVAILABLE}
+22:00:51.995 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@773dab28{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+22:00:51.996 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2636ms
+22:01:16.518 [qtp270095066-15] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+22:01:16.724 [qtp270095066-15] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+22:01:16.942 [qtp270095066-15] INFO  OntologyServer loadOntology - Cannot load ontology: file 'ontology/individuals.owl' does not exist.
+22:01:16.942 [qtp270095066-15] INFO  OntologyServer loadIndividuals - Cannot load individuals: individuals ontology not loaded
+22:01:24.186 [qtp270095066-15] INFO  OntologyServer addIndividual - Adding individual:
+22:01:24.195 [qtp270095066-15] INFO  OntologyServer addIndividual - model.PersonImpl@73cbc87e[
+  hasAge=15
+  hasRiskFactor=[]
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=lucas5
+  hasLogin=<null>
+  hasDevice=[]
+]
+22:01:24.195 [qtp270095066-15] INFO  OntologyServer saveIndividuals - Saving individuals. size: 1
+22:01:24.196 [qtp270095066-15] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@73cbc87e[
+  hasAge=15
+  hasRiskFactor=[]
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=lucas5
+  hasLogin=<null>
+  hasDevice=[]
+]
+22:01:31.705 [qtp270095066-27] INFO  OntologyServer saveIndividuals - Saving individuals. size: 1
+22:01:31.706 [qtp270095066-27] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@73cbc87e[
+  hasAge=15
+  hasRiskFactor=[]
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=lucas5
+  hasLogin=<null>
+  hasDevice=[]
+]
+22:01:56.251 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @2015ms to org.eclipse.jetty.util.log.Slf4jLog
+22:01:56.518 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+22:01:56.601 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+22:01:56.602 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+22:01:56.606 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+22:01:57.836 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@45099dd3{/,null,AVAILABLE}
+22:01:58.128 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@5d1e09bc{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+22:01:58.129 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @3950ms
+22:02:02.651 [qtp270095066-21] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+22:02:02.834 [qtp270095066-21] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+22:02:03.014 [qtp270095066-21] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+22:02:03.081 [qtp270095066-21] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 7 Logical Axioms: 3])
+22:03:20.255 [qtp270095066-21] INFO  OntologyServer loadIndividuals - Individuals size: 1
+22:03:20.268 [qtp270095066-21] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@d9ca09f[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+22:03:23.228 [qtp270095066-21] INFO  OntologyServer loadReasoner - isConsistent: true
+22:03:24.369 [qtp270095066-21] INFO  OntologyServer getIndividuals - REST call /individuals
+22:03:37.630 [qtp270095066-27] INFO  OntologyServer saveIndividuals - Saving individuals. size: 1
+22:03:37.631 [qtp270095066-27] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@d9ca09f[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+22:04:13.454 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @894ms to org.eclipse.jetty.util.log.Slf4jLog
+22:04:13.587 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+22:04:13.703 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+22:04:13.704 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+22:04:13.715 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+22:04:14.624 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+22:04:14.880 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+22:04:14.880 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2326ms
+22:04:20.761 [qtp1800659519-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+22:04:20.938 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+22:04:21.101 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+22:04:21.182 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 7 Logical Axioms: 3])
+22:04:21.185 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Individuals size: 1
+22:04:21.194 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@3847b1dd[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+22:04:21.367 [qtp1800659519-26] INFO  OntologyServer loadReasoner - isConsistent: true
+22:04:21.370 [qtp1800659519-26] INFO  OntologyServer getIndividuals - REST call /individuals
+22:04:29.345 [qtp1800659519-25] INFO  OntologyServer saveIndividuals - Saving individuals. size: 1
+22:04:29.346 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@3847b1dd[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+22:24:01.715 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1079ms to org.eclipse.jetty.util.log.Slf4jLog
+22:24:01.846 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+22:24:01.895 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+22:24:01.895 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+22:24:01.900 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+22:24:02.614 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+22:24:02.852 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+22:24:02.852 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2221ms
+22:24:24.401 [qtp1800659519-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+22:24:24.588 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+22:24:24.798 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+22:24:24.876 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 7 Logical Axioms: 3])
+22:24:24.879 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Individuals size: 1
+22:24:24.891 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@46db2dbe[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+22:24:25.057 [qtp1800659519-26] INFO  OntologyServer loadReasoner - isConsistent: true
+22:24:25.060 [qtp1800659519-26] INFO  OntologyServer getIndividuals - REST call /individuals
+22:24:54.909 [qtp1800659519-25] INFO  OntologyServer addIndividual - Adding individual:
+22:24:54.909 [qtp1800659519-25] INFO  OntologyServer addIndividual - model.PersonImpl@38ab24ee[
+  hasAge=11
+  hasRiskFactor=[]
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=lucas6
+  hasLogin=<null>
+  hasDevice=[]
+]
+22:24:54.909 [qtp1800659519-25] INFO  OntologyServer saveIndividuals - Saving individuals. size: 2
+22:24:54.910 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@46db2dbe[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+22:24:54.910 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@38ab24ee[
+  hasAge=11
+  hasRiskFactor=[]
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=[]
+]
+22:26:20.431 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @859ms to org.eclipse.jetty.util.log.Slf4jLog
+22:26:20.542 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+22:26:20.613 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+22:26:20.620 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+22:26:20.625 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+22:26:21.569 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@10db82ae{/,null,AVAILABLE}
+22:26:21.898 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@1e7aa82b{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+22:26:21.899 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2332ms
+22:26:25.790 [qtp1800659519-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+22:26:25.987 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+22:26:26.158 [qtp1800659519-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+22:26:26.234 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 11 Logical Axioms: 6])
+22:26:26.236 [qtp1800659519-26] INFO  OntologyServer loadIndividuals - Individuals size: 2
+22:26:26.246 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@78d1bce5[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+22:26:26.246 [qtp1800659519-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@47b4cd73[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]
+22:26:26.402 [qtp1800659519-26] INFO  OntologyServer loadReasoner - isConsistent: true
+22:26:26.405 [qtp1800659519-26] INFO  OntologyServer getIndividuals - REST call /individuals
+22:26:44.840 [qtp1800659519-25] INFO  OntologyServer saveIndividuals - Saving individuals. size: 2
+22:26:44.842 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@78d1bce5[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+22:26:44.842 [qtp1800659519-25] INFO  OntologyServer $anonfun$saveIndividuals$1 - model.PersonImpl@47b4cd73[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]

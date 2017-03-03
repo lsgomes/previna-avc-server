@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: com.clarkparsia.pellet:pellet-owlapiv3:2.3.2-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/clarkparsia/pellet/pellet-owlapiv3/2.3.2-SNAPSHOT/pellet-owlapiv3-2.3.2-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

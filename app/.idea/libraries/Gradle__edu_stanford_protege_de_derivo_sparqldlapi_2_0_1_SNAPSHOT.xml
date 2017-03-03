@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: edu.stanford.protege:de-derivo-sparqldlapi:2.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/edu/stanford/protege/de-derivo-sparqldlapi/2.0.1-SNAPSHOT/de-derivo-sparqldlapi-2.0.1-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/edu/stanford/protege/de-derivo-sparqldlapi/2.0.1-SNAPSHOT/de-derivo-sparqldlapi-2.0.1-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
