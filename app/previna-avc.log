@@ -5618,3 +5618,840 @@ Caused by: java.util.NoSuchElementException: None.get
   hasLogin=<null>
   hasDevice=<null>
 ]
+11:29:32.382 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1721ms to org.eclipse.jetty.util.log.Slf4jLog
+11:29:32.552 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+11:29:32.655 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+11:29:32.655 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+11:29:32.664 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+11:29:33.614 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@6a01e23{/,null,AVAILABLE}
+11:29:34.136 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@20a14b55{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+11:29:34.136 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @3481ms
+11:29:39.568 [qtp1371006431-16] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+11:29:39.750 [qtp1371006431-16] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+11:29:40.032 [qtp1371006431-16] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+11:29:40.115 [qtp1371006431-16] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 19 Logical Axioms: 12])
+11:29:40.118 [qtp1371006431-16] INFO  OntologyServer loadIndividuals - Individuals size: 4
+11:29:40.128 [qtp1371006431-16] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@1bd4aec7[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:29:40.129 [qtp1371006431-16] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@79b8474f[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:29:40.129 [qtp1371006431-16] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@3b9bede[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:29:40.130 [qtp1371006431-16] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@1a4d34d1[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:29:40.161 [qtp1371006431-16] INFO  OntologyServer processQuery - Executing query: 
+ASK
+WHERE {  }
+
+ ---------------------------------------
+11:29:40.165 [qtp1371006431-16] INFO  OntologyServer processQuery - Result:Yes
+11:29:40.165 [qtp1371006431-16] INFO  OntologyServer processQuery - Finished in: 8 ms
+11:29:40.168 [qtp1371006431-16] INFO  OntologyServer getIndividuals - REST call /individuals
+11:51:07.310 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @778ms to org.eclipse.jetty.util.log.Slf4jLog
+11:51:07.404 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+11:51:07.449 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+11:51:07.450 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+11:51:07.454 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+11:51:08.261 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@6a01e23{/,null,AVAILABLE}
+11:51:08.645 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@20a14b55{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+11:51:08.646 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2117ms
+11:51:15.504 [qtp1371006431-18] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+11:51:15.693 [qtp1371006431-18] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+11:51:15.868 [qtp1371006431-18] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+11:51:15.939 [qtp1371006431-18] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 19 Logical Axioms: 12])
+11:51:15.942 [qtp1371006431-18] INFO  OntologyServer loadIndividuals - Individuals size: 4
+11:51:15.952 [qtp1371006431-18] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@6adb754c[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:51:15.953 [qtp1371006431-18] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@6c094fe1[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:51:15.953 [qtp1371006431-18] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@148d0b97[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:51:15.953 [qtp1371006431-18] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@50af7500[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:51:15.983 [qtp1371006431-18] INFO  OntologyServer processQuery - Query engine error: Unknown query type. (near "PREFIX:", pos: 0, col: 1, row: 1)
+11:51:15.985 [qtp1371006431-18] INFO  OntologyServer getIndividuals - REST call /individuals
+11:51:44.848 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @787ms to org.eclipse.jetty.util.log.Slf4jLog
+11:51:44.948 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+11:51:45.001 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+11:51:45.002 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+11:51:45.007 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+11:51:45.995 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@6a01e23{/,null,AVAILABLE}
+11:51:46.404 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@20a14b55{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+11:51:46.405 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2347ms
+11:51:48.427 [qtp1371006431-12] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+11:51:48.697 [qtp1371006431-12] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+11:51:48.915 [qtp1371006431-12] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+11:51:49.065 [qtp1371006431-12] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 19 Logical Axioms: 12])
+11:51:49.077 [qtp1371006431-12] INFO  OntologyServer loadIndividuals - Individuals size: 4
+11:51:49.103 [qtp1371006431-12] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@109ea30f[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:51:49.103 [qtp1371006431-12] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@9476a45[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:51:49.104 [qtp1371006431-12] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@44bb14b8[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:51:49.104 [qtp1371006431-12] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@615f92e9[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:51:49.173 [qtp1371006431-12] INFO  OntologyServer processQuery - Executing query: 
+SELECT ?de.derivo.sparqldlapi.Var@78
+WHERE { Individual(?de.derivo.sparqldlapi.Var@78) }
+
+ ---------------------------------------
+11:51:49.189 [qtp1371006431-12] INFO  OntologyServer processQuery - Results: 
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+
+ Size of result set: 4---------------
+11:51:49.190 [qtp1371006431-12] INFO  OntologyServer processQuery - Finished in: 33 ms
+11:51:49.197 [qtp1371006431-12] INFO  OntologyServer getIndividuals - REST call /individuals
+11:54:29.834 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @800ms to org.eclipse.jetty.util.log.Slf4jLog
+11:54:29.928 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+11:54:29.983 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+11:54:29.984 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+11:54:29.990 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+11:54:30.875 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@6a01e23{/,null,AVAILABLE}
+11:54:31.337 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@20a14b55{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+11:54:31.337 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2310ms
+11:54:34.712 [qtp1371006431-12] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+11:54:34.908 [qtp1371006431-12] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+11:54:35.095 [qtp1371006431-12] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+11:54:35.187 [qtp1371006431-12] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 19 Logical Axioms: 12])
+11:54:35.191 [qtp1371006431-12] INFO  OntologyServer loadIndividuals - Individuals size: 4
+11:54:35.204 [qtp1371006431-12] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@7316430[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:54:35.205 [qtp1371006431-12] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@258091a2[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:54:35.205 [qtp1371006431-12] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@38a11ad7[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:54:35.206 [qtp1371006431-12] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@1840394e[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:54:35.243 [qtp1371006431-12] INFO  OntologyServer processQuery - Executing query: 
+SELECT ?de.derivo.sparqldlapi.Var@78
+WHERE { Individual(?de.derivo.sparqldlapi.Var@78) }
+
+ ---------------------------------------
+11:54:35.251 [qtp1371006431-12] INFO  OntologyServer processQuery - Results: 
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+
+ Size of result set: 4
+ -----------------------
+11:54:35.252 [qtp1371006431-12] INFO  OntologyServer processQuery - Finished in: 15 ms
+11:54:35.255 [qtp1371006431-12] INFO  OntologyServer getIndividuals - REST call /individuals
+11:57:04.025 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1467ms to org.eclipse.jetty.util.log.Slf4jLog
+11:57:04.108 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+11:57:04.146 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+11:57:04.147 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+11:57:04.150 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+11:57:05.028 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@1a942c18{/,null,AVAILABLE}
+11:57:05.367 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@5b5c0057{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+11:57:05.367 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2814ms
+11:57:10.277 [qtp542365801-28] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+11:57:10.624 [qtp542365801-28] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+11:57:10.852 [qtp542365801-28] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+11:57:10.947 [qtp542365801-28] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 19 Logical Axioms: 12])
+11:57:26.591 [qtp542365801-28] INFO  OntologyServer loadIndividuals - Individuals size: 4
+11:57:26.650 [qtp542365801-28] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@57673b43[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:57:26.652 [qtp542365801-28] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@13e1d426[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:57:26.654 [qtp542365801-28] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@9af1f62[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:57:26.656 [qtp542365801-28] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@107f6092[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]
+11:57:45.430 [qtp542365801-28] INFO  OntologyServer processQuery - Executing query: 
+PREFIX person: <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#>
+SELECT * WHERE {
+Individual(?x)}
+ ---------------------------------------
+12:10:51.478 [qtp542365801-28] INFO  OntologyServer processQuery - Results: 
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+
+ Size of result set: 4
+ -----------------------
+12:10:51.479 [qtp542365801-28] INFO  OntologyServer processQuery - Finished in: 787140 ms
+12:10:51.482 [qtp542365801-28] INFO  OntologyServer getIndividuals - REST call /individuals
+12:22:53.338 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @776ms to org.eclipse.jetty.util.log.Slf4jLog
+12:22:53.438 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+12:22:53.492 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+12:22:53.493 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+12:22:53.497 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+12:22:54.338 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@6a01e23{/,null,AVAILABLE}
+12:22:54.754 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@20a14b55{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+12:22:54.755 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2197ms
+12:22:58.589 [qtp1371006431-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+12:22:58.768 [qtp1371006431-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+12:22:58.931 [qtp1371006431-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+12:22:59.010 [qtp1371006431-26] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 19 Logical Axioms: 12])
+12:22:59.013 [qtp1371006431-26] INFO  OntologyServer loadIndividuals - Individuals size: 4
+12:22:59.025 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@147e356[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]
+12:22:59.025 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@364a35b9[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+12:22:59.026 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@43ad4fbb[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+  hasLogin=<null>
+  hasDevice=<null>
+]
+12:22:59.026 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@3c42e1cd[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+  hasLogin=<null>
+  hasDevice=<null>
+]
+12:22:59.051 [qtp1371006431-26] INFO  OntologyServer processQuery - Executing query: 
+PREFIX person: <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#>
+SELECT * WHERE {
+Individual(?x)}
+ ---------------------------------------
+12:22:59.065 [qtp1371006431-26] INFO  OntologyServer processQuery - Results: 
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+
+ Size of result set: 4
+-----------------------
+12:22:59.065 [qtp1371006431-26] INFO  OntologyServer processQuery - Finished in: 14 ms
+12:22:59.152 [qtp1371006431-26] INFO  OntologyServer getIndividuals - REST call /individuals
+13:34:25.677 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @772ms to org.eclipse.jetty.util.log.Slf4jLog
+13:34:25.763 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+13:34:25.808 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+13:34:25.808 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+13:34:25.812 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+13:34:26.668 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@6a01e23{/,null,AVAILABLE}
+13:34:27.051 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@20a14b55{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+13:34:27.052 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2152ms
+13:34:33.478 [qtp1371006431-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+13:34:33.651 [qtp1371006431-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+13:34:33.821 [qtp1371006431-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+13:34:33.898 [qtp1371006431-26] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 19 Logical Axioms: 12])
+13:34:33.900 [qtp1371006431-26] INFO  OntologyServer loadIndividuals - Individuals size: 4
+13:34:33.911 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@42727430[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:34:33.911 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@1b6ad34f[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:34:33.912 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@2d5e1b1b[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:34:33.912 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@3ca5beed[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:34:33.938 [qtp1371006431-26] INFO  OntologyServer processQuery - Executing query: 
+PREFIX person: <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#>
+SELECT * WHERE {
+Individual(?x)}
+ ---------------------------------------
+13:34:33.952 [qtp1371006431-26] INFO  OntologyServer processQuery - Results: 
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+
+ Size of result set: 4
+-----------------------
+13:34:33.953 [qtp1371006431-26] INFO  OntologyServer processQuery - Finished in: 15 ms
+13:34:34.033 [qtp1371006431-26] INFO  OntologyServer getIndividuals - REST call /individuals
+13:37:27.801 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @959ms to org.eclipse.jetty.util.log.Slf4jLog
+13:37:28.013 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+13:37:28.083 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+13:37:28.084 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+13:37:28.089 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+13:37:29.396 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@6a01e23{/,null,AVAILABLE}
+13:37:29.810 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@13cf7d52{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+13:37:29.810 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2976ms
+13:37:32.169 [qtp1371006431-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+13:37:32.353 [qtp1371006431-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+13:37:32.520 [qtp1371006431-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+13:37:32.591 [qtp1371006431-26] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 19 Logical Axioms: 12])
+13:37:32.593 [qtp1371006431-26] INFO  OntologyServer loadIndividuals - Individuals size: 4
+13:37:32.603 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@7d52d2c3[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:37:32.604 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@2add8028[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:37:32.604 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@16469cf3[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:37:32.605 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@382e2925[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:37:32.631 [qtp1371006431-26] INFO  OntologyServer processQuery - Executing query: 
+PREFIX person: <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#>
+SELECT * WHERE {
+Individual(?x)}
+ ---------------------------------------
+13:37:32.646 [qtp1371006431-26] INFO  OntologyServer processQuery - Results: 
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+
+ Size of result set: 4
+-----------------------
+13:37:32.646 [qtp1371006431-26] INFO  OntologyServer processQuery - Finished in: 15 ms
+13:37:32.649 [qtp1371006431-26] INFO  OntologyServer getIndividuals - REST call /individuals
+13:41:47.463 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @963ms to org.eclipse.jetty.util.log.Slf4jLog
+13:41:47.572 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+13:41:47.648 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+13:41:47.648 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+13:41:47.653 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+13:41:48.979 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@6a01e23{/,null,AVAILABLE}
+13:41:49.392 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@20a14b55{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+13:41:49.392 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2896ms
+13:41:51.755 [qtp1371006431-16] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+13:41:51.942 [qtp1371006431-16] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+13:41:52.120 [qtp1371006431-16] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+13:41:52.203 [qtp1371006431-16] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 19 Logical Axioms: 12])
+13:41:52.205 [qtp1371006431-16] INFO  OntologyServer loadIndividuals - Individuals size: 4
+13:41:52.216 [qtp1371006431-16] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@258bdbfe[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:41:52.216 [qtp1371006431-16] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@249386a9[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:41:52.217 [qtp1371006431-16] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@36562eca[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:41:52.217 [qtp1371006431-16] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@185ecae3[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:41:52.243 [qtp1371006431-16] INFO  OntologyServer processQuery - Executing query: 
+PREFIX person: <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#>
+SELECT * WHERE {
+Individual(?x)}
+ ---------------------------------------
+13:41:52.257 [qtp1371006431-16] INFO  OntologyServer processQuery - Results: 
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+
+ Size of result set: 4
+-----------------------
+13:41:52.258 [qtp1371006431-16] INFO  OntologyServer processQuery - Finished in: 15 ms
+13:41:52.337 [qtp1371006431-16] INFO  OntologyServer getIndividuals - REST call /individuals
+13:58:05.896 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @907ms to org.eclipse.jetty.util.log.Slf4jLog
+13:58:06.001 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+13:58:06.059 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+13:58:06.059 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+13:58:06.064 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+13:58:06.980 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@6a01e23{/,null,AVAILABLE}
+13:58:07.360 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@5d2a4eed{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+13:58:07.361 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2376ms
+13:58:14.996 [qtp1371006431-26] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+13:58:15.200 [qtp1371006431-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+13:58:15.411 [qtp1371006431-26] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+13:58:15.504 [qtp1371006431-26] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 19 Logical Axioms: 12])
+13:58:15.507 [qtp1371006431-26] INFO  OntologyServer loadIndividuals - Individuals size: 4
+13:58:15.518 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@1deaacf8[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:58:15.518 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@294c93aa[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:58:15.519 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@28c739fd[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:58:15.519 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@53497647[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+13:58:15.550 [qtp1371006431-26] INFO  OntologyServer processQuery - Executing query: 
+PREFIX person: <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#>
+SELECT * WHERE {
+Individual(?x)}
+ ---------------------------------------
+13:58:15.565 [qtp1371006431-26] INFO  OntologyServer processQuery - Results: 
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+
+ Size of result set: 4
+-----------------------
+13:58:15.566 [qtp1371006431-26] INFO  OntologyServer processQuery - Finished in: 15 ms
+13:58:15.567 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadReasoner$2 - http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+13:58:15.567 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadReasoner$2 - http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+13:58:15.568 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadReasoner$2 - http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+13:58:15.568 [qtp1371006431-26] INFO  OntologyServer $anonfun$loadReasoner$2 - http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+13:58:15.570 [qtp1371006431-26] INFO  OntologyServer getIndividuals - REST call /individuals
+14:00:39.322 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1146ms to org.eclipse.jetty.util.log.Slf4jLog
+14:00:39.558 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+14:00:39.642 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+14:00:39.642 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+14:00:39.648 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+14:00:41.154 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@1a942c18{/,null,AVAILABLE}
+14:00:41.559 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@2bfbffb2{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+14:00:41.559 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @3391ms
+14:01:33.197 [qtp542365801-28] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+14:01:33.416 [qtp542365801-28] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+14:01:33.602 [qtp542365801-28] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+14:01:33.685 [qtp542365801-28] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 19 Logical Axioms: 12])
+14:01:33.688 [qtp542365801-28] INFO  OntologyServer loadIndividuals - Individuals size: 4
+14:01:33.703 [qtp542365801-28] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@4c31a7c1[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+  hasLogin=<null>
+  hasDevice=<null>
+]
+14:01:33.704 [qtp542365801-28] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@1765d067[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]
+14:01:33.704 [qtp542365801-28] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@487cdaeb[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+14:01:33.704 [qtp542365801-28] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@12cd3e40[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+  hasLogin=<null>
+  hasDevice=<null>
+]
+14:01:33.731 [qtp542365801-28] INFO  OntologyServer processQuery - Executing query: 
+PREFIX person: <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#>
+SELECT * WHERE {
+Individual(?x)}
+ ---------------------------------------
+14:01:33.744 [qtp542365801-28] INFO  OntologyServer processQuery - Results: 
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+
+ Size of result set: 4
+-----------------------
+14:01:33.745 [qtp542365801-28] INFO  OntologyServer processQuery - Finished in: 15 ms
+14:25:15.036 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @814ms to org.eclipse.jetty.util.log.Slf4jLog
+14:25:15.161 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+14:25:15.215 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+14:25:15.217 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+14:25:15.222 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+14:25:16.015 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@6a01e23{/,null,AVAILABLE}
+14:25:50.848 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @862ms to org.eclipse.jetty.util.log.Slf4jLog
+14:25:50.965 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+14:25:51.026 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+14:25:51.028 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+14:25:51.039 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 660000ms
+14:25:52.255 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@6a01e23{/,null,AVAILABLE}
+14:26:00.689 [qtp542365801-28] INFO  OntologyServer $anonfun$loadReasoner$2 - http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+14:26:00.694 [qtp542365801-28] INFO  OntologyServer $anonfun$loadReasoner$2 - http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+14:26:00.694 [qtp542365801-28] INFO  OntologyServer $anonfun$loadReasoner$2 - http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+14:26:00.694 [qtp542365801-28] INFO  OntologyServer $anonfun$loadReasoner$2 - http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+14:26:00.700 [qtp542365801-28] INFO  OntologyServer getIndividuals - REST call /individuals
+14:26:11.050 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @1113ms to org.eclipse.jetty.util.log.Slf4jLog
+14:26:11.173 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+14:26:11.235 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+14:26:11.235 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+14:26:11.240 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+14:26:12.596 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@6a01e23{/,null,AVAILABLE}
+14:26:13.117 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@5d2a4eed{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+14:26:13.118 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @3187ms
+14:26:34.508 [qtp1371006431-14] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+14:26:34.705 [qtp1371006431-14] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+14:26:34.887 [qtp1371006431-14] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+14:26:34.968 [qtp1371006431-14] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 19 Logical Axioms: 12])
+14:26:34.972 [qtp1371006431-14] INFO  OntologyServer loadIndividuals - Individuals size: 4
+14:26:34.984 [qtp1371006431-14] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@1c808370[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+  hasLogin=<null>
+  hasDevice=<null>
+]
+14:26:34.984 [qtp1371006431-14] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@4257d6c5[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+14:26:34.985 [qtp1371006431-14] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@74dffdfc[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]
+14:26:34.985 [qtp1371006431-14] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@533bc4e3[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+  hasLogin=<null>
+  hasDevice=<null>
+]
+14:26:35.011 [qtp1371006431-14] INFO  OntologyServer processQuery - Executing query: 
+PREFIX person: <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#>
+SELECT * WHERE {
+Individual(?x)}
+ ---------------------------------------
+14:26:35.024 [qtp1371006431-14] INFO  OntologyServer processQuery - Results: 
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+
+ Size of result set: 4
+-----------------------
+14:26:35.024 [qtp1371006431-14] INFO  OntologyServer processQuery - Finished in: 13 ms
+14:26:35.024 [qtp1371006431-14] INFO  OntologyServer loadReasoner - IAU
+14:26:35.032 [qtp1371006431-14] INFO  OntologyServer getIndividuals - REST call /individuals
+14:41:50.076 [main] INFO  org.eclipse.jetty.util.log initialized - Logging initialized @877ms to org.eclipse.jetty.util.log.Slf4jLog
+14:41:50.192 [main] INFO  org.eclipse.jetty.server.Server doStart - jetty-9.4.2.v20170220
+14:41:50.249 [main] INFO  org.eclipse.jetty.server.session doStart - DefaultSessionIdManager workerName=node0
+14:41:50.249 [main] INFO  org.eclipse.jetty.server.session doStart - No SessionScavenger set, using defaults
+14:41:50.254 [main] INFO  org.eclipse.jetty.server.session startScavenging - Scavenging every 600000ms
+14:41:51.185 [main] INFO  o.e.j.server.handler.ContextHandler doStart - Started o.e.j.s.ServletContextHandler@6a01e23{/,null,AVAILABLE}
+14:41:51.631 [main] INFO  o.e.jetty.server.AbstractConnector doStart - Started ServerConnector@5d2a4eed{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+14:41:51.632 [main] INFO  org.eclipse.jetty.server.Server doStart - Started @2437ms
+14:41:55.723 [qtp1371006431-13] INFO  OntologyServer setupOntologyServer - Starting Ontology Server.
+14:41:55.899 [qtp1371006431-13] INFO  OntologyServer loadOntology - Loading ontology: ontology/stroke_v2.owl
+14:41:56.070 [qtp1371006431-13] INFO  OntologyServer loadOntology - Loading ontology: ontology/individuals.owl
+14:41:56.158 [qtp1371006431-13] INFO  OntologyServer loadIndividuals - Loading individuals: Some(Ontology(OntologyID(OntologyIRI(<http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals>))) [Axioms: 19 Logical Axioms: 12])
+14:41:56.160 [qtp1371006431-13] INFO  OntologyServer loadIndividuals - Individuals size: 4
+14:41:56.171 [qtp1371006431-13] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@3bdc1c8e[
+  hasAge=11
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+  hasLogin=<null>
+  hasDevice=<null>
+]
+14:41:56.172 [qtp1371006431-13] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@4d55913f[
+  hasAge=20
+  hasRiskFactor=<null>
+  hasRiskLevel=99.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+  hasLogin=<null>
+  hasDevice=<null>
+]
+14:41:56.172 [qtp1371006431-13] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@4efec702[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=50.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+  hasLogin=<null>
+  hasDevice=<null>
+]
+14:41:56.172 [qtp1371006431-13] INFO  OntologyServer $anonfun$loadIndividuals$1 - model.PersonImpl@5ef7d408[
+  hasAge=15
+  hasRiskFactor=<null>
+  hasRiskLevel=2.0
+  hasSex=<null>
+  individualName=http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+  hasLogin=<null>
+  hasDevice=<null>
+]
+14:41:56.197 [qtp1371006431-13] INFO  OntologyServer processQuery - Executing query: 
+PREFIX person: <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#>
+SELECT * WHERE {
+Individual(?x)}
+ ---------------------------------------
+14:41:56.210 [qtp1371006431-13] INFO  OntologyServer processQuery - Results: 
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+?de.derivo.sparqldlapi.Var@78 = http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+
+ Size of result set: 4
+-----------------------
+14:41:56.210 [qtp1371006431-13] INFO  OntologyServer processQuery - Finished in: 13 ms
+14:41:56.210 [qtp1371006431-13] INFO  OntologyServer loadReasoner - IAU
+14:41:56.214 [qtp1371006431-13] INFO  OntologyServer $anonfun$loadReasoner$1 - http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas5
+14:41:56.215 [qtp1371006431-13] INFO  OntologyServer $anonfun$loadReasoner$1 - http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas6
+14:41:56.215 [qtp1371006431-13] INFO  OntologyServer $anonfun$loadReasoner$1 - http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas7
+14:41:56.215 [qtp1371006431-13] INFO  OntologyServer $anonfun$loadReasoner$1 - http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#lucas8
+14:41:56.218 [qtp1371006431-13] INFO  OntologyServer getIndividuals - REST call /individuals

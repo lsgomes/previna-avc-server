@@ -10,7 +10,7 @@ import javax.ws.rs.core.{MediaType, Response}
 
 import com.clarkparsia.pellet.owlapiv3.PelletReasonerFactory
 import com.yoshtec.owl.marshall.{Marshaller, UnMarshaller}
-import de.derivo.sparqldlapi.QueryEngine
+import de.derivo.sparqldlapi.{Query, QueryEngine, QueryResult}
 import model.PersonImpl
 import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.model.{IRI, OWLOntology, OWLOntologyManager}
@@ -42,6 +42,7 @@ class OntologyServer {
   var strokeOntology: Option[OWLOntology] = None
   var individualsOntology: Option[OWLOntology] = None
 
+  var engine: Option[QueryEngine] = None
 
   @PostConstruct
   def setupOntologyServer: Unit = {
@@ -85,9 +86,37 @@ class OntologyServer {
       // Create an instance of the SPARQL-DL query engine
 
       //https://github.com/protegeproject/sparql-dl-api/blob/master/src/main/java/de/derivo/sparqldlapi/examples/Example_Extended.java
-      val engine = QueryEngine.create(manager, reasoner);
+      engine = Some(QueryEngine.create(manager, reasoner))
+
+      //processQuery("ASK {}")
+
+      val results = processQuery(
+        Queries.GET_ALL_INDIVIDUALS
+      )
+
+      queryResultsToList(results).foreach(i => logger.info(i))
+
+
+
     }
 
+  }
+
+  def queryResultsToList(results: Option[QueryResult]): List[String] = {
+
+    var list: List[String] = List()
+
+    if (!results.isDefined) {
+      return list
+    }
+
+    results.get.forEach {
+      result => result.getBoundArgs.forEach {
+        bound => list = list :+ result.get(bound).toString
+      }
+    }
+
+    list
   }
 
   @GET
@@ -180,6 +209,47 @@ class OntologyServer {
     }
 
     individual
+  }
+
+  def processQuery(queryString: String) : Option[QueryResult] = {
+
+    var result: Option[QueryResult] = None
+
+    try {
+
+      if (!engine.isDefined) {
+        return result
+      }
+
+      val startTime = System.currentTimeMillis()
+
+      logger.info("Executing query: \n" + queryString + "\n ---------------------------------------")
+
+      // Create a SPARQL-DL query
+      val query = Query.create(queryString)
+
+      result = Some(engine.get.execute(query))
+
+      if (query.isAsk) {
+        val ask = if (result.get.ask) "Yes" else "No"
+        logger.info("Result: " + ask)
+      }
+      else {
+        if (!result.get.ask) {
+          logger.info("Query has no solution.\n")
+        }
+        else {
+          logger.info("Results: \n" + result.get.toString + "\n Size of result set: " + result.get.size() + "\n-----------------------")
+        }
+      }
+
+      logger.info("Finished in: " + (System.currentTimeMillis - startTime) + " ms")
+    }
+    catch  {
+      case e: Throwable => logger.info("Query engine error: " + e)
+    }
+
+    result
   }
 
 }
