@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.okkam.owl:jaob-maven-plugin:1.1-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/okkam/owl/jaob-maven-plugin/1.1-SNAPSHOT/jaob-maven-plugin-1.1-SNAPSHOT.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/okkam/owl/jaob-maven-plugin/1.1-SNAPSHOT/jaob-maven-plugin-1.1-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

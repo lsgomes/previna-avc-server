@@ -67,6 +67,7 @@ class OntologyServer {
     loadIndividuals()
 
     loadReasoner()
+
   }
 
   def loadReasoner(): Unit = {
@@ -202,7 +203,7 @@ class OntologyServer {
     var individual: PersonImpl = null
 
     for (person: PersonImpl <- individuals.asScala) {
-      if (person.getIndividualName.equals(name)) {
+      if (Utils.extractNameFromURI(person.getIndividualName).equals(name)) {
         logger.info("Getting individual: " + person.toString)
         individual = person
       }
