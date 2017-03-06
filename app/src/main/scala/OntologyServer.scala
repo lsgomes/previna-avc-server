@@ -1,21 +1,22 @@
 /**
   * Created by dossluca on 27/02/2017.
   */
-import java.io.{File, FileWriter}
-import java.util.HashSet
+import java.io.File
 import javax.annotation.PostConstruct
 import javax.inject.Singleton
 import javax.ws.rs._
-import javax.ws.rs.core.{MediaType, Response}
 
 import com.clarkparsia.pellet.owlapiv3.PelletReasonerFactory
-import com.yoshtec.owl.marshall.{Marshaller, UnMarshaller}
-import de.derivo.sparqldlapi.{Query, QueryEngine, QueryResult}
-import model.PersonImpl
-import org.semanticweb.owlapi.apibinding.OWLManager
-import org.semanticweb.owlapi.model.{IRI, OWLOntology, OWLOntologyManager}
+import com.hp.hpl.jena.query.{QueryExecutionFactory, QueryFactory}
+import com.hp.hpl.jena.rdf.model.ModelFactory
+import com.lucas.stroke.v3.strokeFactory
 import org.semanticweb.owlapi.reasoner.InferenceType
-import org.semanticweb.owlapi.reasoner.structural.StructuralReasonerFactory
+//import com.yoshtec.owl.marshall.{Marshaller, UnMarshaller}
+//import de.derivo.sparqldlapi.{Query, QueryEngine, QueryResult}
+//import model._
+import org.protege.owl.codegeneration.inference.ReasonerBasedInference
+import org.semanticweb.owlapi.apibinding.OWLManager
+import org.semanticweb.owlapi.model.{OWLOntology, OWLOntologyManager}
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.collection.JavaConverters._
@@ -26,23 +27,27 @@ class OntologyServer {
 
   var logger: Logger = _
 
-  val ONTOLOGY_LOCATION = "ontology/stroke_v2.owl"
+  val ONTOLOGY_LOCATION = "ontology/stroke_v3.owl"
   val INDIVIDUALS_LOCATION = "ontology/individuals.owl"
 
   val INDIVIDUALS_IRI = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals"
+  val ONTOLOGY_IRI = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke"
 
   var manager: OWLOntologyManager = _
 
-  var marshaller: Marshaller = _
+  //var marshaller: Marshaller = _
 
-  var unmarshaller: UnMarshaller = _
+  //var unmarshaller: UnMarshaller = _
 
-  var individuals: HashSet[PersonImpl] = new HashSet[PersonImpl]
+  //var individuals: HashSet[PersonImpl] = new HashSet[PersonImpl]
 
   var strokeOntology: Option[OWLOntology] = None
   var individualsOntology: Option[OWLOntology] = None
 
-  var engine: Option[QueryEngine] = None
+  //var engine: Option[QueryEngine] = None
+
+  var inference: ReasonerBasedInference = _
+  var factory: strokeFactory = _
 
   @PostConstruct
   def setupOntologyServer: Unit = {
@@ -56,54 +61,75 @@ class OntologyServer {
     manager = OWLManager.createOWLOntologyManager()
     //manager.addIRIMapper(autoIRIMapper)
 
-    marshaller = new Marshaller()
+    //marshaller = new Marshaller()
 
-    unmarshaller = new UnMarshaller()
-    unmarshaller.registerClass(classOf[PersonImpl])
+    //unmarshaller = new UnMarshaller()
+    //unmarshaller.registerClass(classOf[PersonImpl])
 
     strokeOntology = loadOntology(ONTOLOGY_LOCATION)
     individualsOntology = loadOntology(INDIVIDUALS_LOCATION)
 
-    loadIndividuals()
+    //loadIndividuals()
 
     loadReasoner()
 
   }
 
   def loadReasoner(): Unit = {
-    val factory = PelletReasonerFactory.getInstance()
 
-    if (individualsOntology.isDefined) {
+    val ontology = strokeOntology
+
+    if (ontology.isDefined) {
       //val reasoner = factory.createReasoner(individualsOntology.get)
       //reasoner.precomputeInferences()
       //logger.info("isConsistent: " + reasoner.isConsistent)
+      //queryResultsToList(results).foreach(i => logger.info(i))
+      val reasoner = PelletReasonerFactory.getInstance.createReasoner( ontology.get )
+      reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS);
+      reasoner.prepareReasoner()
+
+      //inference = new ReasonerBasedInference(ontology.get, reasoner)
+      factory = new strokeFactory(ontology.get)
+
+      //reasoner.
+
+      val graph = new org.mindswap.pellet.jena.PelletReasoner().bind(reasoner.getKB);
+      val model = ModelFactory.createInfModel( graph )
+
+      //reasoner.getKB.printClassTree()
+
+      val q = QueryFactory.create(Queries.SUBJECT_HAS_AGE)
+      val queryExecution = QueryExecutionFactory.create(q, model)
+      val result = queryExecution.execSelect()
+
+      //SPARQL or any other way to query
+      // the ontology are equivalent, i.e., through calls to the reasoner.
 
 
-      // Create an instance of an OWL API reasoner (we use the OWL API built-in StructuralReasoner for the purpose of demonstration here)
-      val factory = new StructuralReasonerFactory()
-      val reasoner = factory.createReasoner(individualsOntology.get)
-      // Optionally let the reasoner compute the most relevant inferences in advance
-      reasoner.precomputeInferences(InferenceType.CLASS_ASSERTIONS, InferenceType.OBJECT_PROPERTY_ASSERTIONS);
-      // Create an instance of the SPARQL-DL query engine
+      result.asScala.foreach {
+        solution => solution.varNames().asScala.foreach { variable =>
+        logger.info(variable + ": " + solution.get(variable).toString)
+        }
+      }
 
-      //https://github.com/protegeproject/sparql-dl-api/blob/master/src/main/java/de/derivo/sparqldlapi/examples/Example_Extended.java
-      engine = Some(QueryEngine.create(manager, reasoner))
+//      while (result.hasNext) {
+//        val solution = result.next()
+//        while (solution.varNames().hasNext) {
+//          val variable = solution.varNames().next()
+//          logger.info(variable)
+//        }
+//      }
 
-      //processQuery("ASK {}")
-
-      val results = processQuery(
-        Queries.GET_ALL_INDIVIDUALS
-      )
-
-      queryResultsToList(results).foreach(i => logger.info(i))
-
-
-
+      logger.info("a")
+      //val ind = reasoner.getInstances()
+      //com.clarkparsia.pellet.sparqldl.model.Query
     }
 
   }
 
-  def queryResultsToList(results: Option[QueryResult]): List[String] = {
+
+
+/*  def queryResultsToList(results: Option[QueryResult]): List[String] = {
 
     var list: List[String] = List()
 
@@ -118,7 +144,7 @@ class OntologyServer {
     }
 
     list
-  }
+  }*/
 
   @GET
   @Path("/individuals")
@@ -143,7 +169,7 @@ class OntologyServer {
     ontology
   }
 
-  def loadIndividuals(): Unit = {
+/*  def loadIndividuals(): Unit = {
 
     //val ontology = loadOntology(INDIVIDUALS_LOCATION)
 
@@ -156,29 +182,29 @@ class OntologyServer {
 
     logger.info("Loading individuals: " + individualsOntology)
 
-    individuals = unmarshaller.unmarshal(individualsOntology.get).asInstanceOf[HashSet[PersonImpl]]
+    //individuals = unmarshaller.unmarshal(individualsOntology.get).asInstanceOf[HashSet[PersonImpl]]
 
     logger.info("Individuals size: " + individuals.size())
 
-    individuals.forEach(i => logger.info(i.toString))
-  }
+    //individuals.forEach(i => logger.info(i.toString))
+  }*/
 
-   @GET
+/*   @GET
    @Path("/saveIndividuals")
    def saveIndividuals(): Unit = {
 
      logger.info("Saving individuals. size: " + individuals.size())
 
-     individuals.forEach(i => logger.info(i.toString))
+     //individuals.forEach(i => logger.info(i.toString))
 
      val writer = new FileWriter(INDIVIDUALS_LOCATION)
 
-     marshaller.marshal(individuals, IRI.create(INDIVIDUALS_IRI), writer, true)
+     //marshaller.marshal(individuals, IRI.create(INDIVIDUALS_IRI), writer, true)
 
      writer.close()
-   }
+   }*/
 
-  @POST
+  /*@POST
   @Path("/addIndividual")
   @Consumes(Array[String](MediaType.APPLICATION_JSON))
   def addIndividual(person: PersonImpl): Response = {
@@ -186,16 +212,16 @@ class OntologyServer {
 
     logger.info(person.toString)
 
-    person.setIndividualName(INDIVIDUALS_IRI + "#" + person.getIndividualName)
+    //person.setIndividualName(INDIVIDUALS_IRI + "#" + person.getName)
 
-    individuals.add(person)
+    //individuals.add(person)
 
     saveIndividuals()
 
     Response.status(201).entity("Individual successfully added").build();
-  }
+  }*/
 
-  @GET
+/*  @GET
   @Path("/getIndividual")
   @Produces(Array[String](MediaType.APPLICATION_JSON))
   def getIndividual(@QueryParam("name") name:String): PersonImpl = {
@@ -203,16 +229,72 @@ class OntologyServer {
     var individual: PersonImpl = null
 
     for (person: PersonImpl <- individuals.asScala) {
-      if (Utils.extractNameFromURI(person.getIndividualName).equals(name)) {
+      if (Utils.extractNameFromURI(person.getName).equals(name)) {
         logger.info("Getting individual: " + person.toString)
         individual = person
       }
     }
 
     individual
+  }*/
+
+  @GET
+  @Path("/protege")
+  //@Produces(Array[String](MediaType.APPLICATION_JSON))
+  def protege(): Unit = {
+
+    val person = factory.createPerson("LUCAS")
+
+    person.addHasAge(30)
+    person.addHasSex(factory.createSex("Male"))
+
+    val education = factory.createHigh_school_diploma_and_some_college("High_school_diploma_and_some_college")
+    val smoker = factory.createSmoker("Smoker")
+    val drinker = factory.createDrinker("Drinker")
+    drinker.addHasDrinkPerWeekFrequency(factory.createSeven_or_more_drinks_per_week("Seven_or_more_drinks_per_week"))
+    val inactive = factory.createInactive("Inactive")
+    val anger = factory.createCritical_of_others("Critical_of_others")
+    anger.addHasAdverbFrequency(factory.createOften_or_always("Often_or_always"))
+
+    person.addHasRiskFactor(education)
+    person.addHasRiskFactor(smoker)
+    person.addHasRiskFactor(drinker)
+    person.addHasRiskFactor(inactive)
+    person.addHasRiskFactor(anger)
+
+    person.getOwlOntology.saveOntology()
   }
 
-  def processQuery(queryString: String) : Option[QueryResult] = {
+  /*@GET
+  @Path("/exampleIndividual")
+  @Produces(Array[String](MediaType.APPLICATION_JSON))
+  def exampleIndividual(): PersonImpl = {
+
+    val person = new PersonImpl()
+    person.setHasAge(62)
+    person.setHasSex(new MaleImpl())
+    person.setIndividualName("ExamplePerson")
+
+    var riskFactors = new java.util.ArrayList[RiskFactor]()
+
+    val education = new High_school_diploma_and_some_collegeImpl()
+    val smoker = new SmokerImpl()
+    val drinker = new DrinkerImpl(new _or_more_drinks_per_weekImpl())
+    val inactive = new InactiveImpl()
+    val anger = new Critical_of_othersImpl(new Often_or_alwaysImpl())
+
+    riskFactors.add(education)
+    riskFactors.add(smoker)
+    riskFactors.add(drinker)
+    riskFactors.add(inactive)
+    riskFactors.add(anger)
+
+    person.setHasRiskFactor(riskFactors)
+
+    person
+  }*/
+
+  /*def processQuery(queryString: String) : Option[QueryResult] = {
 
     var result: Option[QueryResult] = None
 
@@ -251,6 +333,28 @@ class OntologyServer {
     }
 
     result
+  }*/
+
+/*
+  def sparql_dl(): Unit = {
+    // Create an instance of an OWL API reasoner (we use the OWL API built-in StructuralReasoner for the purpose of demonstration here)
+    val factory = new StructuralReasonerFactory()
+    val reasoner = factory.createReasoner(individualsOntology.get)
+    // Optionally let the reasoner compute the most relevant inferences in advance
+    reasoner.precomputeInferences(InferenceType.CLASS_ASSERTIONS, InferenceType.OBJECT_PROPERTY_ASSERTIONS);
+    // Create an instance of the SPARQL-DL query engine
+
+    val parser = com.clarkparsia.pellet.sparqldl.engine.QueryEngine.getParser
+    val query = parser.parse(Queries.SUBJECT_HAS_AGE, knowledgeBase)
+    //https://github.com/protegeproject/sparql-dl-api/blob/master/src/main/java/de/derivo/sparqldlapi/examples/Example_Extended.java
+    engine = Some(QueryEngine.create(manager, reasoner))
+
+    //processQuery("ASK {}")
+
+    val results = processQuery(
+      Queries.SUBJECT_HAS_AGE
+    )
   }
+*/
 
 }

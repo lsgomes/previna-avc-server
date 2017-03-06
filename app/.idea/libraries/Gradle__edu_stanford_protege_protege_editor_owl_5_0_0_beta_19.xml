@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: edu.stanford.protege:protege-editor-owl:5.0.0-beta-19">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.stanford.protege/protege-editor-owl/5.0.0-beta-19/a0feb3232759a2506edd865acb9a6388e0ab2e1d/protege-editor-owl-5.0.0-beta-19.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.stanford.protege/protege-editor-owl/5.0.0-beta-19/1d4cfecbcfde606ee890231f5b71e35306dd458f/protege-editor-owl-5.0.0-beta-19-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

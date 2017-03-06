@@ -17,115 +17,133 @@
           <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
         </element>
         <element id="directory" name="lib">
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.1/dd235d04037dc6f4b6090257872dd35359a563ce/scala-library-2.12.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/9.4.2.v20170220/d44c34ac77053f49c963dba7b122d01343f2d40d/jetty-server-9.4.2.v20170220.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-servlet/9.4.2.v20170220/722a4b6df98b3a1a3ced1d80da06e8ebf49293ea/jetty-servlet-9.4.2.v20170220.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/2.25.1/4d563b1f93352ee9fad597e9e1daf2c6159993c6/jersey-client-2.25.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.25.1/2438ce68d4907046095ab54aa83a6092951b4bbb/jersey-common-2.25.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.25.1/276e2ee0fd1cdabf99357fce560c5baab675b1a2/jersey-server-2.25.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-servlet/2.25.1/cf5f7a76fcea38158b890ab7a0142d4db709a882/jersey-container-servlet-2.25.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-jetty-servlet/2.25.1/c147778aa689164a2024946624db076460ef5ae1/jersey-container-jetty-servlet-2.25.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-json-jackson/2.25.1/19d1e4276eb7b6386640c344d9e5c01eba7eae5d/jersey-media-json-jackson-2.25.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.5/6c6c702c89bfff3cd9e80b04d668c5e190d588c6/commons-lang3-3.5.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.24/3f6b4bd4f8dbe8d4bea06d107a3826469b85c3e9/slf4j-api-1.7.24.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.2.1/706a8b8206ead3683ec639dd270d11fd948fbb0e/logback-classic-1.2.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.m2/repository/com/clarkparsia/pellet/pellet-core/2.3.2-SNAPSHOT/pellet-core-2.3.2-SNAPSHOT.jar" />
-          <element id="file-copy" path="$USER_HOME$/.m2/repository/com/clarkparsia/pellet/pellet-owlapiv3/2.3.2-SNAPSHOT/pellet-owlapiv3-2.3.2-SNAPSHOT.jar" />
-          <element id="file-copy" path="$USER_HOME$/.m2/repository/org/okkam/owl/jaob-core/1.1-SNAPSHOT/jaob-core-1.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$USER_HOME$/.m2/repository/org/okkam/owl/jaob-maven-plugin/1.1-SNAPSHOT/jaob-maven-plugin-1.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$USER_HOME$/.m2/repository/edu/stanford/protege/de-derivo-sparqldlapi/2.0.1-SNAPSHOT/de-derivo-sparqldlapi-2.0.1-SNAPSHOT.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/9.4.2.v20170220/d22fac65c0c7a7cc188cfb9d70312b5ae0db8fd8/jetty-http-9.4.2.v20170220.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/9.4.2.v20170220/c0c1c3b9dfc2ecadf75aa789ab0feb3c74d5b820/jetty-io-9.4.2.v20170220.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-security/9.4.2.v20170220/17650f5424d3b5f3782d6c196a6ca4989a8adeec/jetty-security-9.4.2.v20170220.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.ws.rs/javax.ws.rs-api/2.0.1/104e9c2b5583cfcfeac0402316221648d6d8ea6b/javax.ws.rs-api-2.0.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-api/2.5.0-b32/6a576c9653832ce610b80a2f389374ef19d96171/hk2-api-2.5.0-b32.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/javax.inject/2.5.0-b32/b2fa50c8186a38728c35fe6a9da57ce4cc806923/javax.inject-2.5.0-b32.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-locator/2.5.0-b32/195474f8ad0a8d130e9ea949a771bcf1215fc33b/hk2-locator-2.5.0-b32.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/479c1e06db31c432330183f5cae684163f186146/javax.annotation-api-1.2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.bundles.repackaged/jersey-guava/2.25.1/a2bb4f8208e134cf2cf71dfb8824e42942f7bd06/jersey-guava-2.25.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/osgi-resource-locator/1.0.1/4ed2b2d4738aed5786cfa64cba5a332779c4c708/osgi-resource-locator-1.0.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-jaxb/2.25.1/d7da0beeed5614a3bfd882662faec602699e24b/jersey-media-jaxb-2.25.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.1.0.Final/8613ae82954779d518631e05daa73a6a954817d5/validation-api-1.1.0.Final.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-servlet-core/2.25.1/400e30bb035a0cdf3c554530224141ce659a0d1e/jersey-container-servlet-core-2.25.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-jetty-http/2.25.1/f880be688b57ef6d1fa317317da4adef687bfba5/jersey-container-jetty-http-2.25.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-webapp/9.2.14.v20151106/773f1c45f6534bff6313997ab3bdbe25533ee255/jetty-webapp-9.2.14.v20151106.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.ext/jersey-entity-filtering/2.25.1/4a5805060f796ec2c9bb1ba0ce91c1db6d889524/jersey-entity-filtering-2.25.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.8.4/6c0ceb3c9fed2e225b0cc2a45533574df393f606/jackson-jaxrs-base-2.8.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.8.4/839366ece31829a19cb15719b2b54a3f9f91148d/jackson-jaxrs-json-provider-2.8.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.8.4/de3570327cf8d1d4f37920535c51a1f74225a6de/jackson-annotations-2.8.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.2.1/378913dfc3c6c71e7e2a2853eff2c3e8ac27599/logback-core-1.2.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ansell.aterms/aterm-java/1.8.2-p1/529d35509f6c5c51d65ceaed7330c1516f04f67c/aterm-java-1.8.2-p1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jgrapht/jgrapht-jdk1.5/0.7.3/54dc2b1b17b003b6fd62211946cb49acdc7d0364/jgrapht-jdk1.5-0.7.3.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xerces/xercesImpl/2.11.0/9bb329db1cfc4e22462c9d6b43a8432f5850e92c/xercesImpl-2.11.0.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.jena/jena-arq/2.10.1/cd65780b33f5103468b7e2840bcb532a29d1d037/jena-arq-2.10.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.m2/repository/com/clarkparsia/pellet/pellet-query/2.3.2-SNAPSHOT/pellet-query-2.3.2-SNAPSHOT.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.owlapi/owlapi-api/3.5.6/54cad6c9beb3ef13ffbc56e3b035b4fa50f08f9/owlapi-api-3.5.6.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.owlapi/owlapi-impl/3.5.6/7c70c6da2ef56325d420bab3883e5426a6a2c44f/owlapi-impl-3.5.6.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.owlapi/owlapi-parsers/3.5.6/88a33d857b08945125697464d2db4499cc552479/owlapi-parsers-3.5.6.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.owlapi/owlapi-apibinding/3.5.6/25263d86c377b5c45dd7804a69861f4dc4831b9f/owlapi-apibinding-3.5.6.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-all/1.3/63a21ebc981131004ad02e0434e799fd7f3a8d5a/hamcrest-all-1.3.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.owlapi/owlapi-distribution/3.5.6/61000584efc5db0f6fd13db723a85758419eeb4f/owlapi-distribution-3.5.6.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.24/309d7b29b14573c05d4c69cc7e44da0cb17212d3/slf4j-log4j12-1.7.24.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-jdk14/1.7.24/6b7357d916c7e009c5abc47beb1270e4b7f1fcaa/slf4j-jdk14-1.7.24.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-plugin-api/3.0.4/1cd908e0aa67ad2d2b470c00c6db610db60b966b/maven-plugin-api-3.0.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven.plugin-tools/maven-plugin-annotations/3.2/6959f227cb1d36470877ce56c7425fe6626dac2/maven-plugin-annotations-3.2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-core/3.0.4/4d60ad977827c011322928c4cedf021575fa39ec/maven-core-3.0.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.sonatype.plexus/plexus-build-api/0.0.7/e6ba5cd4bfd8de00235af936e7f63eb24ed436e6/plexus-build-api-0.0.7.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.codemodel/codemodel/2.6/cde4647fcebedb3663bccc79e21789e8e6755a19/codemodel-2.6.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jdom/jdom-legacy/1.1.3/8bdfeb39fa929c35f5e4f0b02d34350db39a1efc/jdom-legacy-1.1.3.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/edu.stanford.protege/jpaul/2.5.1/e44aaff4163708a480b18478577410897ca9d7cc/jpaul-2.5.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/2.0.5-beta/8e313807d4d53e0fcd89ff054865f7d62d9582b0/mockito-core-2.0.5-beta.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/9.4.2.v20170220/df66fc12053bf23308d799890cd31bea497fda46/jetty-util-9.4.2.v20170220.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-utils/2.5.0-b32/5108a926988c4ceda7f1e681dddfe3101454a002/hk2-utils-2.5.0-b32.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/aopalliance-repackaged/2.5.0-b32/6af37c3f8ec6f9e9653ec837eb508da28ce443cd/aopalliance-repackaged-2.5.0-b32.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.20.0-GA/a9cbcdfb7e9f86fbc74d3afae65f2248bfbf82a0/javassist-3.20.0-GA.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-continuation/9.2.14.v20151106/8909d62fd7e28351e2da30de6fb4105539b949c0/jetty-continuation-9.2.14.v20151106.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-xml/9.2.14.v20151106/946a5a1d4fb816fd346dba74d09a6c0e162cafcd/jetty-xml-9.2.14.v20151106.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.8.4/ca365c0817cc345ea831cae7c4e9b42a72b32281/jackson-core-2.8.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.8.4/1c36c81e79cacdf48116afba8495e3393d267ba1/jackson-databind-2.8.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.8.4/d2eec7cf6c4284f7d5f0b1a72dc7cfa9d6bb579d/jackson-module-jaxb-annotations-2.8.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ansell.jjtraveler/jjtraveler/0.6/5ebd2aac75c53ac798fa07123090dcad9f35c499/jjtraveler-0.6.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ansell.aterms/shared-objects/1.4.9-p1/c9138901547a61ed5bbf2881656e31f011ae363/shared-objects-1.4.9-p1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis/1.4.01/3789d9fada2d3d458c4ba2de349d48780f381ee3/xml-apis-1.4.01.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.jena/jena-core/2.10.1/15917ac1b110c23a4e2fd1c8660856b1d2994b0f/jena-core-2.10.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.2.3/37ced84d839a02fb856255eca85f0a4be95aa634/httpclient-4.2.3.jar" />
-          <element id="file-copy" path="$USER_HOME$/.m2/repository/com/clarkparsia/pellet/pellet-jena/2.3.2-SNAPSHOT/pellet-jena-2.3.2-SNAPSHOT.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.5.2/cd9cd41361c155f3af0f653009dcecb08d8b4afd/antlr-runtime-3.5.2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.trove4j/trove4j/3.0.3/42ccaf4761f0dfdfa805c9e340d99a755907e2dd/trove4j-3.0.3.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.owlapi/owlapi-oboformat/3.5.6/b399f5944c154468bf3f2455f2e53ff0c53f099b/owlapi-oboformat-3.5.6.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.owlapi/owlapi-tools/3.5.6/5302ce01c8a69b4975e1dba93d4d15d120cca840/owlapi-tools-3.5.6.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.felix/org.osgi.core/1.4.0/fc7e9bfe0ca47736a5ed2ffcffe8b07c977c4444/org.osgi.core-1.4.0.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/5af35056b4d257e4b64b9e8069c0746e8b08629f/log4j-1.2.17.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-model/3.0.4/5e149cfe15daedebbb1e8970d6a5ff1bea61b94c/maven-model-3.0.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.0.4/990f82878d95fe79e99659f07ba5b472444fc72e/maven-artifact-3.0.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.sonatype.sisu/sisu-inject-plexus/2.3.0/7d8ecdce497bf361b83cfbc890670ca50d6ec299/sisu-inject-plexus-2.3.0.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-settings/3.0.4/9897b492f19f4a9a37c008c025691cd4a858cdc/maven-settings-3.0.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-settings-builder/3.0.4/1c47e99b3cef4aed391f6c76aa073f3f7f25044b/maven-settings-builder-3.0.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-repository-metadata/3.0.4/a5c737d02ab9365d272a1d0fc724420808ab4df8/maven-repository-metadata-3.0.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-model-builder/3.0.4/4f9c6ecf6d6de41933e82a122019117ea0741314/maven-model-builder-3.0.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-aether-provider/3.0.4/80eaf6efa354082894adb29fb7db24313977c7f5/maven-aether-provider-3.0.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.sonatype.aether/aether-impl/1.13.1/ba2656934fa7c0f20c0c3882873dc705e16ae201/aether-impl-1.13.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.sonatype.aether/aether-api/1.13.1/e48292eae5e14ec44978aa53debb1af7ddd6df93/aether-api-1.13.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.sonatype.aether/aether-util/1.13.1/c8487ceb499b9ced96694731810acd1a70e13aca/aether-util-1.13.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-interpolation/1.14/c88dd864fe8b8256c25558ce7cd63be66ba07693/plexus-interpolation-1.14.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-classworlds/2.4/ef38ff5c25f83a4a02fcd9843d85f3e47012873e/plexus-classworlds-2.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-component-annotations/1.5.5/c72f2660d0cbed24246ddb55d7fdc4f7374d2078/plexus-component-annotations-1.5.5.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.sonatype.plexus/plexus-sec-dispatcher/1.3/dedc02034fb8fcd7615d66593228cb71709134b4/plexus-sec-dispatcher-1.3.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.1/860340562250678d1a344907ac75754e259cdb14/hamcrest-core-1.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.objenesis/objenesis/2.1/87c0ea803b69252868d09308b4618f766f135a96/objenesis-2.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.jena/jena-iri/0.9.6/bd68e62f778b397d3e96509944162df896a9de56/jena-iri-0.9.6.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.2.2/b76bee23cd3f3ee9b98bc7c2c14670e821ddbbfd/httpcore-4.2.2.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.6/b7f0fc8f61ecadeb3695f0b9464755eee44374d4/commons-codec-1.6.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.6.4/aad8e9df65ebb68e3ba6f269e3312707f7f1065f/jcl-over-slf4j-1.6.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.sonatype.sisu/sisu-inject-bean/2.3.0/4767ee22f0b84fc0fe3af2095c30bfbdafba9459/sisu-inject-bean-2.3.0.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.sonatype.aether/aether-spi/1.13.1/c62b02d2a5a3939fded72039dd83e5b8ed42d45e/aether-spi-1.13.1.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.sonatype.plexus/plexus-cipher/1.4/50ade46f23bb38cd984b4ec560c46223432aac38/plexus-cipher-1.4.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.sonatype.sisu/sisu-guice/3.1.0/97c87d15d749c86b2be1b9809b28321a1d926c7f/sisu-guice-3.1.0-no_aop.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.sonatype.sisu/sisu-guava/0.9.9/91395a7816ad64c5ef68e1a1b5b861463f0eb3e2/sisu-guava-0.9.9.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-utils/2.1/8efcb5d86ba0a7f11c61dc67f54cfbe2192aef32/plexus-utils-2.1.jar" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-common:2.25.1" />
+          <element id="library" level="project" name="Gradle: org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b32" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet:2.25.1" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.containers:jersey-container-jetty-servlet:2.25.1" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.media:jersey-media-json-jackson:2.25.1" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.8.4" />
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.24" />
+          <element id="library" level="project" name="Gradle: ch.qos.logback:logback-classic:1.2.1" />
+          <element id="library" level="project" name="Gradle: net.sourceforge.owlapi:owlapi-distribution:4.2.8" />
+          <element id="library" level="project" name="Gradle: edu.stanford.protege:code-generation:2.0.1-SNAPSHOT" />
+          <element id="library" level="project" name="Gradle: javax.servlet:javax.servlet-api:3.1.0" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-http:9.4.2.v20170220" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-io:9.4.2.v20170220" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-security:9.4.2.v20170220" />
+          <element id="library" level="project" name="Gradle: javax.ws.rs:javax.ws.rs-api:2.0.1" />
+          <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-api:2.5.0-b32" />
+          <element id="library" level="project" name="Gradle: org.glassfish.hk2.external:javax.inject:2.5.0-b32" />
+          <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-locator:2.5.0-b32" />
+          <element id="library" level="project" name="Gradle: javax.annotation:javax.annotation-api:1.2" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.bundles.repackaged:jersey-guava:2.25.1" />
+          <element id="library" level="project" name="Gradle: org.glassfish.hk2:osgi-resource-locator:1.0.1" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.media:jersey-media-jaxb:2.25.1" />
+          <element id="library" level="project" name="Gradle: javax.validation:validation-api:1.1.0.Final" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.containers:jersey-container-servlet-core:2.25.1" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.containers:jersey-container-jetty-http:2.25.1" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-webapp:9.2.14.v20151106" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.ext:jersey-entity-filtering:2.25.1" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.8.4" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.8.4" />
+          <element id="library" level="project" name="Gradle: org.apache.commons:commons-lang3:3.5" />
+          <element id="library" level="project" name="Gradle: ch.qos.logback:logback-core:1.2.1" />
+          <element id="library" level="project" name="Gradle: org.tukaani:xz:1.5" />
+          <element id="library" level="project" name="Gradle: org.openrdf.sesame:sesame-model:2.7.16" />
+          <element id="library" level="project" name="Gradle: org.openrdf.sesame:sesame-rio-api:2.7.16" />
+          <element id="library" level="project" name="Gradle: org.openrdf.sesame:sesame-rio-languages:2.7.16" />
+          <element id="library" level="project" name="Gradle: org.openrdf.sesame:sesame-rio-datatypes:2.7.16" />
+          <element id="library" level="project" name="Gradle: org.openrdf.sesame:sesame-rio-binary:2.7.16" />
+          <element id="library" level="project" name="Gradle: org.openrdf.sesame:sesame-rio-n3:2.7.16" />
+          <element id="library" level="project" name="Gradle: org.openrdf.sesame:sesame-rio-nquads:2.7.16" />
+          <element id="library" level="project" name="Gradle: org.openrdf.sesame:sesame-rio-ntriples:2.7.16" />
+          <element id="library" level="project" name="Gradle: org.openrdf.sesame:sesame-rio-rdfjson:2.7.16" />
+          <element id="library" level="project" name="Gradle: org.openrdf.sesame:sesame-rio-rdfxml:2.7.16" />
+          <element id="library" level="project" name="Gradle: org.openrdf.sesame:sesame-rio-trix:2.7.16" />
+          <element id="library" level="project" name="Gradle: org.openrdf.sesame:sesame-rio-turtle:2.7.16" />
+          <element id="library" level="project" name="Gradle: org.openrdf.sesame:sesame-rio-trig:2.7.16" />
+          <element id="library" level="project" name="Gradle: com.github.jsonld-java:jsonld-java-sesame:0.5.0" />
+          <element id="library" level="project" name="Gradle: org.semarglproject:semargl-sesame:0.6.1" />
+          <element id="library" level="project" name="Gradle: net.sf.trove4j:trove4j:3.0.3" />
+          <element id="library" level="project" name="Gradle: com.google.guava:guava:18.0" />
+          <element id="library" level="project" name="Gradle: com.google.inject:guice:4.0" />
+          <element id="library" level="project" name="Gradle: com.google.inject.extensions:guice-assistedinject:4.0" />
+          <element id="library" level="project" name="Gradle: com.google.inject.extensions:guice-multibindings:4.0" />
+          <element id="library" level="project" name="Gradle: com.google.code.findbugs:jsr305:2.0.1" />
+          <element id="library" level="project" name="Gradle: commons-io:commons-io:2.4" />
+          <element id="library" level="project" name="Gradle: net.sourceforge.cobertura:cobertura:2.0" />
+          <element id="library" level="project" name="Gradle: commons-cli:commons-cli:1.2" />
+          <element id="library" level="project" name="Gradle: edu.stanford.protege:protege-common:5.0.0-beta-19" />
+          <element id="library" level="project" name="Gradle: edu.stanford.protege:protege-editor-core:5.0.0-beta-19" />
+          <element id="library" level="project" name="Gradle: edu.stanford.protege:protege-editor-owl:5.0.0-beta-19" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-util:9.4.2.v20170220" />
+          <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-utils:2.5.0-b32" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-server:2.25.1" />
+          <element id="library" level="project" name="Gradle: org.javassist:javassist:3.20.0-GA" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-continuation:9.2.14.v20151106" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-xml:9.2.14.v20151106" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.8.4" />
+          <element id="library" level="project" name="Gradle: org.openrdf.sesame:sesame-util:2.7.16" />
+          <element id="library" level="project" name="Gradle: org.semarglproject:semargl-core:0.6.1" />
+          <element id="library" level="project" name="Gradle: org.semarglproject:semargl-rdfa:0.6.1" />
+          <element id="library" level="project" name="Gradle: javax.inject:javax.inject:1" />
+          <element id="library" level="project" name="Gradle: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Gradle: oro:oro:2.0.8" />
+          <element id="library" level="project" name="Gradle: asm:asm:3.3.1" />
+          <element id="library" level="project" name="Gradle: asm:asm-tree:3.3.1" />
+          <element id="library" level="project" name="Gradle: asm:asm-commons:3.3.1" />
+          <element id="library" level="project" name="Gradle: org.apache.ant:ant:1.7.0" />
+          <element id="library" level="project" name="Gradle: org.slf4j:log4j-over-slf4j:1.7.12" />
+          <element id="library" level="project" name="Gradle: org.slf4j:jul-to-slf4j:1.7.12" />
+          <element id="library" level="project" name="Gradle: org.apache.felix:org.apache.felix.main:4.4.1" />
+          <element id="library" level="project" name="Gradle: org.eclipse.equinox:org.eclipse.equinox.registry:3.5.0.v20100503" />
+          <element id="library" level="project" name="Gradle: org.eclipse.equinox:org.eclipse.equinox.common:3.6.0.v20100503" />
+          <element id="library" level="project" name="Gradle: com.googlecode.mdock:mdock:2.0.1" />
+          <element id="library" level="project" name="Gradle: com.jgoodies:jgoodies-looks:2.5.3" />
+          <element id="library" level="project" name="Gradle: edu.stanford.protege:org.protege.xmlcatalog:1.0.5" />
+          <element id="library" level="project" name="Gradle: net.sourceforge.owlapi:owlapi-osgidistribution:4.1.3" />
+          <element id="library" level="project" name="Gradle: org.apache.servicemix.bundles:org.apache.servicemix.bundles.javax-inject:1_2" />
+          <element id="library" level="project" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.7" />
+          <element id="library" level="project" name="Gradle: org.semarglproject:semargl-rdf:0.6.1" />
+          <element id="library" level="project" name="Gradle: org.apache.ant:ant-launcher:1.7.0" />
+          <element id="library" level="project" name="Gradle: org.apache.felix:org.apache.felix.framework:4.4.1" />
+          <element id="library" level="project" name="Gradle: org.eclipse.core:org.eclipse.core.jobs:3.5.0.v20100515" />
+          <element id="library" level="project" name="Gradle: org.eclipse.osgi:org.eclipse.osgi:3.6.0.v20100517" />
+          <element id="library" level="project" name="Gradle: com.jgoodies:jgoodies-common:1.6.0" />
+          <element id="library" level="project" name="Gradle: xml-resolver:xml-resolver:1.2" />
+          <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpcore:4.4.3" />
+          <element id="library" level="project" name="Gradle: commons-codec:commons-codec:1.9" />
+          <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Gradle: org.apache.servicemix.bundles:org.apache.servicemix.bundles.aopalliance:1.0_6" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.8.4" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.8.4" />
+          <element id="library" level="project" name="Gradle: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Gradle: org.scala-lang:scala-library:2.12.1" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-server:9.4.2.v20170220" />
+          <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpclient:4.5.1" />
+          <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpclient-cache:4.5.1" />
+          <element id="library" level="project" name="Gradle: com.clarkparsia.pellet:pellet-core:2.4.0-SNAPSHOT" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-client:2.25.1" />
+          <element id="library" level="project" name="Gradle: com.github.ansell.aterms:aterm-java:1.8.2-p1" />
+          <element id="library" level="project" name="Gradle: org.jgrapht:jgrapht-jdk1.5:0.7.3" />
+          <element id="library" level="project" name="Gradle: xerces:xercesImpl:2.11.0" />
+          <element id="library" level="project" name="Gradle: org.apache.jena:jena-arq:2.13.0" />
+          <element id="library" level="project" name="Gradle: com.github.jsonld-java:jsonld-java:0.5.1" />
+          <element id="library" level="project" name="Gradle: com.github.ansell.jjtraveler:jjtraveler:0.6" />
+          <element id="library" level="project" name="Gradle: com.github.ansell.aterms:shared-objects:1.4.9-p1" />
+          <element id="library" level="project" name="Gradle: xml-apis:xml-apis:1.4.01" />
+          <element id="library" level="project" name="Gradle: org.apache.jena:jena-core:2.13.0" />
+          <element id="library" level="project" name="Gradle: org.apache.thrift:libthrift:0.9.2" />
+          <element id="library" level="project" name="Gradle: org.eclipse.jetty:jetty-servlet:9.4.2.v20170220" />
+          <element id="library" level="project" name="Gradle: org.apache.jena:jena-iri:1.1.2" />
+          <element id="library" level="project" name="Gradle: org.apache.commons:commons-csv:1.0" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/com/clarkparsia/pellet/pellet-owlapi/2.4.0-SNAPSHOT/pellet-owlapi-2.4.0-SNAPSHOT.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/com/clarkparsia/pellet/pellet-query/2.4.0-SNAPSHOT/pellet-query-2.4.0-SNAPSHOT.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/com/clarkparsia/pellet/pellet-jena/2.4.0-SNAPSHOT/pellet-jena-2.4.0-SNAPSHOT.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.4/8f011408269a8e42b8548687e137d8eeb56df4b4/antlr-runtime-3.4.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.6/6953717b9850aeb26d1b8375ca07dbd9c50eca4e/slf4j-log4j12-1.7.6.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.antlr/stringtemplate/3.2.1/59ec8083721eae215c6f3caee944c410d2be34de/stringtemplate-3.2.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/antlr/antlr/2.7.7/83cd2cd674a217ade95a4bb83a8a14f351f48bd0/antlr-2.7.7.jar" />
         </element>
       </element>
     </root>

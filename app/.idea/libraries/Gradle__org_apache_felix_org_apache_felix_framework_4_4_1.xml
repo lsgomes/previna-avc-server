@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.felix:org.apache.felix.framework:4.4.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.felix/org.apache.felix.framework/4.4.1/5c359b3e8808f7e14d14ae8fe03e8fac8c7cf6bf/org.apache.felix.framework-4.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.felix/org.apache.felix.framework/4.4.1/f851d30e0a42935c7f0b6c313ff90b46df66ba14/org.apache.felix.framework-4.4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

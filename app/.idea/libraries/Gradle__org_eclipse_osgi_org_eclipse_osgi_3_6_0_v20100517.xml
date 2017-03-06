@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.eclipse.osgi:org.eclipse.osgi:3.6.0.v20100517">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.osgi/org.eclipse.osgi/3.6.0.v20100517/1d63b972926d053dfa427ca03841f67d4eac6db2/org.eclipse.osgi-3.6.0.v20100517.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.osgi/org.eclipse.osgi/3.6.0.v20100517/f67212993e01abf3bc4eebd6c12f8523f6fe0fd0/org.eclipse.osgi-3.6.0.v20100517-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

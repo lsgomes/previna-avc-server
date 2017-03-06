@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.servicemix.bundles:org.apache.servicemix.bundles.aopalliance:1.0_6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.servicemix.bundles/org.apache.servicemix.bundles.aopalliance/1.0_6/556da22e537ef71fee55553a351d9e7159d42b5a/org.apache.servicemix.bundles.aopalliance-1.0_6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.servicemix.bundles/org.apache.servicemix.bundles.aopalliance/1.0_6/1b6069227d66dca5e55fc2f19f8d0214b01da31a/org.apache.servicemix.bundles.aopalliance-1.0_6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -2,14 +2,14 @@
  * Created by dossluca on 27/02/2017.
  */
 
-import com.yoshtec.owl.jcodegen.Codegen;
-import com.yoshtec.owl.jcodegen.CodegenException;
+//import com.yoshtec.owl.jcodegen.Codegen;
+//import com.yoshtec.owl.jcodegen.CodegenException;
 
 import java.io.File;
 
 public class CodegenMain {
 
-    public static void main(String args[]) throws CodegenException {
+   /* public static void main(String args[]) throws CodegenException {
         Codegen codegen = new Codegen();
 
         // the java package to create the classes in
@@ -26,5 +26,5 @@ public class CodegenMain {
 
         // generate code
         codegen.genCode();
-    }
+    }*/
 }

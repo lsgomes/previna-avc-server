@@ -21,7 +21,7 @@ object JettyServer extends App {
     "jersey.config.server.provider.classnames",
     classOf[OntologyServer].getCanonicalName())
 
-  servlet.setInitParameter("com.sun.jersey.api.json.POJOMappingFeature", "true")
+  //servlet.setInitParameter("com.sun.jersey.api.json.POJOMappingFeature", "true")
 
   try {
     server.start();
