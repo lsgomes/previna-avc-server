@@ -35,7 +35,7 @@ dependencies {
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.24'
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.1'
 
-    compile group: 'net.sourceforge.owlapi', name: 'owlapi-distribution', version: '4.2.8'
+    //compile group: 'net.sourceforge.owlapi', name: 'owlapi-distribution', version: '4.2.8'
 
     compile group: 'com.clarkparsia.pellet', name: 'pellet-core', version: '2.4.0-SNAPSHOT'
     compile group: 'com.clarkparsia.pellet', name: 'pellet-owlapi', version: '2.4.0-SNAPSHOT'
@@ -44,9 +44,9 @@ dependencies {
     //compile group: 'com.clarkparsia.pellet', name: 'pellet-core', version: '2.3.2-SNAPSHOT'
     //compile group: 'com.clarkparsia.pellet', name: 'pellet-owlapiv3', version: '2.3.2-SNAPSHOT'
 
-    //compile group: 'org.okkam.owl', name: 'jaob-core', version: '1.1-SNAPSHOT', changing: true
+    compile group: 'org.okkam.owl', name: 'jaob-core', version: '1.1-SNAPSHOT', changing: true
 
-    //compile group: 'org.okkam.owl', name: 'jaob-maven-plugin', version: '1.1-SNAPSHOT', changing: true
+    compile group: 'org.okkam.owl', name: 'jaob-maven-plugin', version: '1.1-SNAPSHOT', changing: true
 
     //compile group: 'de.derivo', name: 'sparqldl-api', version: '1.0.0'
 

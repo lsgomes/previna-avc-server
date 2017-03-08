@@ -1,0 +1,714 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#"
+     xml:base="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:stroke="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasAdverbFrequency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasAdverbFrequency">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasFrequency"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Adverb"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasDevice -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasDevice">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasDrinkPerWeekFrequency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasDrinkPerWeekFrequency">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasFrequency"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinker"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinks_per_week"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasEducation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasEducation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Education"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Education"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasFrequency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasFrequency">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasLogin -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasLogin">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Login"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskFactor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskFactor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasSensor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasSensor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Device"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasSex -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasSex">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sex"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasTimesPerWeekFrequency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasTimesPerWeekFrequency">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasFrequency"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Active"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Times_per_week"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasAge">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskLevel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasUserName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasUserName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Login"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasUserPassword -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasUserPassword">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Login"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Abstain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Abstain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Alcohol_consumption"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Accelerometer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Accelerometer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Active -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Active">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Physical_activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Adverb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Adverb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Frequency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Alcohol_consumption -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Alcohol_consumption">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Ambient_light_sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Ambient_light_sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Barometer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Barometer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#College_diploma -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#College_diploma">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Education"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Congestive_heart_failure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Congestive_heart_failure">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Heart_disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Critical_of_others -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Critical_of_others">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Cry_easily -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Cry_easily">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Device -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Device"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Diabetes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Diabetes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Alcohol_consumption"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinks_per_week -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinks_per_week">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Frequency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Education -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Education">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Fearful -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Fearful">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Female -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Female">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Fingerprint_sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Fingerprint_sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Former_alcoholic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Former_alcoholic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Alcohol_consumption"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Former_smoker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Former_smoker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoking_status"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Frequency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Frequency"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Gyroscope -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Gyroscope">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Heart_disease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Heart_disease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Heart_rate_sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Heart_rate_sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#High_school_diploma_and_some_college -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#High_school_diploma_and_some_college">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Education"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Hypertension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Hypertension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Inactive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Inactive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Physical_activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Ischemic_heart_disease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Ischemic_heart_disease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Heart_disease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Location_sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Location_sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Login -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Login"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Male -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Male">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sex"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Mobile_device -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Mobile_device">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Never_smoked -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Never_smoked">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoking_status"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#No_high_school_diploma -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#No_high_school_diploma">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Education"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Often_or_always -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Often_or_always">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Adverb"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#One_or_two_times_per_week -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#One_or_two_times_per_week">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Times_per_week"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#One_to_six_drinks_per_week -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#One_to_six_drinks_per_week">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinks_per_week"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Peripheral_arterial_disease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Peripheral_arterial_disease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Physical_activity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Physical_activity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Proximity_sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Proximity_sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Renal_disease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Renal_disease">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sensor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Seven_or_more_drinks_per_week -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Seven_or_more_drinks_per_week">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinks_per_week"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sex -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sex"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoking_status"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoking_status -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoking_status">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sometimes_or_never -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sometimes_or_never">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Adverb"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Thing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Thing"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Three_or_more_times_per_week -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Three_or_more_times_per_week">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Times_per_week"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Times_per_week -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Times_per_week">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Frequency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Wearable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Wearable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- Critical_of_others -->
+
+    <owl:NamedIndividual rdf:about="Critical_of_others">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Critical_of_others"/>
+        <hasAdverbFrequency rdf:resource="Often_or_always"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- Drinker -->
+
+    <owl:NamedIndividual rdf:about="Drinker">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinker"/>
+        <hasDrinkPerWeekFrequency rdf:resource="Seven_or_more_drinks_per_week"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- High_school_diploma_and_some_college -->
+
+    <owl:NamedIndividual rdf:about="High_school_diploma_and_some_college">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#High_school_diploma_and_some_college"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- Inactive -->
+
+    <owl:NamedIndividual rdf:about="Inactive">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Inactive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- LUCAS -->
+
+    <owl:NamedIndividual rdf:about="LUCAS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <hasRiskFactor rdf:resource="Critical_of_others"/>
+        <hasRiskFactor rdf:resource="Drinker"/>
+        <hasRiskFactor rdf:resource="High_school_diploma_and_some_college"/>
+        <hasRiskFactor rdf:resource="Inactive"/>
+        <hasRiskFactor rdf:resource="Smoker"/>
+        <hasSex rdf:resource="Male"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</hasAge>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- Male -->
+
+    <owl:NamedIndividual rdf:about="Male">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- Often_or_always -->
+
+    <owl:NamedIndividual rdf:about="Often_or_always">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Often_or_always"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- Seven_or_more_drinks_per_week -->
+
+    <owl:NamedIndividual rdf:about="Seven_or_more_drinks_per_week">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Seven_or_more_drinks_per_week"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- Smoker -->
+
+    <owl:NamedIndividual rdf:about="Smoker">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoker"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

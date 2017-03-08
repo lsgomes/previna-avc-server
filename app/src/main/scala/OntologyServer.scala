@@ -5,11 +5,12 @@ import java.io.File
 import javax.annotation.PostConstruct
 import javax.inject.Singleton
 import javax.ws.rs._
+import javax.ws.rs.core.MediaType
 
-import com.clarkparsia.pellet.owlapiv3.PelletReasonerFactory
+import model._
+import com.clarkparsia.pellet.owlapiv3.{PelletReasoner, PelletReasonerFactory}
 import com.hp.hpl.jena.query.{QueryExecutionFactory, QueryFactory}
 import com.hp.hpl.jena.rdf.model.ModelFactory
-import com.lucas.stroke.v3.strokeFactory
 import org.semanticweb.owlapi.reasoner.InferenceType
 //import com.yoshtec.owl.marshall.{Marshaller, UnMarshaller}
 //import de.derivo.sparqldlapi.{Query, QueryEngine, QueryResult}
@@ -44,10 +45,9 @@ class OntologyServer {
   var strokeOntology: Option[OWLOntology] = None
   var individualsOntology: Option[OWLOntology] = None
 
-  //var engine: Option[QueryEngine] = None
+  var reasoner: PelletReasoner = _
 
-  var inference: ReasonerBasedInference = _
-  var factory: strokeFactory = _
+  //var engine: Option[QueryEngine] = None
 
   @PostConstruct
   def setupOntologyServer: Unit = {
@@ -61,37 +61,34 @@ class OntologyServer {
     manager = OWLManager.createOWLOntologyManager()
     //manager.addIRIMapper(autoIRIMapper)
 
-    //marshaller = new Marshaller()
+   /* marshaller = new Marshaller()
 
-    //unmarshaller = new UnMarshaller()
-    //unmarshaller.registerClass(classOf[PersonImpl])
+    unmarshaller = new UnMarshaller()
+    unmarshaller.registerClass(classOf[PersonImpl])*/
 
     strokeOntology = loadOntology(ONTOLOGY_LOCATION)
     individualsOntology = loadOntology(INDIVIDUALS_LOCATION)
 
-    //loadIndividuals()
-
     loadReasoner()
+
+    loadIndividuals()
+
 
   }
 
   def loadReasoner(): Unit = {
 
-    val ontology = strokeOntology
+    val ontology = individualsOntology
 
     if (ontology.isDefined) {
       //val reasoner = factory.createReasoner(individualsOntology.get)
       //reasoner.precomputeInferences()
       //logger.info("isConsistent: " + reasoner.isConsistent)
       //queryResultsToList(results).foreach(i => logger.info(i))
-      val reasoner = PelletReasonerFactory.getInstance.createReasoner( ontology.get )
-      reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS);
+
+      reasoner = PelletReasonerFactory.getInstance.createReasoner( ontology.get )
       reasoner.prepareReasoner()
-
-      //inference = new ReasonerBasedInference(ontology.get, reasoner)
-      factory = new strokeFactory(ontology.get)
-
-      //reasoner.
+      reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS);
 
       val graph = new org.mindswap.pellet.jena.PelletReasoner().bind(reasoner.getKB);
       val model = ModelFactory.createInfModel( graph )
@@ -106,11 +103,11 @@ class OntologyServer {
       // the ontology are equivalent, i.e., through calls to the reasoner.
 
 
-      result.asScala.foreach {
-        solution => solution.varNames().asScala.foreach { variable =>
-        logger.info(variable + ": " + solution.get(variable).toString)
-        }
-      }
+//      result.asScala.foreach {
+//        solution => solution.varNames().asScala.foreach { variable =>
+//        logger.info(variable + ": " + solution.get(variable).toString)
+//        }
+//      }
 
 //      while (result.hasNext) {
 //        val solution = result.next()
@@ -169,7 +166,7 @@ class OntologyServer {
     ontology
   }
 
-/*  def loadIndividuals(): Unit = {
+ def loadIndividuals(): Unit = {
 
     //val ontology = loadOntology(INDIVIDUALS_LOCATION)
 
@@ -182,12 +179,13 @@ class OntologyServer {
 
     logger.info("Loading individuals: " + individualsOntology)
 
+    individualsOntology.get
     //individuals = unmarshaller.unmarshal(individualsOntology.get).asInstanceOf[HashSet[PersonImpl]]
 
-    logger.info("Individuals size: " + individuals.size())
+    //logger.info("Individuals size: " + individuals.size())
 
     //individuals.forEach(i => logger.info(i.toString))
-  }*/
+  }
 
 /*   @GET
    @Path("/saveIndividuals")
@@ -239,33 +237,6 @@ class OntologyServer {
   }*/
 
   @GET
-  @Path("/protege")
-  //@Produces(Array[String](MediaType.APPLICATION_JSON))
-  def protege(): Unit = {
-
-    val person = factory.createPerson("LUCAS")
-
-    person.addHasAge(30)
-    person.addHasSex(factory.createSex("Male"))
-
-    val education = factory.createHigh_school_diploma_and_some_college("High_school_diploma_and_some_college")
-    val smoker = factory.createSmoker("Smoker")
-    val drinker = factory.createDrinker("Drinker")
-    drinker.addHasDrinkPerWeekFrequency(factory.createSeven_or_more_drinks_per_week("Seven_or_more_drinks_per_week"))
-    val inactive = factory.createInactive("Inactive")
-    val anger = factory.createCritical_of_others("Critical_of_others")
-    anger.addHasAdverbFrequency(factory.createOften_or_always("Often_or_always"))
-
-    person.addHasRiskFactor(education)
-    person.addHasRiskFactor(smoker)
-    person.addHasRiskFactor(drinker)
-    person.addHasRiskFactor(inactive)
-    person.addHasRiskFactor(anger)
-
-    person.getOwlOntology.saveOntology()
-  }
-
-  /*@GET
   @Path("/exampleIndividual")
   @Produces(Array[String](MediaType.APPLICATION_JSON))
   def exampleIndividual(): PersonImpl = {
@@ -273,13 +244,13 @@ class OntologyServer {
     val person = new PersonImpl()
     person.setHasAge(62)
     person.setHasSex(new MaleImpl())
-    person.setIndividualName("ExamplePerson")
+    person.setName("ExamplePerson")
 
     var riskFactors = new java.util.ArrayList[RiskFactor]()
 
     val education = new High_school_diploma_and_some_collegeImpl()
     val smoker = new SmokerImpl()
-    val drinker = new DrinkerImpl(new _or_more_drinks_per_weekImpl())
+    val drinker = new DrinkerImpl(new Seven_or_more_drinks_per_weekImpl())
     val inactive = new InactiveImpl()
     val anger = new Critical_of_othersImpl(new Often_or_alwaysImpl())
 
@@ -292,7 +263,7 @@ class OntologyServer {
     person.setHasRiskFactor(riskFactors)
 
     person
-  }*/
+  }
 
   /*def processQuery(queryString: String) : Option[QueryResult] = {
 
