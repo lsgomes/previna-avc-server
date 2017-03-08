@@ -7,20 +7,19 @@ import javax.inject.Singleton
 import javax.ws.rs._
 import javax.ws.rs.core.MediaType
 
-import model._
 import com.clarkparsia.pellet.owlapiv3.{PelletReasoner, PelletReasonerFactory}
 import com.hp.hpl.jena.query.{QueryExecutionFactory, QueryFactory}
 import com.hp.hpl.jena.rdf.model.ModelFactory
-import org.semanticweb.owlapi.reasoner.InferenceType
+import model._
+import org.semanticweb.owlapi.model.{IRI, OWLEntity, OWLNamedIndividual}
+import org.semanticweb.owlapi.reasoner.{InferenceType, NodeSet}
+import uk.ac.manchester.cs.owl.owlapi.OWLClassImpl
 //import com.yoshtec.owl.marshall.{Marshaller, UnMarshaller}
 //import de.derivo.sparqldlapi.{Query, QueryEngine, QueryResult}
 //import model._
-import org.protege.owl.codegeneration.inference.ReasonerBasedInference
 import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.model.{OWLOntology, OWLOntologyManager}
 import org.slf4j.{Logger, LoggerFactory}
-
-import scala.collection.JavaConverters._
 
 @Singleton
 @Path("/rest")
@@ -102,7 +101,10 @@ class OntologyServer {
       //SPARQL or any other way to query
       // the ontology are equivalent, i.e., through calls to the reasoner.
 
+      val expression: OWLClassImpl = new OWLClassImpl(IRI.create(ONTOLOGY_IRI + "#Person")) // Thing.GetURI
+      val instances = reasoner.getInstances(expression, true)
 
+      printNodeSet(instances)
 //      result.asScala.foreach {
 //        solution => solution.varNames().asScala.foreach { variable =>
 //        logger.info(variable + ": " + solution.get(variable).toString)
@@ -124,7 +126,13 @@ class OntologyServer {
 
   }
 
+  def printNodeSet(nodeSet: NodeSet[OWLNamedIndividual]): Unit = {
+    nodeSet.getNodes.forEach(n => n.getEntities.forEach(e => logger.info(e.getIRI.toString)))
+  }
 
+  def parseNodeSet(nodeSet: NodeSet[OWLNamedIndividual]): OWLEntity[T] = {
+    nodeSet.getNodes.forEach(n => n.getEntities.forEach(e => e.getIRI.toString))
+  }
 
 /*  def queryResultsToList(results: Option[QueryResult]): List[String] = {
 
@@ -242,23 +250,23 @@ class OntologyServer {
   def exampleIndividual(): PersonImpl = {
 
     val person = new PersonImpl()
-    person.setHasAge(62)
-    person.setHasSex(new MaleImpl())
+    //person.setHasAge(62)
+    //person.setHasSex(new MaleImpl())
     person.setName("ExamplePerson")
 
     var riskFactors = new java.util.ArrayList[RiskFactor]()
 
     val education = new High_school_diploma_and_some_collegeImpl()
     val smoker = new SmokerImpl()
-    val drinker = new DrinkerImpl(new Seven_or_more_drinks_per_weekImpl())
+   // val drinker = new DrinkerImpl(new Seven_or_more_drinks_per_weekImpl())
     val inactive = new InactiveImpl()
-    val anger = new Critical_of_othersImpl(new Often_or_alwaysImpl())
+    //val anger = new Critical_of_othersImpl(new Often_or_alwaysImpl())
 
     riskFactors.add(education)
     riskFactors.add(smoker)
-    riskFactors.add(drinker)
+    //riskFactors.add(drinker)
     riskFactors.add(inactive)
-    riskFactors.add(anger)
+    //riskFactors.add(anger)
 
     person.setHasRiskFactor(riskFactors)
 
