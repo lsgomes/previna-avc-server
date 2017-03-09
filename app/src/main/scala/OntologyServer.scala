@@ -13,13 +13,16 @@ import com.hp.hpl.jena.rdf.model.ModelFactory
 import model._
 import org.semanticweb.owlapi.model.{IRI, OWLEntity, OWLNamedIndividual}
 import org.semanticweb.owlapi.reasoner.{InferenceType, NodeSet}
-import uk.ac.manchester.cs.owl.owlapi.OWLClassImpl
+import org.semanticweb.owlapi.search.{EntitySearcher, Searcher}
+import uk.ac.manchester.cs.owl.owlapi.{OWLClassImpl, OWLNamedIndividualImpl}
 //import com.yoshtec.owl.marshall.{Marshaller, UnMarshaller}
 //import de.derivo.sparqldlapi.{Query, QueryEngine, QueryResult}
 //import model._
 import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.model.{OWLOntology, OWLOntologyManager}
 import org.slf4j.{Logger, LoggerFactory}
+
+import util.control.Breaks._
 
 @Singleton
 @Path("/rest")
@@ -86,8 +89,9 @@ class OntologyServer {
       //queryResultsToList(results).foreach(i => logger.info(i))
 
       reasoner = PelletReasonerFactory.getInstance.createReasoner( ontology.get )
+      reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS,
+        InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.DATA_PROPERTY_HIERARCHY);
       reasoner.prepareReasoner()
-      reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS);
 
       val graph = new org.mindswap.pellet.jena.PelletReasoner().bind(reasoner.getKB);
       val model = ModelFactory.createInfModel( graph )
@@ -100,11 +104,22 @@ class OntologyServer {
 
       //SPARQL or any other way to query
       // the ontology are equivalent, i.e., through calls to the reasoner.
+      val p = new PersonImpl()
 
-      val expression: OWLClassImpl = new OWLClassImpl(IRI.create(ONTOLOGY_IRI + "#Person")) // Thing.GetURI
-      val instances = reasoner.getInstances(expression, true)
+      val expression = createClassExpression(p.getIRI)
+      val instances = reasoner.getInstances(expression, false)
+
+      val list = getIndividualsFromNodeSet(instances)
+
+      val ind = getIndividualFromList("lucas4", list)
+      val propers = Searcher.values(individualsOntology.get.getDataPropertyAssertionAxioms(ind), null)
+      val map = EntitySearcher.getDataPropertyValues(ind, individualsOntology.get)
+
 
       printNodeSet(instances)
+
+
+
 //      result.asScala.foreach {
 //        solution => solution.varNames().asScala.foreach { variable =>
 //        logger.info(variable + ": " + solution.get(variable).toString)
@@ -126,12 +141,39 @@ class OntologyServer {
 
   }
 
+  def createClassExpression(iri: String): OWLClassImpl = {
+    new OWLClassImpl(IRI.create(iri))
+  }
+
+  def createClassExpression(thing: Thing): OWLClassImpl = {
+    new OWLClassImpl(IRI.create(thing.getIRI))
+  }
+
+  def getIndividualFromList(name: String, list: List[OWLNamedIndividual]): OWLNamedIndividual = {
+    var individual: OWLNamedIndividual = null
+
+    breakable {
+      list.foreach {
+        i =>
+          if (i.getIRI.toString.equals(ONTOLOGY_IRI + "#" + name)) {
+            individual = i
+            break
+          }
+      }
+    }
+
+
+    individual
+  }
+
   def printNodeSet(nodeSet: NodeSet[OWLNamedIndividual]): Unit = {
     nodeSet.getNodes.forEach(n => n.getEntities.forEach(e => logger.info(e.getIRI.toString)))
   }
 
-  def parseNodeSet(nodeSet: NodeSet[OWLNamedIndividual]): OWLEntity[T] = {
-    nodeSet.getNodes.forEach(n => n.getEntities.forEach(e => e.getIRI.toString))
+  def getIndividualsFromNodeSet(nodeSet: NodeSet[OWLNamedIndividual]): List[OWLNamedIndividual] = {
+    var list = List[OWLNamedIndividual]()
+    nodeSet.getNodes.forEach(n => n.getEntities.forEach(e => list = list :+ e.asOWLNamedIndividual()))
+    list
   }
 
 /*  def queryResultsToList(results: Option[QueryResult]): List[String] = {
@@ -250,6 +292,10 @@ class OntologyServer {
   def exampleIndividual(): PersonImpl = {
 
     val person = new PersonImpl()
+
+    val c = new College_diplomaImpl()
+    c.
+
     //person.setHasAge(62)
     //person.setHasSex(new MaleImpl())
     person.setName("ExamplePerson")

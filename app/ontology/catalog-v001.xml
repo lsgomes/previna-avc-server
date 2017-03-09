@@ -2,11 +2,12 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke" uri="stroke_v3.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1488989581876" name="individuals.owl" uri="individuals%20-%20Copy.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1488989581876" name="duplicate:http://www.semanticweb.org/lucas/ontologies/2016/9/stroke" uri="stroke_v2.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1488989581876" name="duplicate:http://www.semanticweb.org/lucas/ontologies/2016/9/stroke" uri="stroke_v3%20-%20Copy.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1488989581876" name="duplicate:http://www.semanticweb.org/lucas/ontologies/2016/9/stroke" uri="stroke_v3.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1488989581876" name="duplicate:http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals" uri="individuals%20-%20Copy%20(2).owl"/>
-        <uri id="Automatically generated entry, Timestamp=1488989581876" name="duplicate:http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals" uri="individuals.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1489033062252" name="individuals.owl" uri="individuals%20-%20Copy.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1489033062252" name="duplicate:http://www.semanticweb.org/lucas/ontologies/2016/9/stroke" uri="stroke_v2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1489033062252" name="duplicate:http://www.semanticweb.org/lucas/ontologies/2016/9/stroke" uri="stroke_v3%20-%20Copy.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1489033062252" name="duplicate:http://www.semanticweb.org/lucas/ontologies/2016/9/stroke" uri="stroke_v3.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1489033062252" name="duplicate:http://www.semanticweb.org/lucas/ontologies/2016/9/stroke" uri="stroke_v4.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1489033062252" name="duplicate:http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals" uri="individuals%20-%20Copy%20(2).owl"/>
+        <uri id="Automatically generated entry, Timestamp=1489033062252" name="duplicate:http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals" uri="individuals.owl"/>
     </group>
 </catalog>

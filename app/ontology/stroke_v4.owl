@@ -56,7 +56,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasEducation">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Education"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Education"/>
     </owl:ObjectProperty>
     
@@ -105,6 +105,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasSex">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Frequency"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sex"/>
     </owl:ObjectProperty>
@@ -337,14 +338,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Female -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Female">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sex"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Fingerprint_sensor -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Fingerprint_sensor">
@@ -442,14 +435,6 @@
     <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Login -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Login"/>
-    
-
-
-    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Male -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Male">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sex"/>
-    </owl:Class>
     
 
 
@@ -678,6 +663,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/Male">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sex"/>
+        <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasWeight>
     </owl:NamedIndividual>
     
 
@@ -702,6 +688,15 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/Smoker">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Female -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Female">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sex"/>
+        <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasWeight>
     </owl:NamedIndividual>
 </rdf:RDF>
 

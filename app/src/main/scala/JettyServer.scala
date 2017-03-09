@@ -1,16 +1,19 @@
 import org.eclipse.jetty.server.Server
 import org.eclipse.jetty.servlet.ServletContextHandler
 import org.glassfish.jersey.servlet.ServletContainer
+import org.slf4j.LoggerFactory
 
 /**
   * Created by dossluca on 28/02/2017.
   */
 object JettyServer extends App {
 
+  val logger = LoggerFactory.getLogger(this.getClass)
+
   val context = new ServletContextHandler(ServletContextHandler.SESSIONS)
   context.setContextPath("/")
 
-  val server = new Server(8080)
+  val server = new Server(8081)
   server.setHandler(context)
 
   val servlet = context.addServlet(classOf[ServletContainer], "/*")
@@ -26,7 +29,12 @@ object JettyServer extends App {
   try {
     server.start();
     server.join();
-  } finally {
+  }
+  catch {
+    case e: Exception => logger.error("Jetty exception:", e)
+    case i: InterruptedException => logger.error("Jetty exception:", i)
+  }
+  finally {
     server.destroy();
   }
 }

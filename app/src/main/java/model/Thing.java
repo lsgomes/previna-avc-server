@@ -3,6 +3,8 @@ package model;
 
 import com.yoshtec.owl.annotations.OwlClass;
 
+import java.lang.annotation.Annotation;
+
 
 /**
  * Generated Class from Ontology:
@@ -29,5 +31,18 @@ public interface Thing {
      *     the new name value
      */
     public void setName(String name);
+
+    public default String getIRI() {
+
+        Class<?> clazz = this.getClass().getInterfaces()[0];
+
+        Annotation annotation = clazz.getAnnotation(OwlClass.class);
+
+        if (annotation instanceof OwlClass) {
+            OwlClass owlClass = (OwlClass) annotation;
+            return owlClass.uri();
+        }
+        return null;
+    }
 
 }

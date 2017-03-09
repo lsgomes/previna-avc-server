@@ -5,10 +5,12 @@ import java.text.{DecimalFormat, DecimalFormatSymbols}
 import java.util.Locale
 import javax.inject.Singleton
 
+import model.{Female, Male, Sex}
+
 import scala.math.{exp, pow}
 
 @Singleton
-object RiskCalculator extends App{
+object RiskCalculator extends App {
 
   val decimalFormat = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH))
   decimalFormat.setMaximumFractionDigits(3) // 340 = DecimalFormat.DOUBLE_FRACTION_DIGITS
@@ -29,7 +31,7 @@ object RiskCalculator extends App{
     risk * 100
   }
 
-  def testRiskCalculator: Unit = {
+  private def testRiskCalculator: Unit = {
     val list = List(0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110)
 
     list.foreach(i => println(i + ": " + formatWithoutScientificNotation(calculateRiskFormula(i))))
@@ -38,10 +40,23 @@ object RiskCalculator extends App{
     list.foreach(i => println(i + ": " + formatWithoutScientificNotation(calculateRiskPercentage(calculateRiskFormula(i)))))
   }
 
-  def calculateHasAge(age: Int): Int = {
+  def calculateAge(age: Integer): Integer = {
     if (age > 20) {
       return age - 20
     }
+    0
+  }
+
+  def calculateSex(sex: Sex): Integer = {
+
+    if (sex.isInstanceOf[Male]) {
+
+    }
+    else if (sex.isInstanceOf[Female])
+    {
+
+    }
+
     0
   }
 }
