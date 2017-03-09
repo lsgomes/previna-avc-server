@@ -82,3 +82,87 @@ SELECT DISTINCT ?subject ?pred ?object
         SELECT  ?subject ?pred (str(?object) as ?label)
             WHERE {stroke:lucas4 stroke:hasAge ?object . }
             ORDER BY ?subject
+
+
+              PREFIX +
+                  "SELECT DISTINCT (str(?weight) as ?result)\n" +
+                  "WHERE {\n" +
+                  "  stroke:" + individual + " stroke:hasSex ?sex .\n" +
+                  "    bind (\n" +
+                  "      if (?sex = stroke:Male, 3,  0) as ?weight\n" +
+                  "  )\n" +
+                  "}"
+
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX owl: <http://www.w3.org/2002/07/owl#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+        PREFIX stroke: <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#>
+
+        SELECT ?q ?p
+        	WHERE {
+        		stroke:luquinhas stroke:hasRiskFactor ?q .
+        		filter(?q = stroke:Diabetes)
+        	}
+
+        	SELECT ?q
+            	WHERE {
+            		stroke:luquinhas stroke:hasRiskFactor ?q .
+            		filter(?q = stroke:Drinker || ?q = stroke:Male)
+
+            }
+
+            SELECT ?q ?p ?t
+            	WHERE {
+            		stroke:luquinhas stroke:hasRiskFactor ?q .
+            		bind(if(?q = stroke:Male, "yes", "no") as ?p)
+
+            	}
+
+
+           ASK {
+           		stroke:luquinhas stroke:hasRiskFactor stroke:Drinker .
+           		stroke:luquinhas stroke:hasRiskFactor stroke:Male .
+
+           	}
+
+           	SELECT DISTINCT ?q ?x ?result
+                        	WHERE {
+
+
+                        		stroke:luquinhas stroke:hasRiskFactor ?q .
+            		?q stroke:hasWeight ?x
+                    	}
+
+
+             SELECT (str(?weight) as ?result)
+             	WHERE
+             	 {
+             		bind ( EXISTS { stroke:luquinhas stroke:hasRiskFactor stroke:Drinker .
+             			     stroke:luquinhas stroke:hasRiskFactor stroke:Seven_or_more_drinks_per_week .
+             			      } as ?both
+             	                            )
+
+             		bind ( if (?both, 3, 0) as ?weight)
+
+                    }
+
+
+            SE FALSO, nao retorna a segunda linha
+	SELECT DISTINCT * #(str(?weight) as ?result)
+	WHERE
+	 {
+		stroke:luquinhas stroke:hasRiskFactor stroke:Inactive .
+		stroke:Seven_or_more_drinks_per_week stroke:hasWeight ?weight .
+
+        	}
+
+
+
+	SELECT DISTINCT * #(str(?weight) as ?result)
+	WHERE
+	 {
+		stroke:luquinhas stroke:hasRiskFactor stroke:Seven_or_more_drinks_per_week .
+		stroke:Seven_or_more_drinks_per_week stroke:hasWeight ?weight .
+
+        	}

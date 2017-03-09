@@ -8,13 +8,13 @@ import javax.ws.rs._
 import javax.ws.rs.core.MediaType
 
 import com.clarkparsia.pellet.owlapiv3.{PelletReasoner, PelletReasonerFactory}
-import com.hp.hpl.jena.query.{QueryExecutionFactory, QueryFactory}
-import com.hp.hpl.jena.rdf.model.ModelFactory
+import com.hp.hpl.jena.query.{QueryExecutionFactory, QueryFactory, ResultSet, ResultSetFormatter}
+import com.hp.hpl.jena.rdf.model.{InfModel, ModelFactory}
 import model._
-import org.semanticweb.owlapi.model.{IRI, OWLEntity, OWLNamedIndividual}
+import org.semanticweb.owlapi.model.{IRI, OWLNamedIndividual}
 import org.semanticweb.owlapi.reasoner.{InferenceType, NodeSet}
 import org.semanticweb.owlapi.search.{EntitySearcher, Searcher}
-import uk.ac.manchester.cs.owl.owlapi.{OWLClassImpl, OWLNamedIndividualImpl}
+import uk.ac.manchester.cs.owl.owlapi.OWLClassImpl
 //import com.yoshtec.owl.marshall.{Marshaller, UnMarshaller}
 //import de.derivo.sparqldlapi.{Query, QueryEngine, QueryResult}
 //import model._
@@ -22,7 +22,7 @@ import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.model.{OWLOntology, OWLOntologyManager}
 import org.slf4j.{Logger, LoggerFactory}
 
-import util.control.Breaks._
+import scala.util.control.Breaks._
 
 @Singleton
 @Path("/rest")
@@ -49,6 +49,8 @@ class OntologyServer {
 
   var reasoner: PelletReasoner = _
 
+  var model: InfModel = _
+
   //var engine: Option[QueryEngine] = None
 
   @PostConstruct
@@ -73,9 +75,34 @@ class OntologyServer {
 
     loadReasoner()
 
+    loadQueryExecutor()
+
     loadIndividuals()
 
+    val result = executeQuery(Queries.calculateAge("lucas6"))
 
+    val s = ResultSetFormatter.toList(result)
+
+    logger.info("B")
+  }
+
+  def executeQuery(query: String): ResultSet = {
+    val q = QueryFactory.create(query)
+    val queryExecution = QueryExecutionFactory.create(q, model)
+
+    try
+    {
+      queryExecution.execSelect()
+    }
+    finally
+    {
+      queryExecution.close()
+    }
+  }
+
+  def loadQueryExecutor(): Unit = {
+    val graph = new org.mindswap.pellet.jena.PelletReasoner().bind(reasoner.getKB)
+    model = ModelFactory.createInfModel( graph )
   }
 
   def loadReasoner(): Unit = {
@@ -83,24 +110,19 @@ class OntologyServer {
     val ontology = individualsOntology
 
     if (ontology.isDefined) {
-      //val reasoner = factory.createReasoner(individualsOntology.get)
-      //reasoner.precomputeInferences()
-      //logger.info("isConsistent: " + reasoner.isConsistent)
-      //queryResultsToList(results).foreach(i => logger.info(i))
 
       reasoner = PelletReasonerFactory.getInstance.createReasoner( ontology.get )
+      reasoner.prepareReasoner()
       reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS,
         InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.DATA_PROPERTY_HIERARCHY);
-      reasoner.prepareReasoner()
 
-      val graph = new org.mindswap.pellet.jena.PelletReasoner().bind(reasoner.getKB);
-      val model = ModelFactory.createInfModel( graph )
+      val reasoner2 = PelletReasonerFactory.getInstance.createReasoner( strokeOntology.get )
+      reasoner2.prepareReasoner()
+      reasoner2.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS,
+        InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.DATA_PROPERTY_HIERARCHY);
+
 
       //reasoner.getKB.printClassTree()
-
-      val q = QueryFactory.create(Queries.SUBJECT_HAS_AGE)
-      val queryExecution = QueryExecutionFactory.create(q, model)
-      val result = queryExecution.execSelect()
 
       //SPARQL or any other way to query
       // the ontology are equivalent, i.e., through calls to the reasoner.
@@ -114,7 +136,6 @@ class OntologyServer {
       val ind = getIndividualFromList("lucas4", list)
       val propers = Searcher.values(individualsOntology.get.getDataPropertyAssertionAxioms(ind), null)
       val map = EntitySearcher.getDataPropertyValues(ind, individualsOntology.get)
-
 
       printNodeSet(instances)
 
@@ -260,7 +281,7 @@ class OntologyServer {
 
     logger.info(person.toString)
 
-    //person.setIndividualName(INDIVIDUALS_IRI + "#" + person.getName)
+    //person.setIndividualName(ONTOLOGY_IRI + "#" + person.getName)
 
     //individuals.add(person)
 
@@ -294,11 +315,10 @@ class OntologyServer {
     val person = new PersonImpl()
 
     val c = new College_diplomaImpl()
-    c.
 
     //person.setHasAge(62)
     //person.setHasSex(new MaleImpl())
-    person.setName("ExamplePerson")
+    //person.setName("ExamplePerson")
 
     var riskFactors = new java.util.ArrayList[RiskFactor]()
 
@@ -307,6 +327,7 @@ class OntologyServer {
    // val drinker = new DrinkerImpl(new Seven_or_more_drinks_per_weekImpl())
     val inactive = new InactiveImpl()
     //val anger = new Critical_of_othersImpl(new Often_or_alwaysImpl())
+    new DiabetesImpl()
 
     riskFactors.add(education)
     riskFactors.add(smoker)

@@ -19,5 +19,47 @@ object Queries {
       "SELECT * " +
       "WHERE { ?subject stroke:hasAge ?object }"
 
+  def calculateAge(individual: String): String = {
+    PREFIX +
+      "SELECT DISTINCT (str(?variable) as ?result)\n" +
+      "WHERE {stroke:" + individual + " stroke:hasAge ?age \n" +
+      "bind(if(?age > 20, ?age - 20, 0) as ?variable)\n" +
+      "}"
+  }
+
+  def calculateSex2(individual: String): String = {
+    PREFIX +
+      "SELECT DISTINCT (str(?weight) as ?result)\n" +
+      "WHERE {\n" +
+      "  stroke:" + individual + " stroke:hasSex ?sex .\n" +
+      "    bind (\n" +
+      "      if (?sex = stroke:Male, 3,  0) as ?weight\n" +
+      "  )\n" +
+      "}"
+  }
+
+/*  def calculateSex(individual: String): String = {
+    PREFIX +
+      "SELECT DISTINCT (str(?weight) as ?result)\n" +
+      "WHERE {\n" +
+      "  stroke:" + individual + " stroke:hasSex ?sex .\n" +
+      "  ?sex stroke:hasWeight ?weight\n" +
+      "}"
+  }*/
+
+  def calculateProperty(individual: String, property: String): String = {
+    PREFIX +
+      "SELECT DISTINCT (str(?weight) as ?result)\n" +
+      "WHERE {\n" +
+      "  stroke:" + individual + " stroke: " + property + " ?value .\n" +
+      "  ?value stroke:hasWeight ?weight\n" +
+      "}"
+  }
+
+  def calculateSex(individual: String): String = {
+    calculateProperty(individual, "hasSex")
+  }
+
+
   // query(?x, ?y) :- PropertyValue(?x, hasAge, ?y).
 }
