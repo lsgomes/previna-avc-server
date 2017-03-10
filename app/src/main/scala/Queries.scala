@@ -60,6 +60,15 @@ object Queries {
     calculateProperty(individual, "hasSex")
   }
 
+  def calculatePropertiesWeights(individual: String): String = {
+    PREFIX +
+      "SELECT (SUM(?weight) as ?result)\n" +
+      "WHERE\n" +
+      "{\n" +
+      "  stroke:" + individual + " stroke:hasRiskFactor ?q .\n" +
+      "  ?q stroke:hasWeight ?weight .\n" +
+      "}"
+  }
 
   // query(?x, ?y) :- PropertyValue(?x, hasAge, ?y).
 }

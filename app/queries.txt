@@ -166,3 +166,11 @@ SELECT DISTINCT ?subject ?pred ?object
 		stroke:Seven_or_more_drinks_per_week stroke:hasWeight ?weight .
 
         	}
+
+
+	SELECT (SUM(?weight) as ?total_weight)
+	WHERE
+	 {
+		stroke:luquinhas stroke:hasRiskFactor ?q .
+		?q stroke:hasWeight ?weight .
+        	}

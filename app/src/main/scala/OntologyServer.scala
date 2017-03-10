@@ -30,7 +30,7 @@ class OntologyServer {
 
   var logger: Logger = _
 
-  val ONTOLOGY_LOCATION = "ontology/stroke_v3.owl"
+  val ONTOLOGY_LOCATION = "ontology/stroke_v4.owl"
   val INDIVIDUALS_LOCATION = "ontology/individuals.owl"
 
   val INDIVIDUALS_IRI = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals"
@@ -77,16 +77,20 @@ class OntologyServer {
 
     loadQueryExecutor()
 
-    loadIndividuals()
+    //loadIndividuals()
 
-    val result = executeQuery(Queries.calculateAge("lucas6"))
+    val result = executeQuery(Queries.calculatePropertiesWeights("luquinhas"))
 
-    val s = ResultSetFormatter.toList(result)
+    logger.info(ResultSetFormatter.asText(result))
+
+    //val s = ResultSetFormatter.toList(result)
 
     logger.info("B")
   }
 
   def executeQuery(query: String): ResultSet = {
+    logger.info(query)
+
     val q = QueryFactory.create(query)
     val queryExecution = QueryExecutionFactory.create(q, model)
 
@@ -96,7 +100,7 @@ class OntologyServer {
     }
     finally
     {
-      queryExecution.close()
+      //queryExecution.close()
     }
   }
 
@@ -107,18 +111,13 @@ class OntologyServer {
 
   def loadReasoner(): Unit = {
 
-    val ontology = individualsOntology
+    val ontology = strokeOntology
 
     if (ontology.isDefined) {
 
       reasoner = PelletReasonerFactory.getInstance.createReasoner( ontology.get )
       reasoner.prepareReasoner()
       reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS,
-        InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.DATA_PROPERTY_HIERARCHY);
-
-      val reasoner2 = PelletReasonerFactory.getInstance.createReasoner( strokeOntology.get )
-      reasoner2.prepareReasoner()
-      reasoner2.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS,
         InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.DATA_PROPERTY_HIERARCHY);
 
 
@@ -133,9 +132,9 @@ class OntologyServer {
 
       val list = getIndividualsFromNodeSet(instances)
 
-      val ind = getIndividualFromList("lucas4", list)
-      val propers = Searcher.values(individualsOntology.get.getDataPropertyAssertionAxioms(ind), null)
-      val map = EntitySearcher.getDataPropertyValues(ind, individualsOntology.get)
+      val ind = getIndividualFromList("luquinhas", list)
+      val propers = Searcher.values(ontology.get.getDataPropertyAssertionAxioms(ind), null)
+      val map = EntitySearcher.getDataPropertyValues(ind, ontology.get)
 
       printNodeSet(instances)
 
