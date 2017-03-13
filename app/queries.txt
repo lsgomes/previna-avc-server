@@ -174,3 +174,19 @@ SELECT DISTINCT ?subject ?pred ?object
 		stroke:luquinhas stroke:hasRiskFactor ?q .
 		?q stroke:hasWeight ?weight .
         	}
+
+
+
+        	PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            PREFIX stroke: <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#>
+            PREFIX person: <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals#>
+            SELECT DISTINCT * WHERE {
+
+            stroke:John ?pred ?object .
+            stroke:John stroke:hasRiskFactor ?q .
+            ?q stroke:hasWeight ?x
+            }
+
+            ???????????????????????????????????????????????????????????

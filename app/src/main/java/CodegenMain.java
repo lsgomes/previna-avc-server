@@ -1,7 +1,5 @@
-/**
- * Created by dossluca on 27/02/2017.
- *//*
-
+import com.yoshtec.owl.jcodegen.Codegen;
+import com.yoshtec.owl.jcodegen.CodegenException;
 
 import com.yoshtec.owl.jcodegen.Codegen;
 import com.yoshtec.owl.jcodegen.CodegenException;
@@ -14,10 +12,10 @@ public class CodegenMain {
         Codegen codegen = new Codegen();
 
         // the java package to create the classes in
-        codegen.setJavaPackageName("model");
+        codegen.setJavaPackageName("model.v5");
 
         codegen.setOntologyIri("http://www.semanticweb.org/lucas/ontologies/2016/9/stroke");
-        codegen.setOntologyPhysicalIri( new File("stroke_v3.owl").toURI().toString());
+        codegen.setOntologyPhysicalIri( new File("ontology/stroke_v5.owl").toURI().toString());
 
         codegen.setJavaSourceFolder(new File("ov3test"));
 
@@ -29,4 +27,3 @@ public class CodegenMain {
         codegen.genCode();
     }
 }
-*/

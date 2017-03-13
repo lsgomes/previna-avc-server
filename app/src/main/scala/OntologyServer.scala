@@ -10,19 +10,20 @@ import javax.ws.rs.core.MediaType
 import com.clarkparsia.pellet.owlapiv3.{PelletReasoner, PelletReasonerFactory}
 import com.hp.hpl.jena.query.{QueryExecutionFactory, QueryFactory, ResultSet, ResultSetFormatter}
 import com.hp.hpl.jena.rdf.model.{InfModel, ModelFactory}
-import model._
+import model.v5._
 import org.semanticweb.owlapi.model.{IRI, OWLNamedIndividual}
 import org.semanticweb.owlapi.reasoner.{InferenceType, NodeSet}
 import org.semanticweb.owlapi.search.{EntitySearcher, Searcher}
 import uk.ac.manchester.cs.owl.owlapi.OWLClassImpl
 //import com.yoshtec.owl.marshall.{Marshaller, UnMarshaller}
 //import de.derivo.sparqldlapi.{Query, QueryEngine, QueryResult}
-//import model._
+
 import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.model.{OWLOntology, OWLOntologyManager}
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.util.control.Breaks._
+import scala.collection.JavaConverters._
 
 @Singleton
 @Path("/rest")
@@ -30,7 +31,7 @@ class OntologyServer {
 
   var logger: Logger = _
 
-  val ONTOLOGY_LOCATION = "ontology/stroke_v4.owl"
+  val ONTOLOGY_LOCATION = "ontology/stroke_v5.owl"
   val INDIVIDUALS_LOCATION = "ontology/individuals.owl"
 
   val INDIVIDUALS_IRI = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals"
@@ -60,10 +61,8 @@ class OntologyServer {
 
     logger.info("Starting Ontology Server.")
 
-    //val autoIRIMapper = new AutoIRIMapper(new File("ontology"), false)
 
     manager = OWLManager.createOWLOntologyManager()
-    //manager.addIRIMapper(autoIRIMapper)
 
    /* marshaller = new Marshaller()
 
@@ -77,31 +76,60 @@ class OntologyServer {
 
     loadQueryExecutor()
 
+
+
     //loadIndividuals()
+  }
 
-    val result = executeQuery(Queries.calculatePropertiesWeights("luquinhas"))
+  def executeQueryAndReturnInt(query: String): Int = {
+    val queryResult = executeQuery(query)
+    val result = getResultFromMap(getResultMapFromQuery(queryResult))
+    result.get.toInt
+  }
 
-    logger.info(ResultSetFormatter.asText(result))
+  def getResultFromMap(map: Map[String, String]): Option[String] = {
+    map.get(Queries.RESULT)
+  }
 
-    //val s = ResultSetFormatter.toList(result)
+  def getResultListFromQuery(result: ResultSet): List[String] = {
+    var list = List[String]()
 
-    logger.info("B")
+    result.asScala.foreach {
+      solution => solution.varNames().asScala.foreach
+      {
+        variable =>  list = solution.getLiteral(variable).getString :: list
+      }
+    }
+
+    list
+  }
+
+  def getResultMapFromQuery(result: ResultSet): Map[String, String] = {
+    var map = Map[String, String]()
+
+    result.asScala.foreach {
+      solution => solution.varNames().asScala.foreach
+      {
+        variable => map += (variable -> solution.getLiteral(variable).getString)
+      }
+    }
+
+    map
   }
 
   def executeQuery(query: String): ResultSet = {
-    logger.info(query)
+    logger.info("\n" + query)
+
+    val startTime = System.currentTimeMillis()
 
     val q = QueryFactory.create(query)
     val queryExecution = QueryExecutionFactory.create(q, model)
 
-    try
-    {
-      queryExecution.execSelect()
-    }
-    finally
-    {
-      //queryExecution.close()
-    }
+    val select = queryExecution.execSelect()
+
+    logger.info("Query took: "+ (System.currentTimeMillis() - startTime) + " ms")
+
+    select
   }
 
   def loadQueryExecutor(): Unit = {
@@ -125,7 +153,8 @@ class OntologyServer {
 
       //SPARQL or any other way to query
       // the ontology are equivalent, i.e., through calls to the reasoner.
-      val p = new PersonImpl()
+
+      /*val p = new PersonImpl()
 
       val expression = createClassExpression(p.getIRI)
       val instances = reasoner.getInstances(expression, false)
@@ -136,7 +165,7 @@ class OntologyServer {
       val propers = Searcher.values(ontology.get.getDataPropertyAssertionAxioms(ind), null)
       val map = EntitySearcher.getDataPropertyValues(ind, ontology.get)
 
-      printNodeSet(instances)
+      printNodeSet(instances)*/
 
 
 
@@ -154,7 +183,6 @@ class OntologyServer {
 //        }
 //      }
 
-      logger.info("a")
       //val ind = reasoner.getInstances()
       //com.clarkparsia.pellet.sparqldl.model.Query
     }
@@ -165,9 +193,9 @@ class OntologyServer {
     new OWLClassImpl(IRI.create(iri))
   }
 
-  def createClassExpression(thing: Thing): OWLClassImpl = {
+/*  def createClassExpression(thing: Thing): OWLClassImpl = {
     new OWLClassImpl(IRI.create(thing.getIRI))
-  }
+  }*/
 
   def getIndividualFromList(name: String, list: List[OWLNamedIndividual]): OWLNamedIndividual = {
     var individual: OWLNamedIndividual = null
@@ -289,6 +317,16 @@ class OntologyServer {
     Response.status(201).entity("Individual successfully added").build();
   }*/
 
+  @GET
+  @Path("/getRiskLevel")
+  @Produces(Array[String](MediaType.TEXT_PLAIN))
+  def getRiskLevel(@QueryParam("name") name: String): String = {
+    val weights = executeQueryAndReturnInt(Queries.calculatePropertiesWeights(name))
+    val age =  executeQueryAndReturnInt(Queries.calculateAge(name))
+    val total = weights + age
+    RiskCalculator.calculateRiskPercentageRounded(total)
+  }
+
 /*  @GET
   @Path("/getIndividual")
   @Produces(Array[String](MediaType.APPLICATION_JSON))
@@ -309,34 +347,23 @@ class OntologyServer {
   @GET
   @Path("/exampleIndividual")
   @Produces(Array[String](MediaType.APPLICATION_JSON))
-  def exampleIndividual(): PersonImpl = {
+  def exampleIndividual(): Unit = {
 
     val person = new PersonImpl()
 
-    val c = new College_diplomaImpl()
+    person.setHasAge(List[Integer](65).asJava)
 
-    //person.setHasAge(62)
-    //person.setHasSex(new MaleImpl())
-    //person.setName("ExamplePerson")
+    val factory = new ObjectFactory
+    factory.createPerson()
 
-    var riskFactors = new java.util.ArrayList[RiskFactor]()
+    //person.setHasRiskFactor()
 
-    val education = new High_school_diploma_and_some_collegeImpl()
-    val smoker = new SmokerImpl()
-   // val drinker = new DrinkerImpl(new Seven_or_more_drinks_per_weekImpl())
-    val inactive = new InactiveImpl()
-    //val anger = new Critical_of_othersImpl(new Often_or_alwaysImpl())
-    new DiabetesImpl()
-
-    riskFactors.add(education)
-    riskFactors.add(smoker)
-    //riskFactors.add(drinker)
-    riskFactors.add(inactive)
-    //riskFactors.add(anger)
-
-    person.setHasRiskFactor(riskFactors)
-
-    person
+    /*
+    *  a) riskFactor.fromSPARQL...
+    *  b) queries all risk factors
+    *  c) riskFactor.getIRI
+    *
+    * */
   }
 
   /*def processQuery(queryString: String) : Option[QueryResult] = {

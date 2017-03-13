@@ -432,15 +432,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#College_diploma -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#College_diploma">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Education"/>
-        <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasWeight>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Congestive_heart_failure -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Congestive_heart_failure">
@@ -487,15 +478,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Fearful">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Female -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Female">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sex"/>
-        <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasWeight>
     </owl:NamedIndividual>
     
 
@@ -554,20 +536,25 @@
     
 
 
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#John -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#John">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Critical_of_others"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Diabetes"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Inactive"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Seven_or_more_drinks_per_week"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoker"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">62</hasAge>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Male -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Male">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sex"/>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasWeight>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Never_smoked -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Never_smoked">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoking_status"/>
-        <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasWeight>
     </owl:NamedIndividual>
     
 
@@ -595,15 +582,6 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#One_or_two_times_per_week">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Times_per_week"/>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasWeight>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#One_to_six_drinks_per_week -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#One_to_six_drinks_per_week">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinks_per_week"/>
-        <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasWeight>
     </owl:NamedIndividual>
     
 
@@ -640,24 +618,6 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoker">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoking_status"/>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasWeight>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sometimes_or_never -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sometimes_or_never">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Adverb"/>
-        <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasWeight>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Three_or_more_times_per_week -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Three_or_more_times_per_week">
-        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Times_per_week"/>
-        <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasWeight>
     </owl:NamedIndividual>
     
 
