@@ -12,7 +12,7 @@ import scala.math.{exp, pow}
 object RiskCalculator extends App {
 
 
-
+  testRiskCalculator
   // 1 - (0.99982 ^ exp(score/10))
   private def calculateRiskFormula(score: Double): Double = {
     val division = score / 10
@@ -32,7 +32,7 @@ object RiskCalculator extends App {
   }
 
   private def testRiskCalculator(): Unit = {
-    val list = List(0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110)
+    val list = List(0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 62, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110)
 
     list.foreach(i => println(i + ": " + formatWithoutScientificNotation(calculateRiskFormula(i))))
     list.foreach(i => println(i + ": " + calculateRiskFormula(i)))

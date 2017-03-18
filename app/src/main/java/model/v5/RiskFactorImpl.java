@@ -11,7 +11,7 @@ import com.yoshtec.owl.annotations.OwlIndividualId;
 @OwlClassImplementation({
     RiskFactor.class
 })
-public abstract class RiskFactorImpl
+public class RiskFactorImpl
     implements RiskFactor
 {
 

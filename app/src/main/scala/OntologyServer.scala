@@ -1,19 +1,20 @@
 /**
   * Created by dossluca on 27/02/2017.
   */
-import java.io.File
+import java.io.{File, FileWriter}
+import java.util.HashSet
 import javax.annotation.PostConstruct
 import javax.inject.Singleton
 import javax.ws.rs._
-import javax.ws.rs.core.MediaType
+import javax.ws.rs.core.{MediaType, Response}
 
 import com.clarkparsia.pellet.owlapiv3.{PelletReasoner, PelletReasonerFactory}
-import com.hp.hpl.jena.query.{QueryExecutionFactory, QueryFactory, ResultSet, ResultSetFormatter}
+import com.hp.hpl.jena.query.{QueryExecutionFactory, QueryFactory, ResultSet}
 import com.hp.hpl.jena.rdf.model.{InfModel, ModelFactory}
+import com.yoshtec.owl.marshall.{Marshaller, UnMarshaller}
 import model.v5._
 import org.semanticweb.owlapi.model.{IRI, OWLNamedIndividual}
 import org.semanticweb.owlapi.reasoner.{InferenceType, NodeSet}
-import org.semanticweb.owlapi.search.{EntitySearcher, Searcher}
 import uk.ac.manchester.cs.owl.owlapi.OWLClassImpl
 //import com.yoshtec.owl.marshall.{Marshaller, UnMarshaller}
 //import de.derivo.sparqldlapi.{Query, QueryEngine, QueryResult}
@@ -22,8 +23,8 @@ import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.model.{OWLOntology, OWLOntologyManager}
 import org.slf4j.{Logger, LoggerFactory}
 
-import scala.util.control.Breaks._
 import scala.collection.JavaConverters._
+import scala.util.control.Breaks._
 
 @Singleton
 @Path("/rest")
@@ -39,11 +40,11 @@ class OntologyServer {
 
   var manager: OWLOntologyManager = _
 
-  //var marshaller: Marshaller = _
+  var marshaller: Marshaller = _
 
-  //var unmarshaller: UnMarshaller = _
+  var unmarshaller: UnMarshaller = _
 
-  //var individuals: HashSet[PersonImpl] = new HashSet[PersonImpl]
+  var individuals: HashSet[PersonImpl] = new HashSet[PersonImpl]
 
   var strokeOntology: Option[OWLOntology] = None
   var individualsOntology: Option[OWLOntology] = None
@@ -61,13 +62,14 @@ class OntologyServer {
 
     logger.info("Starting Ontology Server.")
 
-
     manager = OWLManager.createOWLOntologyManager()
 
-   /* marshaller = new Marshaller()
+    marshaller = new Marshaller()
 
     unmarshaller = new UnMarshaller()
-    unmarshaller.registerClass(classOf[PersonImpl])*/
+    //unmarshaller.registerClass(classOf[RiskFactor])
+    //unmarshaller.registerClass(classOf[PersonImpl])
+    unmarshaller.registerClass(classOf[RiskFactorImpl])
 
     strokeOntology = loadOntology(ONTOLOGY_LOCATION)
     individualsOntology = loadOntology(INDIVIDUALS_LOCATION)
@@ -76,9 +78,16 @@ class OntologyServer {
 
     loadQueryExecutor()
 
+    //individuals = loadAllIndividuals[ThingImpl]()
+    loadAllIndividuals[ThingImpl]()
+  }
 
-
-    //loadIndividuals()
+  def loadAllIndividuals[T](): HashSet[T] =
+  {
+    val individualsFromStrokeOntology = loadIndividualsWithType[T](strokeOntology)
+//    val individualsFromIndividualsOntology = loadIndividuals(individualsOntology)
+//    individualsFromStrokeOntology.addAll(individualsFromIndividualsOntology)
+    individualsFromStrokeOntology
   }
 
   def executeQueryAndReturnInt(query: String): Int = {
@@ -161,7 +170,7 @@ class OntologyServer {
 
       val list = getIndividualsFromNodeSet(instances)
 
-      val ind = getIndividualFromList("luquinhas", list)
+      val ind = getOWLIndividualFromList("luquinhas", list)
       val propers = Searcher.values(ontology.get.getDataPropertyAssertionAxioms(ind), null)
       val map = EntitySearcher.getDataPropertyValues(ind, ontology.get)
 
@@ -197,7 +206,7 @@ class OntologyServer {
     new OWLClassImpl(IRI.create(thing.getIRI))
   }*/
 
-  def getIndividualFromList(name: String, list: List[OWLNamedIndividual]): OWLNamedIndividual = {
+  def getOWLIndividualFromList(name: String, list: List[OWLNamedIndividual]): OWLNamedIndividual = {
     var individual: OWLNamedIndividual = null
 
     breakable {
@@ -264,43 +273,41 @@ class OntologyServer {
     ontology
   }
 
- def loadIndividuals(): Unit = {
+ def loadIndividualsWithType[T](ontology: Option[OWLOntology]): HashSet[T] = {
 
-    //val ontology = loadOntology(INDIVIDUALS_LOCATION)
+    var list = new HashSet[T]()
 
-    //manager.setOntologyDocumentIRI(ontology, IRI.create(INDIVIDUALS_IRI))
-
-    if (!individualsOntology.isDefined) {
-      logger.info("Cannot load individuals: individuals ontology not loaded")
-      return
+    if (!ontology.isDefined) {
+      logger.info("Cannot load individuals: ontology " + ontology + " not loaded")
+      return list
     }
 
-    logger.info("Loading individuals: " + individualsOntology)
+    logger.info("Loading individuals: " + ontology)
 
-    individualsOntology.get
-    //individuals = unmarshaller.unmarshal(individualsOntology.get).asInstanceOf[HashSet[PersonImpl]]
+    list = unmarshaller.unmarshal(ontology.get).asInstanceOf[HashSet[T]]
 
-    //logger.info("Individuals size: " + individuals.size())
+    logger.info("Individuals size: " + list.size())
 
+    list
     //individuals.forEach(i => logger.info(i.toString))
   }
 
-/*   @GET
+   @GET
    @Path("/saveIndividuals")
    def saveIndividuals(): Unit = {
 
-     logger.info("Saving individuals. size: " + individuals.size())
+     logger.info("Saving all individuals. size: " + individuals.size())
 
      //individuals.forEach(i => logger.info(i.toString))
 
      val writer = new FileWriter(INDIVIDUALS_LOCATION)
 
-     //marshaller.marshal(individuals, IRI.create(INDIVIDUALS_IRI), writer, true)
+     marshaller.marshal(individuals, IRI.create(INDIVIDUALS_IRI), writer, true)
 
      writer.close()
-   }*/
+   }
 
-  /*@POST
+  @POST
   @Path("/addIndividual")
   @Consumes(Array[String](MediaType.APPLICATION_JSON))
   def addIndividual(person: PersonImpl): Response = {
@@ -308,14 +315,14 @@ class OntologyServer {
 
     logger.info(person.toString)
 
-    //person.setIndividualName(ONTOLOGY_IRI + "#" + person.getName)
+    person.setName(ONTOLOGY_IRI + "#" + person.getName)
 
-    //individuals.add(person)
+    individuals.add(person)
 
     saveIndividuals()
 
     Response.status(201).entity("Individual successfully added").build();
-  }*/
+  }
 
   @GET
   @Path("/getRiskLevel")
@@ -327,12 +334,12 @@ class OntologyServer {
     RiskCalculator.calculateRiskPercentageRounded(total)
   }
 
-/*  @GET
+  @GET
   @Path("/getIndividual")
   @Produces(Array[String](MediaType.APPLICATION_JSON))
   def getIndividual(@QueryParam("name") name:String): PersonImpl = {
 
-    var individual: PersonImpl = null
+    var individual: PersonImpl = new PersonImpl()
 
     for (person: PersonImpl <- individuals.asScala) {
       if (Utils.extractNameFromURI(person.getName).equals(name)) {
@@ -342,7 +349,7 @@ class OntologyServer {
     }
 
     individual
-  }*/
+  }
 
   @GET
   @Path("/exampleIndividual")
@@ -354,7 +361,8 @@ class OntologyServer {
     person.setHasAge(List[Integer](65).asJava)
 
     val factory = new ObjectFactory
-    factory.createPerson()
+
+    //person.setHas
 
     //person.setHasRiskFactor()
 

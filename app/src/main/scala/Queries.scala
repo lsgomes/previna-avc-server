@@ -84,7 +84,5 @@ object Queries {
 
   }
 
-  def ge
-
   // query(?x, ?y) :- PropertyValue(?x, hasAge, ?y).
 }
