@@ -7,7 +7,7 @@ import com.yoshtec.owl.annotations.OwlIndividualId;
 @OwlClassImplementation({
     Thing.class
 })
-public abstract class ThingImpl
+public class ThingImpl
     implements Thing
 {
 

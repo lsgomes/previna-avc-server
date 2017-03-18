@@ -44,7 +44,7 @@ class OntologyServer {
 
   var unmarshaller: UnMarshaller = _
 
-  var individuals: HashSet[PersonImpl] = new HashSet[PersonImpl]
+  var individuals: HashSet[Thing] = new HashSet[Thing]
 
   var strokeOntology: Option[OWLOntology] = None
   var individualsOntology: Option[OWLOntology] = None
@@ -67,9 +67,15 @@ class OntologyServer {
     marshaller = new Marshaller()
 
     unmarshaller = new UnMarshaller()
-    //unmarshaller.registerClass(classOf[RiskFactor])
-    //unmarshaller.registerClass(classOf[PersonImpl])
+    unmarshaller.registerClass(classOf[PersonImpl])
     unmarshaller.registerClass(classOf[RiskFactorImpl])
+    unmarshaller.registerClass(classOf[Alcohol_consumptionImpl])
+    unmarshaller.registerClass(classOf[EducationImpl])
+    unmarshaller.registerClass(classOf[Heart_diseaseImpl])
+    unmarshaller.registerClass(classOf[Physical_activityImpl])
+    unmarshaller.registerClass(classOf[Psychosocial_factorsImpl])
+    unmarshaller.registerClass(classOf[SexImpl])
+    unmarshaller.registerClass(classOf[Smoking_statusImpl])
 
     strokeOntology = loadOntology(ONTOLOGY_LOCATION)
     individualsOntology = loadOntology(INDIVIDUALS_LOCATION)
@@ -78,8 +84,7 @@ class OntologyServer {
 
     loadQueryExecutor()
 
-    //individuals = loadAllIndividuals[ThingImpl]()
-    loadAllIndividuals[ThingImpl]()
+    individuals = loadAllIndividuals[Thing]()
   }
 
   def loadAllIndividuals[T](): HashSet[T] =
@@ -223,6 +228,7 @@ class OntologyServer {
     individual
   }
 
+
   def printNodeSet(nodeSet: NodeSet[OWLNamedIndividual]): Unit = {
     nodeSet.getNodes.forEach(n => n.getEntities.forEach(e => logger.info(e.getIRI.toString)))
   }
@@ -335,33 +341,47 @@ class OntologyServer {
   }
 
   @GET
-  @Path("/getIndividual")
+  @Path("/getPerson")
   @Produces(Array[String](MediaType.APPLICATION_JSON))
-  def getIndividual(@QueryParam("name") name:String): PersonImpl = {
+  def getPerson(@QueryParam("name") name: String): PersonImpl = {
+    getIndividualFromList[PersonImpl](name)
+  }
 
-    var individual: PersonImpl = new PersonImpl()
 
-    for (person: PersonImpl <- individuals.asScala) {
-      if (Utils.extractNameFromURI(person.getName).equals(name)) {
-        logger.info("Getting individual: " + person.toString)
-        individual = person
-      }
+  def getIndividualFromList[T](name: String): T = {
+    individuals.forEach {
+      i =>
+        if (Utils.extractNameFromURI(i.getName).equals(name)) {
+          logger.info("Getting individual: " + i.toString)
+          return i.asInstanceOf[T]
+        }
     }
 
-    individual
+    logger.error("Not possible to get individual: " + name + " . Returning null")
+
+    asInstanceOf[T]
   }
 
   @GET
-  @Path("/exampleIndividual")
+  @Path("/examplePerson")
   @Produces(Array[String](MediaType.APPLICATION_JSON))
-  def exampleIndividual(): Unit = {
+  def examplePerson(): PersonImpl = {
 
     val person = new PersonImpl()
 
     person.setHasAge(List[Integer](65).asJava)
 
-    val factory = new ObjectFactory
+    var riskFactors = List[RiskFactor]()
+    riskFactors = riskFactors :+ getIndividualFromList[RiskFactor]("Drinker")
+    riskFactors = riskFactors :+ getIndividualFromList[RiskFactor]("Smoker")
 
+
+
+    person.setHasRiskFactor(riskFactors.asJava)
+
+    person.setName(ONTOLOGY_IRI + "#" + "john2")
+
+    person
     //person.setHas
 
     //person.setHasRiskFactor()
