@@ -1,4 +1,4 @@
-import org.eclipse.jetty.server.Server
+import org.eclipse.jetty.server.{Server, ServerConnector}
 import org.eclipse.jetty.servlet.ServletContextHandler
 import org.glassfish.jersey.servlet.ServletContainer
 import org.slf4j.LoggerFactory
@@ -13,7 +13,14 @@ object JettyServer extends App {
   val context = new ServletContextHandler(ServletContextHandler.SESSIONS)
   context.setContextPath("/")
 
-  val server = new Server(8081)
+  val server = new Server()
+
+  val connector = new ServerConnector(server)
+  connector.setPort(8081)
+  connector.setHost("192.168.42.1")
+
+  server.addConnector(connector)
+
   server.setHandler(context)
 
   val servlet = context.addServlet(classOf[ServletContainer], "/*")
