@@ -12,7 +12,7 @@ import com.clarkparsia.pellet.owlapiv3.{PelletReasoner, PelletReasonerFactory}
 import com.hp.hpl.jena.query.{QueryExecutionFactory, QueryFactory, ResultSet}
 import com.hp.hpl.jena.rdf.model.{InfModel, ModelFactory}
 import com.yoshtec.owl.marshall.{Marshaller, UnMarshaller}
-import model.v5._
+import model.v6._
 import org.semanticweb.owlapi.model.{IRI, OWLNamedIndividual}
 import org.semanticweb.owlapi.reasoner.{InferenceType, NodeSet}
 import uk.ac.manchester.cs.owl.owlapi.OWLClassImpl
@@ -32,7 +32,7 @@ class OntologyServer {
 
   var logger: Logger = _
 
-  val ONTOLOGY_LOCATION = "ontology/stroke_v5.owl"
+  val ONTOLOGY_LOCATION = "ontology/stroke_v6.owl"
   val INDIVIDUALS_LOCATION = "ontology/individuals.owl"
 
   val INDIVIDUALS_IRI = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals"
@@ -76,6 +76,13 @@ class OntologyServer {
     unmarshaller.registerClass(classOf[Psychosocial_factorsImpl])
     unmarshaller.registerClass(classOf[SexImpl])
     unmarshaller.registerClass(classOf[Smoking_statusImpl])
+    unmarshaller.registerClass(classOf[DeviceImpl])
+    unmarshaller.registerClass(classOf[SensorImpl])
+    unmarshaller.registerClass(classOf[Mobile_deviceImpl])
+    unmarshaller.registerClass(classOf[WearableImpl])
+
+
+
 
     strokeOntology = loadOntology(ONTOLOGY_LOCATION)
     individualsOntology = loadOntology(INDIVIDUALS_LOCATION)
@@ -321,7 +328,7 @@ class OntologyServer {
 
     logger.info(person.toString)
 
-    person.setName(ONTOLOGY_IRI + "#" + person.getName)
+    person.setUri(ONTOLOGY_IRI + "#" + person.getUri)
 
     individuals.add(person)
 
@@ -351,7 +358,7 @@ class OntologyServer {
   def getIndividualFromList[T](name: String): T = {
     individuals.forEach {
       i =>
-        if (Utils.extractNameFromURI(i.getName).equals(name)) {
+        if (Utils.extractNameFromURI(i.getUri).equals(name)) {
           logger.info("Getting individual: " + i.toString)
           return i.asInstanceOf[T]
         }
@@ -369,7 +376,7 @@ class OntologyServer {
 
     val person = new PersonImpl()
 
-    person.setHasAge(List[Integer](65).asJava)
+    person.setHasAge(65)
 
     var riskFactors = List[RiskFactor]()
     riskFactors = riskFactors :+ getIndividualFromList[RiskFactor]("Drinker")
@@ -379,7 +386,18 @@ class OntologyServer {
 
     person.setHasRiskFactor(riskFactors.asJava)
 
-    person.setName(ONTOLOGY_IRI + "#" + "john2")
+    person.setUri(ONTOLOGY_IRI + "#" + "john2")
+
+    person.setHasRiskLevel(65.0)
+
+    person.setHasPassword("lucas1")
+    person.setHasUserName("john2")
+
+    val factory = new ObjectFactory
+    val device = factory.createMobile_device(ONTOLOGY_IRI + "#" + "iPhone")
+    device.setHasSensor(List[Sensor](getIndividualFromList[Sensor]("Gyroscope")).asJava)
+    person.setHasDevice(List[Device](device).asJava)
+
 
     person
     //person.setHas

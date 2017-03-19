@@ -12,16 +12,16 @@ public class CodegenMain {
         Codegen codegen = new Codegen();
 
         // the java package to create the classes in
-        codegen.setJavaPackageName("model.v5");
+        codegen.setJavaPackageName("model.v6");
 
         codegen.setOntologyIri("http://www.semanticweb.org/lucas/ontologies/2016/9/stroke");
-        codegen.setOntologyPhysicalIri( new File("ontology/stroke_v5.owl").toURI().toString());
+        codegen.setOntologyPhysicalIri( new File("ontology/stroke_v6.owl").toURI().toString());
 
         codegen.setJavaSourceFolder(new File("ov3test"));
 
         // will generate "indName" String fields with @OwlIndividualId annotation and implementations
         codegen.setGenerateIdField(true);
-        codegen.setIdFieldName("name");
+        codegen.setIdFieldName("id");
 
         // generate code
         codegen.genCode();
