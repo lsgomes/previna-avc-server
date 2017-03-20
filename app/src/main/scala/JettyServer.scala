@@ -17,7 +17,7 @@ object JettyServer extends App {
 
   val connector = new ServerConnector(server)
   connector.setPort(8081)
-  connector.setHost("192.168.42.1")
+  connector.setHost("192.168.25.49")
 
   server.addConnector(connector)
 

@@ -23,7 +23,7 @@ object RiskCalculator extends App {
 
   private def formatWithoutScientificNotation(calculatedRisk: Double): String = {
     val decimalFormat = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH))
-    decimalFormat.setMaximumFractionDigits(3) // 340 = DecimalFormat.DOUBLE_FRACTION_DIGITS
+    decimalFormat.setMaximumFractionDigits(1) // 340 = DecimalFormat.DOUBLE_FRACTION_DIGITS
     decimalFormat.format(calculatedRisk)
   }
 
