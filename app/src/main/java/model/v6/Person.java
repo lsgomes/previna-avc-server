@@ -50,14 +50,14 @@ public interface Person
      * @return
      *     a List of hasRiskFactor
      */
-    public List<RiskFactor> getHasRiskFactor();
+    public List<RiskFactorImpl> getHasRiskFactor();
 
     /**
      * OWL Object Property:</br>
      * <code>http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskFactor</code>
      * 
      */
-    public void setHasRiskFactor(List<RiskFactor> hasRiskFactor);
+    public void setHasRiskFactor(List<RiskFactorImpl> hasRiskFactor);
 
     /**
      * OWL Data Property:</br>

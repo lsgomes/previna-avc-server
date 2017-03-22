@@ -28,7 +28,7 @@ public class RiskFactorImpl
      * 
      */
     @OwlIndividualId
-    protected String id;
+    protected String uri;
 
     public RiskFactorImpl() {
     }
@@ -38,9 +38,15 @@ public class RiskFactorImpl
      * 
      */
     @OwlIndividualId
-    public RiskFactorImpl(String id) {
-        this.id = id;
+    public RiskFactorImpl(String uri) {
+        this.uri = uri;
     }
+
+    public RiskFactorImpl(String uri, Integer hasWeight) {
+        this.uri = uri;
+        this.hasWeight = hasWeight;
+    }
+
 
     /**
      * {@inheritDoc}
@@ -63,7 +69,7 @@ public class RiskFactorImpl
      * 
      */
     public String getUri() {
-        return id;
+        return uri;
     }
 
     /**
@@ -71,7 +77,7 @@ public class RiskFactorImpl
      * 
      */
     public void setUri(String uri) {
-        this.id = uri;
+        this.uri = uri;
     }
 
 }

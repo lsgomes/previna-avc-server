@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.databind.ObjectMapper
 import org.eclipse.jetty.server.{Server, ServerConnector}
 import org.eclipse.jetty.servlet.ServletContextHandler
 import org.glassfish.jersey.servlet.ServletContainer
@@ -25,13 +26,13 @@ object JettyServer extends App {
 
   val servlet = context.addServlet(classOf[ServletContainer], "/*")
   servlet.setInitOrder(0)
-
+  //ObjectMapper
   // Tells the Jersey Servlet which REST service/class to load.
   servlet.setInitParameter(
     "jersey.config.server.provider.classnames",
     classOf[OntologyServer].getCanonicalName())
 
-  //servlet.setInitParameter("com.sun.jersey.api.json.POJOMappingFeature", "true")
+  servlet.setInitParameter("com.sun.jersey.api.json.POJOMappingFeature", "true")
 
   try {
     server.start();

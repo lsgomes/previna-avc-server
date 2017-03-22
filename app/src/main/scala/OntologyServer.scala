@@ -97,8 +97,9 @@ class OntologyServer {
   def loadAllIndividuals[T](): HashSet[T] =
   {
     val individualsFromStrokeOntology = loadIndividualsWithType[T](strokeOntology)
-//    val individualsFromIndividualsOntology = loadIndividuals(individualsOntology)
-//    individualsFromStrokeOntology.addAll(individualsFromIndividualsOntology)
+    // TODO: Duplicados?
+    val individualsFromIndividualsOntology = loadIndividualsWithType[T](individualsOntology)
+    individualsFromStrokeOntology.addAll(individualsFromIndividualsOntology)
     individualsFromStrokeOntology
   }
 
@@ -168,7 +169,6 @@ class OntologyServer {
       reasoner.prepareReasoner()
       reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS,
         InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.DATA_PROPERTY_HIERARCHY);
-
 
       //reasoner.getKB.printClassTree()
 
@@ -337,6 +337,34 @@ class OntologyServer {
     Response.status(201).entity("Individual successfully added").build();
   }
 
+  @POST
+  @Path("/calculateRiskForPerson")
+  @Consumes(Array[String](MediaType.APPLICATION_JSON))
+  @Produces(Array[String](MediaType.TEXT_PLAIN))
+  def calculateRiskForPerson(person: PersonImpl): String = {
+    logger.info("Checking if individual with name: " + person.getUri + " exists")
+
+    logger.info(person.toString)
+
+    person.setUri(ONTOLOGY_IRI + "#" + person.getUri)
+
+    val personFromServer = getIndividualFromList[PersonImpl](person.getUri)
+
+    if (personFromServer != null) {
+      logger.info("Removing individual with name: " + person.getHasUserName + " from list.")
+      individuals.remove(personFromServer)
+    }
+
+    logger.info("Adding individual with name: " + person.getHasUserName + " to list.")
+    individuals.add(person)
+
+    saveIndividuals()
+
+    val risk = getRiskLevel(person.getHasUserName)
+
+    risk
+  }
+
   @GET
   @Path("/getRiskLevel")
   @Produces(Array[String](MediaType.TEXT_PLAIN))
@@ -356,6 +384,7 @@ class OntologyServer {
 
 
   def getIndividualFromList[T](name: String): T = {
+
     individuals.forEach {
       i =>
         if (Utils.extractNameFromURI(i.getUri).equals(name)) {
@@ -366,7 +395,7 @@ class OntologyServer {
 
     logger.error("Not possible to get individual: " + name + " . Returning null")
 
-    asInstanceOf[T]
+    null.asInstanceOf[T]
   }
 
   @GET
@@ -378,9 +407,9 @@ class OntologyServer {
 
     person.setHasAge(65)
 
-    var riskFactors = List[RiskFactor]()
-    riskFactors = riskFactors :+ getIndividualFromList[RiskFactor]("Drinker")
-    riskFactors = riskFactors :+ getIndividualFromList[RiskFactor]("Smoker")
+    var riskFactors = List[RiskFactorImpl]()
+    riskFactors = riskFactors :+ getIndividualFromList[RiskFactorImpl]("Drinker")
+    riskFactors = riskFactors :+ getIndividualFromList[RiskFactorImpl]("Smoker")
 
 
 

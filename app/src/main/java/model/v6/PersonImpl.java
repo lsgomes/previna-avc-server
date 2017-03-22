@@ -33,7 +33,7 @@ public class PersonImpl
      */
     @OwlObjectProperty(uri = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskFactor")
     @OwlDataType(uri = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor")
-    protected List<RiskFactor> hasRiskFactor;
+    protected List<RiskFactorImpl> hasRiskFactor;
     /**
      * OWL Data Property:</br>
      * <code>http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskLevel</code>
@@ -108,9 +108,9 @@ public class PersonImpl
      * {@inheritDoc}
      * 
      */
-    public List<RiskFactor> getHasRiskFactor() {
+    public List<RiskFactorImpl> getHasRiskFactor() {
         if (hasRiskFactor == null) {
-            hasRiskFactor = new ArrayList<RiskFactor>();
+            hasRiskFactor = new ArrayList<RiskFactorImpl>();
         }
         return hasRiskFactor;
     }
@@ -119,7 +119,7 @@ public class PersonImpl
      * {@inheritDoc}
      * 
      */
-    public void setHasRiskFactor(List<RiskFactor> hasRiskFactor) {
+    public void setHasRiskFactor(List<RiskFactorImpl> hasRiskFactor) {
         this.hasRiskFactor = hasRiskFactor;
     }
 
