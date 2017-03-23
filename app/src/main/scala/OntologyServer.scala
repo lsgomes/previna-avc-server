@@ -2,7 +2,8 @@
   * Created by dossluca on 27/02/2017.
   */
 import java.io.{File, FileWriter}
-import java.util.HashSet
+import java.util
+import java.util.{Collection, HashSet}
 import javax.annotation.PostConstruct
 import javax.inject.Singleton
 import javax.ws.rs._
@@ -33,9 +34,7 @@ class OntologyServer {
   var logger: Logger = _
 
   val ONTOLOGY_LOCATION = "ontology/stroke_v6.owl"
-  val INDIVIDUALS_LOCATION = "ontology/individuals.owl"
 
-  val INDIVIDUALS_IRI = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke_individuals"
   val ONTOLOGY_IRI = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke"
 
   var manager: OWLOntologyManager = _
@@ -44,10 +43,10 @@ class OntologyServer {
 
   var unmarshaller: UnMarshaller = _
 
-  var individuals: HashSet[Thing] = new HashSet[Thing]
+  //var individuals: HashSet[Thing] = new HashSet[Thing]
+  var individuals: Collection[Object] = _
 
-  var strokeOntology: Option[OWLOntology] = None
-  var individualsOntology: Option[OWLOntology] = None
+  var ontology: Option[OWLOntology] = None
 
   var reasoner: PelletReasoner = _
 
@@ -81,26 +80,13 @@ class OntologyServer {
     unmarshaller.registerClass(classOf[Mobile_deviceImpl])
     unmarshaller.registerClass(classOf[WearableImpl])
 
-
-
-
-    strokeOntology = loadOntology(ONTOLOGY_LOCATION)
-    individualsOntology = loadOntology(INDIVIDUALS_LOCATION)
+    ontology = loadOntology(ONTOLOGY_LOCATION)
 
     loadReasoner()
 
     loadQueryExecutor()
 
-    individuals = loadAllIndividuals[Thing]()
-  }
-
-  def loadAllIndividuals[T](): HashSet[T] =
-  {
-    val individualsFromStrokeOntology = loadIndividualsWithType[T](strokeOntology)
-    // TODO: Duplicados?
-    val individualsFromIndividualsOntology = loadIndividualsWithType[T](individualsOntology)
-    individualsFromStrokeOntology.addAll(individualsFromIndividualsOntology)
-    individualsFromStrokeOntology
+    individuals = loadIndividuals(ontology)
   }
 
   def executeQueryAndReturnInt(query: String): Int = {
@@ -160,8 +146,6 @@ class OntologyServer {
   }
 
   def loadReasoner(): Unit = {
-
-    val ontology = strokeOntology
 
     if (ontology.isDefined) {
 
@@ -286,23 +270,20 @@ class OntologyServer {
     ontology
   }
 
- def loadIndividualsWithType[T](ontology: Option[OWLOntology]): HashSet[T] = {
-
-    var list = new HashSet[T]()
-
-    if (!ontology.isDefined) {
-      logger.info("Cannot load individuals: ontology " + ontology + " not loaded")
-      return list
-    }
+  def loadIndividuals(ontology: Option[OWLOntology]): Collection[Object] = {
 
     logger.info("Loading individuals: " + ontology)
 
-    list = unmarshaller.unmarshal(ontology.get).asInstanceOf[HashSet[T]]
+    if (!ontology.isDefined) {
+      logger.info("Cannot load individuals: ontology " + ontology + " not loaded. Returning empty hash set of individuals")
+      return new HashSet
+    }
+
+    val list = unmarshaller.unmarshal(ontology.get)
 
     logger.info("Individuals size: " + list.size())
 
     list
-    //individuals.forEach(i => logger.info(i.toString))
   }
 
    @GET
@@ -311,13 +292,9 @@ class OntologyServer {
 
      logger.info("Saving all individuals. size: " + individuals.size())
 
-     //individuals.forEach(i => logger.info(i.toString))
+     marshaller.marshal(individuals, ontology.get, true)
 
-     val writer = new FileWriter(INDIVIDUALS_LOCATION)
-
-     marshaller.marshal(individuals, IRI.create(INDIVIDUALS_IRI), writer, true)
-
-     writer.close()
+     manager.saveOntology(ontology.get)
    }
 
   @POST
@@ -337,6 +314,13 @@ class OntologyServer {
     Response.status(201).entity("Individual successfully added").build();
   }
 
+  def addOntologyURI(individual: Thing): Unit = {
+    if (!individual.getUri.contains("#")) { // or contains ONTOLOGY_URI
+      val uri = ONTOLOGY_IRI + "#" + individual.getUri
+      individual.setUri(uri)
+    }
+  }
+
   @POST
   @Path("/calculateRiskForPerson")
   @Consumes(Array[String](MediaType.APPLICATION_JSON))
@@ -346,9 +330,13 @@ class OntologyServer {
 
     logger.info(person.toString)
 
-    person.setUri(ONTOLOGY_IRI + "#" + person.getUri)
+    addOntologyURI(person)
 
-    val personFromServer = getIndividualFromList[PersonImpl](person.getUri)
+    person.getHasRiskFactor.forEach {
+      r => addOntologyURI(r)
+    }
+
+    val personFromServer = getIndividualFromList[PersonImpl](person.getHasUserName)
 
     if (personFromServer != null) {
       logger.info("Removing individual with name: " + person.getHasUserName + " from list.")
@@ -387,7 +375,7 @@ class OntologyServer {
 
     individuals.forEach {
       i =>
-        if (Utils.extractNameFromURI(i.getUri).equals(name)) {
+        if (Utils.extractNameFromURI(i.asInstanceOf[Thing].getUri).equals(name)) {
           logger.info("Getting individual: " + i.toString)
           return i.asInstanceOf[T]
         }

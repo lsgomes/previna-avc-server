@@ -3,11 +3,12 @@
      xml:base="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:stroke="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke"/>
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke">
+        <owl:imports rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke"/>
+    </owl:Ontology>
     
 
 
@@ -25,9 +26,9 @@
     <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasDevice -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasDevice">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Device"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -35,9 +36,9 @@
     <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskFactor -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskFactor">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -45,9 +46,9 @@
     <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasSensor -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasSensor">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Device"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Sensor"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -66,10 +67,10 @@
     <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasAge -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasAge">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
     </owl:DatatypeProperty>
     
 
@@ -77,10 +78,10 @@
     <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasPassword -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasPassword">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
     </owl:DatatypeProperty>
     
 
@@ -88,10 +89,10 @@
     <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskLevel -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskLevel">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
     </owl:DatatypeProperty>
     
 
@@ -99,10 +100,10 @@
     <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasUserName -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasUserName">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
     </owl:DatatypeProperty>
     
 
@@ -110,10 +111,10 @@
     <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasWeight -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasWeight">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
     </owl:DatatypeProperty>
     
 
@@ -324,6 +325,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinker">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Alcohol_consumption"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</hasWeight>
     </owl:NamedIndividual>
     
@@ -420,13 +422,13 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#John">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">62</hasAge>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Critical_of_others"/>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinker"/>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#High_school_diploma_and_some_college"/>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Inactive"/>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Male"/>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoker"/>
-        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">62</hasAge>
     </owl:NamedIndividual>
     
 
@@ -498,9 +500,30 @@
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinker"/>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Male"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#ricardo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#ricardo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">65</hasAge>
+        <hasUserName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ricardo</hasUserName>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#teste -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#teste">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12</hasAge>
+        <hasUserName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testeUser</hasUserName>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 3.5.6) http://owlapi.sourceforge.net -->
 
