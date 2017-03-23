@@ -89,14 +89,20 @@ class OntologyServer {
     individuals = loadIndividuals(ontology)
   }
 
-  def executeQueryAndReturnInt(query: String): Int = {
+  def executeQueryAndReturnResult(query: String): String = {
     val queryResult = executeQuery(query)
-    val result = getResultFromMap(getResultMapFromQuery(queryResult))
-    result.get.toInt
+    getResultFromMap(getResultMapFromQuery(queryResult))
   }
 
-  def getResultFromMap(map: Map[String, String]): Option[String] = {
-    map.get(Queries.RESULT)
+  def getResultFromMap(map: Map[String, String]): String = {
+    val result = map.get(Queries.RESULT)
+
+    if (result.isDefined) {
+      return result.get
+    }
+    else {
+      return "?"
+    }
   }
 
   def getResultListFromQuery(result: ResultSet): List[String] = {
@@ -336,7 +342,7 @@ class OntologyServer {
       r => addOntologyURI(r)
     }
 
-    val personFromServer = getIndividualFromList[PersonImpl](person.getHasUserName)
+    val personFromServer = getIndividualFromList[PersonImpl](person.getUri)
 
     if (personFromServer != null) {
       logger.info("Removing individual with name: " + person.getHasUserName + " from list.")
@@ -357,9 +363,21 @@ class OntologyServer {
   @Path("/getRiskLevel")
   @Produces(Array[String](MediaType.TEXT_PLAIN))
   def getRiskLevel(@QueryParam("name") name: String): String = {
-    val weights = executeQueryAndReturnInt(Queries.calculatePropertiesWeights(name))
-    val age =  executeQueryAndReturnInt(Queries.calculateAge(name))
-    val total = weights + age
+
+    val weights = executeQueryAndReturnResult(Queries.calculatePropertiesWeights(name))
+
+    if (weights.equals("?")) {
+      return "?"
+    }
+
+    val age =  executeQueryAndReturnResult(Queries.calculateAge(name))
+
+    if (age.equals("?")) {
+      return "?"
+    }
+
+    val total = weights.toInt + age.toInt
+
     RiskCalculator.calculateRiskPercentageRounded(total)
   }
 
