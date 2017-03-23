@@ -1,8 +1,7 @@
 /**
   * Created by dossluca on 27/02/2017.
   */
-import java.io.{File, FileWriter}
-import java.util
+import java.io.File
 import java.util.{Collection, HashSet}
 import javax.annotation.PostConstruct
 import javax.inject.Singleton
@@ -36,6 +35,8 @@ class OntologyServer {
   val ONTOLOGY_LOCATION = "ontology/stroke_v6.owl"
 
   val ONTOLOGY_IRI = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke"
+
+  val QUESTION_MARK = "?"
 
   var manager: OWLOntologyManager = _
 
@@ -101,7 +102,7 @@ class OntologyServer {
       return result.get
     }
     else {
-      return "?"
+      return QUESTION_MARK
     }
   }
 
@@ -366,14 +367,14 @@ class OntologyServer {
 
     val weights = executeQueryAndReturnResult(Queries.calculatePropertiesWeights(name))
 
-    if (weights.equals("?")) {
-      return "?"
+    if (weights.equals(QUESTION_MARK)) {
+      return QUESTION_MARK
     }
 
     val age =  executeQueryAndReturnResult(Queries.calculateAge(name))
 
-    if (age.equals("?")) {
-      return "?"
+    if (age.equals(QUESTION_MARK)) {
+      return QUESTION_MARK
     }
 
     val total = weights.toInt + age.toInt
