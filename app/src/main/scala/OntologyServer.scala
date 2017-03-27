@@ -32,7 +32,7 @@ class OntologyServer {
 
   var logger: Logger = _
 
-  val ONTOLOGY_LOCATION = "ontology/stroke_v6.owl"
+  val ONTOLOGY_LOCATION = "ontology/stroke_v7.owl"
 
   val ONTOLOGY_IRI = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke"
 
@@ -332,7 +332,7 @@ class OntologyServer {
   @Path("/calculateRiskForPerson")
   @Consumes(Array[String](MediaType.APPLICATION_JSON))
   @Produces(Array[String](MediaType.TEXT_PLAIN))
-  def calculateRiskForPerson(person: PersonImpl): String = {
+  def calculateRiskForPerson(person: PersonImpl): PersonImpl = {
     logger.info("Checking if individual with name: " + person.getUri + " exists")
 
     logger.info(person.toString)
@@ -355,9 +355,11 @@ class OntologyServer {
 
     saveIndividuals()
 
-    val risk = getRiskLevel(person.getHasUserName)
+    val risk = getRiskLevel(person.getHasUserName).toDouble
 
-    risk
+    person.setHasRiskLevel(risk)
+
+    person
   }
 
   @GET
