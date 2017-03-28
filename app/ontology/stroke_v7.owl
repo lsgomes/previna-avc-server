@@ -69,6 +69,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasAchievement">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -112,6 +113,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasTip">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -332,7 +334,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Cry_easily">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
-        <hasTip>Tente chorar com menos frequência.</hasTip>
+        <hasTip>Tente viver mais alegremente.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</hasWeight>
     </owl:NamedIndividual>
     
@@ -510,6 +512,36 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#No_high_school_diploma">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Education"/>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</hasWeight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_critical_of_others -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_critical_of_others">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Irritação sob controle</hasAchievement>
+        <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_crying_easily -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_crying_easily">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vivendo alegremente</hasAchievement>
+        <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_fearful -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_fearful">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ansiedade sob controle</hasAchievement>
+        <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
     </owl:NamedIndividual>
     
 
