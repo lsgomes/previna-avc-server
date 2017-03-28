@@ -12,7 +12,7 @@ import com.clarkparsia.pellet.owlapiv3.{PelletReasoner, PelletReasonerFactory}
 import com.hp.hpl.jena.query.{QueryExecutionFactory, QueryFactory, ResultSet}
 import com.hp.hpl.jena.rdf.model.{InfModel, ModelFactory}
 import com.yoshtec.owl.marshall.{Marshaller, UnMarshaller}
-import model.v6._
+import model.v7._
 import org.semanticweb.owlapi.model.{IRI, OWLNamedIndividual}
 import org.semanticweb.owlapi.reasoner.{InferenceType, NodeSet}
 import uk.ac.manchester.cs.owl.owlapi.OWLClassImpl
@@ -93,6 +93,35 @@ class OntologyServer {
   def executeQueryAndReturnResult(query: String): String = {
     val queryResult = executeQuery(query)
     getResultFromMap(getResultMapFromQuery(queryResult))
+  }
+
+  def executeQueryAndReturnMap(query: String): Map[String, String] = {
+    val queryResult = executeQuery(query)
+    getResultMapFromQuery(queryResult)
+  }
+
+  def mapRiskFactorTips(person: PersonImpl, map: Map[String, String]): Unit = {
+
+    person.getHasRiskFactor.forEach {
+      riskFactor =>
+        val exists = map.get(riskFactor.getUri) // TODO may necessary to remove the #
+        if (exists.isDefined) {
+          riskFactor.setHasTip(exists.get)
+        }
+    }
+
+  }
+
+  def mapRiskFactorAchievements(person: PersonImpl, map: Map[String, String]): Unit = {
+
+    person.getHasRiskFactor.forEach {
+      riskFactor =>
+        val exists = map.get(riskFactor.getUri) // TODO may necessary to remove the #
+        if (exists.isDefined) {
+          riskFactor.setHasAchievement(exists.get)
+        }
+    }
+
   }
 
   def getResultFromMap(map: Map[String, String]): String = {
@@ -355,9 +384,15 @@ class OntologyServer {
 
     saveIndividuals()
 
-    val risk = getRiskLevel(person.getHasUserName).toDouble
+    val risk = getRiskLevel(person.getHasUserName)
 
-    person.setHasRiskLevel(risk)
+    if (!risk.equals(QUESTION_MARK)) {
+      person.setHasRiskLevel(risk.toDouble)
+    }
+
+    mapRiskFactorTips(person, executeQueryAndReturnMap(Queries.getRiskFactorsTips()))
+
+    mapRiskFactorAchievements(person, executeQueryAndReturnMap(Queries.getRiskFactorsAchievements()))
 
     person
   }

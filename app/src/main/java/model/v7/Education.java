@@ -1,5 +1,5 @@
 
-package model.v6;
+package model.v7;
 
 import com.yoshtec.owl.annotations.OwlClass;
 import com.yoshtec.owl.annotations.classes.OwlSubclassOf;
@@ -7,15 +7,15 @@ import com.yoshtec.owl.annotations.classes.OwlSubclassOf;
 
 /**
  * Generated Class from Ontology:
- * Class URI: <code>http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Alcohol_consumption</code>
+ * Class URI: <code>http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Education</code>
  * 
  * 
  */
-@OwlClass(uri = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Alcohol_consumption")
+@OwlClass(uri = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Education")
 @OwlSubclassOf({
     @OwlClass(uri = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor")
 })
-public interface Alcohol_consumption
+public interface Education
     extends RiskFactor
 {
 

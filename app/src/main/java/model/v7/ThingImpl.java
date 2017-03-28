@@ -1,14 +1,14 @@
 
-package model.v6;
+package model.v7;
 
 import com.yoshtec.owl.annotations.OwlClassImplementation;
 import com.yoshtec.owl.annotations.OwlIndividualId;
 
 @OwlClassImplementation({
-    Sensor.class
+    Thing.class
 })
-public class SensorImpl
-    implements Sensor
+public class ThingImpl
+    implements Thing
 {
 
     /**
@@ -16,9 +16,9 @@ public class SensorImpl
      * 
      */
     @OwlIndividualId
-    protected String id;
+    protected String uri;
 
-    public SensorImpl() {
+    public ThingImpl() {
     }
 
     /**
@@ -26,8 +26,8 @@ public class SensorImpl
      * 
      */
     @OwlIndividualId
-    public SensorImpl(String id) {
-        this.id = id;
+    public ThingImpl(String uri) {
+        this.uri = uri;
     }
 
     /**
@@ -35,7 +35,7 @@ public class SensorImpl
      * 
      */
     public String getUri() {
-        return id;
+        return uri;
     }
 
     /**
@@ -43,7 +43,7 @@ public class SensorImpl
      * 
      */
     public void setUri(String uri) {
-        this.id = uri;
+        this.uri = uri;
     }
 
 }

@@ -1,5 +1,5 @@
 
-package model.v6;
+package model.v7;
 
 import com.yoshtec.owl.annotations.OwlClass;
 
@@ -15,7 +15,7 @@ public interface Thing {
 
 
     /**
-     * rdf:about or rdf:uri, used to generate the individual URI
+     * rdf:about or rdf:id, used to generate the individual URI
      * 
      * @return
      *     the uri
@@ -23,7 +23,7 @@ public interface Thing {
     public String getUri();
 
     /**
-     * rdf:about or rdf:uri, used to generate the individual URI
+     * rdf:about or rdf:id, used to generate the individual URI
      * 
      * @param uri
      *     the new uri value

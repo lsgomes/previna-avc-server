@@ -270,7 +270,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Abstain">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Alcohol_consumption"/>
-        <hasTip>Tente beber com moderação durante a semana.</hasTip>
+        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente beber com moderação durante a semana.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasWeight>
     </owl:NamedIndividual>
     
@@ -288,8 +288,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Active">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Physical_activity"/>
-        <hasAchievement>Se exercitando 2 vezes por semana</hasAchievement>
-        <hasTip>Pratique exercícios físicos mais uma vez essa semana.</hasTip>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Se exercitando 2 vezes por semana</hasAchievement>
+        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pratique exercícios físicos mais uma vez essa semana.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasWeight>
     </owl:NamedIndividual>
     
@@ -324,7 +324,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Critical_of_others">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
-        <hasTip>Tente se irritar menos.</hasTip>
+        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente se irritar menos.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</hasWeight>
     </owl:NamedIndividual>
     
@@ -334,7 +334,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Cry_easily">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
-        <hasTip>Tente viver mais alegremente.</hasTip>
+        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente viver mais alegremente.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</hasWeight>
     </owl:NamedIndividual>
     
@@ -353,8 +353,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drink_in_moderation">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Alcohol_consumption"/>
-        <hasAchievement>Bebendo com moderação</hasAchievement>
-        <hasTip>Tente continuar bebendo com moderação.</hasTip>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bebendo com moderação</hasAchievement>
+        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente continuar bebendo com moderação.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
     </owl:NamedIndividual>
     
@@ -365,7 +365,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinker">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Alcohol_consumption"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
-        <hasTip>Tente beber menos durante a semana.</hasTip>
+        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente beber menos durante a semana.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</hasWeight>
     </owl:NamedIndividual>
     
@@ -375,7 +375,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Fearful">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
-        <hasTip>Tente se sentir menos ansioso(a).</hasTip>
+        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente se sentir menos ansioso(a).</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</hasWeight>
     </owl:NamedIndividual>
     
@@ -393,8 +393,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Former_alcoholic">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Alcohol_consumption"/>
-        <hasAchievement>Não voltar a beber</hasAchievement>
-        <hasTip>Tente não voltar a beber.</hasTip>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Não voltar a beber</hasAchievement>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente não voltar a beber.</hasAchievement>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</hasWeight>
     </owl:NamedIndividual>
     
@@ -404,8 +404,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Former_smoker">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoking_status"/>
-        <hasAchievement>Não voltar a fumar</hasAchievement>
-        <hasTip>Tente não voltar a fumar.</hasTip>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Não voltar a fumar</hasAchievement>
+        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente não voltar a fumar.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</hasWeight>
     </owl:NamedIndividual>
     
@@ -449,7 +449,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Inactive">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Physical_activity"/>
-        <hasTip>Pratique exercícios físicos pelo menos 1 ou 2 vezes essa semana.</hasTip>
+        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pratique exercícios físicos pelo menos 1 ou 2 vezes essa semana.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasWeight>
     </owl:NamedIndividual>
     
@@ -500,8 +500,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Never_smoked">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoking_status"/>
-        <hasAchievement>Não começar a fumar</hasAchievement>
-        <hasTip>Tente nunca fumar.</hasTip>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Não começar a fumar</hasAchievement>
+        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente nunca fumar.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
     </owl:NamedIndividual>
     

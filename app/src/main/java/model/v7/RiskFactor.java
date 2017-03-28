@@ -1,5 +1,5 @@
 
-package model.v6;
+package model.v7;
 
 import com.yoshtec.owl.annotations.OwlClass;
 import com.yoshtec.owl.annotations.classes.OwlObjectIntersectionOf;
@@ -41,5 +41,41 @@ public interface RiskFactor
      *     the new hasWeight value
      */
     public void setHasWeight(Integer hasWeight);
+
+    /**
+     * OWL Data Property:</br>
+     * <code>http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasAchievement</code>
+     * 
+     * @return
+     *     the hasAchievement
+     */
+    public String getHasAchievement();
+
+    /**
+     * OWL Data Property:</br>
+     * <code>http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasAchievement</code>
+     * 
+     * @param hasAchievement
+     *     the new hasAchievement value
+     */
+    public void setHasAchievement(String hasAchievement);
+
+    /**
+     * OWL Data Property:</br>
+     * <code>http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasTip</code>
+     * 
+     * @return
+     *     the hasTip
+     */
+    public String getHasTip();
+
+    /**
+     * OWL Data Property:</br>
+     * <code>http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasTip</code>
+     * 
+     * @param hasTip
+     *     the new hasTip value
+     */
+    public void setHasTip(String hasTip);
 
 }

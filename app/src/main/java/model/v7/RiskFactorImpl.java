@@ -1,5 +1,5 @@
 
-package model.v6;
+package model.v7;
 
 import com.yoshtec.owl.annotations.OwlClassImplementation;
 import com.yoshtec.owl.annotations.OwlDataProperty;
@@ -24,6 +24,24 @@ public class RiskFactorImpl
     @OwlDataType(uri = "http://www.w3.org/2001/XMLSchema#int")
     protected Integer hasWeight;
     /**
+     * OWL Data Property:</br>
+     * <code>http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasAchievement</code>
+     * 
+     */
+    @OwlDataProperty(uri = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasAchievement")
+    @OwlFunctionalDataProperty
+    @OwlDataType(uri = "http://www.w3.org/2001/XMLSchema#string")
+    protected String hasAchievement;
+    /**
+     * OWL Data Property:</br>
+     * <code>http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasTip</code>
+     * 
+     */
+    @OwlDataProperty(uri = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasTip")
+    @OwlFunctionalDataProperty
+    @OwlDataType(uri = "http://www.w3.org/2001/XMLSchema#string")
+    protected String hasTip;
+    /**
      * rdf:about or rdf:id, used to generate the individual URI
      * 
      */
@@ -42,12 +60,6 @@ public class RiskFactorImpl
         this.uri = uri;
     }
 
-    public RiskFactorImpl(String uri, Integer hasWeight) {
-        this.uri = uri;
-        this.hasWeight = hasWeight;
-    }
-
-
     /**
      * {@inheritDoc}
      * 
@@ -62,6 +74,38 @@ public class RiskFactorImpl
      */
     public void setHasWeight(Integer hasWeight) {
         this.hasWeight = hasWeight;
+    }
+
+    /**
+     * {@inheritDoc}
+     * 
+     */
+    public String getHasAchievement() {
+        return hasAchievement;
+    }
+
+    /**
+     * {@inheritDoc}
+     * 
+     */
+    public void setHasAchievement(String hasAchievement) {
+        this.hasAchievement = hasAchievement;
+    }
+
+    /**
+     * {@inheritDoc}
+     * 
+     */
+    public String getHasTip() {
+        return hasTip;
+    }
+
+    /**
+     * {@inheritDoc}
+     * 
+     */
+    public void setHasTip(String hasTip) {
+        this.hasTip = hasTip;
     }
 
     /**

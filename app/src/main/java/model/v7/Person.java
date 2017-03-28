@@ -1,5 +1,5 @@
 
-package model.v6;
+package model.v7;
 
 import java.util.List;
 import com.yoshtec.owl.annotations.OwlClass;
@@ -50,14 +50,14 @@ public interface Person
      * @return
      *     a List of hasRiskFactor
      */
-    public List<RiskFactorImpl> getHasRiskFactor();
+    public List<RiskFactor> getHasRiskFactor();
 
     /**
      * OWL Object Property:</br>
      * <code>http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskFactor</code>
      * 
      */
-    public void setHasRiskFactor(List<RiskFactorImpl> hasRiskFactor);
+    public void setHasRiskFactor(List<RiskFactor> hasRiskFactor);
 
     /**
      * OWL Data Property:</br>

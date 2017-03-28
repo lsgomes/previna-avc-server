@@ -1,5 +1,5 @@
 
-package model.v6;
+package model.v7;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,10 +9,10 @@ import com.yoshtec.owl.annotations.OwlIndividualId;
 import com.yoshtec.owl.annotations.OwlObjectProperty;
 
 @OwlClassImplementation({
-    Mobile_device.class
+    Wearable.class
 })
-public class Mobile_deviceImpl
-    implements Mobile_device
+public class WearableImpl
+    implements Wearable
 {
 
     /**
@@ -28,9 +28,9 @@ public class Mobile_deviceImpl
      * 
      */
     @OwlIndividualId
-    protected String id;
+    protected String uri;
 
-    public Mobile_deviceImpl() {
+    public WearableImpl() {
     }
 
     /**
@@ -38,8 +38,8 @@ public class Mobile_deviceImpl
      * 
      */
     @OwlIndividualId
-    public Mobile_deviceImpl(String id) {
-        this.id = id;
+    public WearableImpl(String uri) {
+        this.uri = uri;
     }
 
     /**
@@ -66,7 +66,7 @@ public class Mobile_deviceImpl
      * 
      */
     public String getUri() {
-        return id;
+        return uri;
     }
 
     /**
@@ -74,7 +74,7 @@ public class Mobile_deviceImpl
      * 
      */
     public void setUri(String uri) {
-        this.id = uri;
+        this.uri = uri;
     }
 
 }

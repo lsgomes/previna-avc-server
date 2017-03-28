@@ -1,5 +1,5 @@
 
-package model.v6;
+package model.v7;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +33,7 @@ public class PersonImpl
      */
     @OwlObjectProperty(uri = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskFactor")
     @OwlDataType(uri = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor")
-    protected List<RiskFactorImpl> hasRiskFactor;
+    protected List<RiskFactor> hasRiskFactor;
     /**
      * OWL Data Property:</br>
      * <code>http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasRiskLevel</code>
@@ -43,12 +43,6 @@ public class PersonImpl
     @OwlFunctionalDataProperty
     @OwlDataType(uri = "http://www.w3.org/2001/XMLSchema#double")
     protected Double hasRiskLevel;
-    /**
-     * rdf:about or rdf:id, used to generate the individual URI
-     * 
-     */
-    @OwlIndividualId
-    protected String id;
     /**
      * OWL Data Property:</br>
      * <code>http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasPassword</code>
@@ -67,6 +61,12 @@ public class PersonImpl
     @OwlDataType(uri = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Device")
     protected List<Device> hasDevice;
     /**
+     * rdf:about or rdf:id, used to generate the individual URI
+     * 
+     */
+    @OwlIndividualId
+    protected String uri;
+    /**
      * OWL Data Property:</br>
      * <code>http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasUserName</code>
      * 
@@ -84,8 +84,8 @@ public class PersonImpl
      * 
      */
     @OwlIndividualId
-    public PersonImpl(String id) {
-        this.id = id;
+    public PersonImpl(String uri) {
+        this.uri = uri;
     }
 
     /**
@@ -108,9 +108,9 @@ public class PersonImpl
      * {@inheritDoc}
      * 
      */
-    public List<RiskFactorImpl> getHasRiskFactor() {
+    public List<RiskFactor> getHasRiskFactor() {
         if (hasRiskFactor == null) {
-            hasRiskFactor = new ArrayList<RiskFactorImpl>();
+            hasRiskFactor = new ArrayList<RiskFactor>();
         }
         return hasRiskFactor;
     }
@@ -119,7 +119,7 @@ public class PersonImpl
      * {@inheritDoc}
      * 
      */
-    public void setHasRiskFactor(List<RiskFactorImpl> hasRiskFactor) {
+    public void setHasRiskFactor(List<RiskFactor> hasRiskFactor) {
         this.hasRiskFactor = hasRiskFactor;
     }
 
@@ -137,22 +137,6 @@ public class PersonImpl
      */
     public void setHasRiskLevel(Double hasRiskLevel) {
         this.hasRiskLevel = hasRiskLevel;
-    }
-
-    /**
-     * {@inheritDoc}
-     * 
-     */
-    public String getUri() {
-        return id;
-    }
-
-    /**
-     * {@inheritDoc}
-     * 
-     */
-    public void setUri(String uri) {
-        this.id = uri;
     }
 
     /**
@@ -188,6 +172,22 @@ public class PersonImpl
      */
     public void setHasDevice(List<Device> hasDevice) {
         this.hasDevice = hasDevice;
+    }
+
+    /**
+     * {@inheritDoc}
+     * 
+     */
+    public String getUri() {
+        return uri;
+    }
+
+    /**
+     * {@inheritDoc}
+     * 
+     */
+    public void setUri(String uri) {
+        this.uri = uri;
     }
 
     /**

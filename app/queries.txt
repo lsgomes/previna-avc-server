@@ -190,3 +190,31 @@ SELECT DISTINCT ?subject ?pred ?object
             }
 
             ???????????????????????????????????????????????????????????
+
+
+
+
+          PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+          PREFIX owl: <http://www.w3.org/2002/07/owl#>
+          PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+          PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+          PREFIX stroke: <http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#>
+
+          SELECT * WHERE
+          {
+          {
+          	SELECT DISTINCT ?entity ?tip
+          	WHERE { ?entity rdf:type/rdfs:subClassOf* stroke:RiskFactor .
+                                            ?entity stroke:hasTip ?tip
+                                          }
+          }
+          UNION
+          {
+          	SELECT DISTINCT ?entity ?achievement
+          	WHERE { ?entity rdf:type/rdfs:subClassOf* stroke:RiskFactor .
+                                            ?entity stroke:hasAchievement ?achievement
+                                          }
+          }
+          }
+
+

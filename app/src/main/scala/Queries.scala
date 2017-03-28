@@ -77,6 +77,35 @@ object Queries {
       "}"
   }
 
+  def getRiskFactorsTips(): String = {
+    PREFIX +
+      "SELECT DISTINCT ?entity ?result\n" +
+      "WHERE\n" +
+      "{\n"
+      "?entity rdf:type/rdfs:subClassOf* stroke:RiskFactor .\n" +
+      "?entity stroke:hasTip ?result . \n"
+      "}"
+  }
+
+  def getRiskFactorsAchievements(): String = {
+    PREFIX +
+      "SELECT DISTINCT ?entity ?result\n" +
+      "WHERE\n" +
+      "{\n"
+    "?entity rdf:type/rdfs:subClassOf* stroke:RiskFactor .\n" +
+      "?entity stroke:hasAchievement ?result . \n"
+    "}"
+  }
+
+  def riskFactorHasTip(riskFactor: String): String = {
+    PREFIX +
+      "SELECT ?result\n" +
+      "WHERE\n" +
+      "{\n"
+      "stroke:" + riskFactor + " stroke:hasTip ?result .\n" +
+      "}"
+  }
+
   def test(): String = {
     PREFIX +
     "SELECT ?result WHERE \n" +

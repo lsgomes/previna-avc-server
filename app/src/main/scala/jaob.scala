@@ -1,9 +1,8 @@
-import java.io.{File, FileWriter}
+import java.io.File
 
 import com.yoshtec.owl.marshall.{Marshaller, UnMarshaller}
-import model.v6._
+import model.v7._
 import org.semanticweb.owlapi.apibinding.OWLManager
-import org.semanticweb.owlapi.model.IRI
 
 /**
   * Created by Lucas on 22/03/2017.

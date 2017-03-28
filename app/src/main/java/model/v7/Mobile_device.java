@@ -1,5 +1,5 @@
 
-package model.v6;
+package model.v7;
 
 import com.yoshtec.owl.annotations.OwlClass;
 import com.yoshtec.owl.annotations.classes.OwlSubclassOf;
