@@ -393,8 +393,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Former_alcoholic">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Alcohol_consumption"/>
-        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Não voltar a beber</hasAchievement>
-        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente não voltar a beber.</hasAchievement>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Não voltou a beber</hasAchievement>
+        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente não voltar a beber.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</hasWeight>
     </owl:NamedIndividual>
     
@@ -404,7 +404,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Former_smoker">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoking_status"/>
-        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Não voltar a fumar</hasAchievement>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Não voltou a fumar</hasAchievement>
         <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente não voltar a fumar.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</hasWeight>
     </owl:NamedIndividual>
@@ -500,8 +500,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Never_smoked">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoking_status"/>
-        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Não começar a fumar</hasAchievement>
-        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente nunca fumar.</hasTip>
+        <hasTip>Tente nunca fumar.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
     </owl:NamedIndividual>
     
@@ -520,7 +519,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_critical_of_others">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
-        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Irritação sob controle</hasAchievement>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nível de irritação sob controle</hasAchievement>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
     </owl:NamedIndividual>
     
@@ -530,7 +529,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_crying_easily">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
-        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vivendo alegremente</hasAchievement>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vivendo de forma alegre</hasAchievement>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
     </owl:NamedIndividual>
     
@@ -540,7 +539,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_fearful">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
-        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ansiedade sob controle</hasAchievement>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nível de ansiedade sob controle</hasAchievement>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
     </owl:NamedIndividual>
     

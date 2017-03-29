@@ -457,7 +457,7 @@ class OntologyServer {
 
 
 
-    person.setHasRiskFactor(riskFactors.asJava)
+    person.setHasRiskFactor(riskFactors.asInstanceOf[List[RiskFactor]].asJava)
 
     person.setUri(ONTOLOGY_IRI + "#" + "john2")
 
