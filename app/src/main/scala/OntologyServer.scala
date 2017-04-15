@@ -357,6 +357,24 @@ class OntologyServer {
     }
   }
 
+ // @GET
+  //@Path("/getRiskLevel")
+ // @Produces(Array[String](MediaType.TEXT_PLAIN))
+  //def getRiskLevel(@QueryParam("name") name: String): String = {
+
+  @POST
+  @Path("/checkNameExists")
+  @Consumes(Array[String](MediaType.TEXT_PLAIN))
+  @Produces(Array[String](MediaType.TEXT_PLAIN))
+  def checkName(@QueryParam("name") name: String): Boolean = {
+    val individual = getIndividualFromList[PersonImpl](name)
+
+    if (individual != null) {
+      return true
+    }
+    else return false
+  }
+
   @POST
   @Path("/calculateRiskForPerson")
   @Consumes(Array[String](MediaType.APPLICATION_JSON))
@@ -393,6 +411,8 @@ class OntologyServer {
     mapRiskFactorTips(person, executeQueryAndReturnMap(Queries.getRiskFactorsTips()))
 
     mapRiskFactorAchievements(person, executeQueryAndReturnMap(Queries.getRiskFactorsAchievements()))
+
+    logger.info("Sending person: " + person)
 
     person
   }
