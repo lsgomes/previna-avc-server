@@ -500,7 +500,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Never_smoked">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoking_status"/>
-        <hasTip>Tente nunca fumar.</hasTip>
+        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente nunca fumar.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
     </owl:NamedIndividual>
     
@@ -575,7 +575,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoker">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoking_status"/>
-        <hasTip>Tente parar de formar.</hasTip>
+        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente parar de fumar.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</hasWeight>
     </owl:NamedIndividual>
     
@@ -585,8 +585,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Very_active">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Physical_activity"/>
-        <hasAchievement>Se exercitando 3 vezes por semana</hasAchievement>
-        <hasTip>Tente manter se exercitando 3 vezes por semana.</hasTip>
+        <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Se exercitando 3 vezes por semana</hasAchievement>
+        <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente manter se exercitando 3 vezes por semana.</hasTip>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
     </owl:NamedIndividual>
     
@@ -595,6 +595,7 @@
     <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#luquinhas -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#luquinhas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinker"/>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Male"/>
     </owl:NamedIndividual>
