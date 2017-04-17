@@ -88,7 +88,7 @@ public class OntologyServerJava {
     @POST
     @Path("/calculateRiskForPerson")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public PersonImpl calculateRiskForPerson(PersonImpl person) throws Exception {
         logger.info("Checking if individual with name: " + person.getUri() + " exists");
 
@@ -174,13 +174,15 @@ public class OntologyServerJava {
     Map<String, String> getResultMapFromQuery(ResultSet result) {
         Map map = new HashMap<String, String>();
 
+        result.forEachRemaining(r -> {
 
-        for (String var : result.getResultVars()) {
-            if (result.hasNext()) {
-                map.put(var, result.nextSolution().getLiteral(var).getString());
-            }
-        }
+            r.varNames().forEachRemaining(v -> {
 
+                map.put(v, r.getLiteral(v).getString());
+
+            });
+
+        });
 
 //        while (result.hasNext()) {
 //            QuerySolution solution = result.nextSolution();

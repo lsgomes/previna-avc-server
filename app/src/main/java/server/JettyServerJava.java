@@ -10,11 +10,18 @@ import org.glassfish.jersey.servlet.ServletContainer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Map;
+
 public class JettyServerJava {
 
     public static void main(String[] args) throws Exception {
 
         Logger logger = LoggerFactory.getLogger(JettyServerJava.class);
+        //"%s=%s%n",
+        Map<String, String> env = System.getenv();
+        for (String envName : env.keySet()) {
+            logger.info(envName + " = "+ env.get(envName));
+        }
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
@@ -22,7 +29,21 @@ public class JettyServerJava {
         Server server = new Server();
 
         ServerConnector connector = new ServerConnector(server);
-        connector.setPort(8081);
+
+        String port = System.getenv("HTTP_PLATFORM_PORT");
+
+        if (port == null) {
+            port = System.getenv("%HTTP_PLATFORM_PORT%");
+            if (port == null) {
+                port = "8081";
+            }
+        }
+
+        logger.info("Setting port to " + port);
+
+        connector.setPort(Integer.parseInt(port));
+
+
         //connector.setHost("192.168.25.49")
 
         server.addConnector(connector);
