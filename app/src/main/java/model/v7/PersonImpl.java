@@ -198,6 +198,19 @@ public class PersonImpl
         return hasUserName;
     }
 
+    @Override
+    public String toString() {
+        return "PersonImpl{" +
+                "hasAge=" + hasAge +
+                ", hasRiskFactor=" + hasRiskFactor +
+                ", hasRiskLevel=" + hasRiskLevel +
+                ", hasPassword='" + hasPassword + '\'' +
+                ", hasDevice=" + hasDevice +
+                ", uri='" + uri + '\'' +
+                ", hasUserName='" + hasUserName + '\'' +
+                '}';
+    }
+
     /**
      * {@inheritDoc}
      * 

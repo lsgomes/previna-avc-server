@@ -94,7 +94,7 @@ public class OntologyServerJava {
     public PersonImpl calculateRiskForPerson(PersonImpl person) throws Exception {
         logger.info("Checking if individual with name: " + person.getUri() + " exists");
 
-        logger.info(person.toString());
+        logger.info("PersonFromClient" + person.toString());
 
         addOntologyURI(person);
 
@@ -105,6 +105,7 @@ public class OntologyServerJava {
         PersonImpl personFromServer = getIndividualFromList(person);
 
         if (personFromServer != null) {
+            logger.info("PersonFromServer: " + personFromServer.toString());
             logger.info("Removing individual with name: " + person.getHasUserName() + " from list.");
             individuals.remove(personFromServer);
         }
@@ -130,7 +131,7 @@ public class OntologyServerJava {
 
         mapRiskFactorAchievements(person, executeQueryAndReturnMapEntitiesLiterals(QueriesJava.getRiskFactorsAchievements()));
 
-        logger.info("Sending person: " + person.toString());
+        logger.info("Sending Person: " + person.toString());
 
         return person;
     }
@@ -353,9 +354,9 @@ public class OntologyServerJava {
         if (ontology != null) {
 
             reasoner = PelletReasonerFactory.getInstance().createReasoner(ontology);
-            reasoner.prepareReasoner();
-            reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS,
-                    InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.DATA_PROPERTY_HIERARCHY);
+            //reasoner.prepareReasoner();
+            //reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS,
+            //        InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.DATA_PROPERTY_HIERARCHY);
         }
     }
 

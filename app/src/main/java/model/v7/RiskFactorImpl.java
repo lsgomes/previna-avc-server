@@ -124,4 +124,14 @@ public class RiskFactorImpl
         this.uri = uri;
     }
 
+    @Override
+    public String toString() {
+
+        return "RiskFactorImpl{" +
+                "hasWeight=" + hasWeight +
+                ", hasAchievement='" + hasAchievement + '\'' +
+                ", hasTip='" + hasTip + '\'' +
+                ", uri='" + uri + '\'' +
+                '}';
+    }
 }
