@@ -30,12 +30,16 @@ public class JettyServerJava {
 
         ServerConnector connector = new ServerConnector(server);
 
-        String port = System.getenv("HTTP_PLATFORM_PORT");
+        String port = System.getenv("PORT");
 
         if (port == null) {
-            port = System.getenv("%HTTP_PLATFORM_PORT%");
+            port = System.getenv("HTTP_PLATFORM_PORT");
+
             if (port == null) {
-                port = "8081";
+                port = System.getenv("%HTTP_PLATFORM_PORT%");
+                if (port == null) {
+                    port = "8081";
+                }
             }
         }
 

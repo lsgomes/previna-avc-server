@@ -5,7 +5,10 @@ package server;
  */
 public class UtilsJava {
     static String extractNameFromURI(String uri) {
-        String[] splitted = uri.split("#");
-        return splitted[1];
+        if (uri.contains("#")) {
+            String[] splitted = uri.split("#");
+            return splitted[1];
+        }
+        return uri;
     }
 }

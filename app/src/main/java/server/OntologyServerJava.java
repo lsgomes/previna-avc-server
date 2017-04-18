@@ -1,5 +1,6 @@
 package server;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.*;
 import javax.annotation.PostConstruct;
@@ -13,6 +14,7 @@ import com.clarkparsia.pellet.owlapiv3.PelletReasonerFactory;
 import com.hp.hpl.jena.query.*;
 import com.hp.hpl.jena.rdf.model.InfModel;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.yoshtec.owl.marshall.Marshaller;
 import com.yoshtec.owl.marshall.UnMarshaller;
 import model.v7.*;
@@ -35,7 +37,7 @@ public class OntologyServerJava {
 
     Logger logger;
 
-    String ONTOLOGY_LOCATION = "ontology/stroke_v7.owl";
+    String ONTOLOGY_LOCATION = "stroke_v7.owl";
     String ONTOLOGY_IRI = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke";
     String QUESTION_MARK = "?";
 
@@ -112,17 +114,23 @@ public class OntologyServerJava {
 
         saveIndividuals();
 
-        String risk = getRiskLevel(person.getHasUserName());
+        loadReasoner();
+
+        loadQueryExecutor();
+
+        //ontology = loadOntology(ONTOLOGY_LOCATION);
+
+        String risk = getRiskLevel(UtilsJava.extractNameFromURI(person.getHasUserName()));
 
         if (!risk.equals(QUESTION_MARK)) {
             person.setHasRiskLevel(Double.valueOf(risk));
         }
 
-        mapRiskFactorTips(person, executeQueryAndReturnMap(QueriesJava.getRiskFactorsTips()));
+        mapRiskFactorTips(person, executeQueryAndReturnMapEntitiesLiterals(QueriesJava.getRiskFactorsTips()));
 
-        mapRiskFactorAchievements(person, executeQueryAndReturnMap(QueriesJava.getRiskFactorsAchievements()));
+        mapRiskFactorAchievements(person, executeQueryAndReturnMapEntitiesLiterals(QueriesJava.getRiskFactorsAchievements()));
 
-        logger.info("Sending person: " + person);
+        logger.info("Sending person: " + person.toString());
 
         return person;
     }
@@ -156,6 +164,16 @@ public class OntologyServerJava {
     }
 
     @GET
+    @Path("/examplePerson")
+    @Produces(MediaType.APPLICATION_JSON)
+    public PersonImpl examplePerson() throws  Exception {
+        PersonImpl john = new PersonImpl();
+        john.setUri(ONTOLOGY_IRI + "#John");
+        john = getIndividualFromList(john);
+        return john;
+    }
+
+    @GET
     @Path("/saveIndividuals")
     public void saveIndividuals() throws  Exception {
 
@@ -172,17 +190,43 @@ public class OntologyServerJava {
     }
 
     Map<String, String> getResultMapFromQuery(ResultSet result) {
+
         Map map = new HashMap<String, String>();
 
-        result.forEachRemaining(r -> {
+        for (String var : result.getResultVars()) {
+            map.put(var, result.nextSolution().getLiteral(var).getString());
+        }
 
-            r.varNames().forEachRemaining(v -> {
+//        result.forEachRemaining(r -> {
+//
+//            r.varNames().forEachRemaining(v -> {
+//
+//                map.put(v, r.getLiteral(v).getString());
+//
+//            });
+//
+//        });
 
-                map.put(v, r.getLiteral(v).getString());
 
-            });
+//        result.forEachRemaining(r -> {
+//
+//
+//                map.put("result", r.getLiteral("result").getString());
 
-        });
+//                r.varNames().forEachRemaining(v -> {
+//
+//                    RDFNode node = r.get(v);
+//
+//                    if (node.isLiteral()) {
+//                    map.put(v, node.asLiteral().getString());
+//                    }
+//                     else if (node.isResource()) {
+//                    map.put(v, node.asResource().toString());
+//                    }
+//
+//            });
+
+       // });
 
 //        while (result.hasNext()) {
 //            QuerySolution solution = result.nextSolution();
@@ -198,6 +242,20 @@ public class OntologyServerJava {
         return map;
     }
 
+    Map<String, String> mapEntitiesLiterals(ResultSet result) {
+        Map map = new HashMap<String, String>();
+
+        result.forEachRemaining(r -> {
+
+            map.put(
+                    r.get("entity").asResource().toString(),
+                    r.get("result").asLiteral().getString());
+        });
+
+        return map;
+    }
+
+
     ResultSet executeQuery(String query) {
         logger.info("\n" + query);
 
@@ -209,6 +267,13 @@ public class OntologyServerJava {
         ResultSet select = queryExecution.execSelect();
 
         logger.info("Query took: "+ (System.currentTimeMillis() - startTime) + " ms");
+
+//        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//
+//        ResultSetRewindable r = ResultSetFactory.copyResults(select);
+//        ResultSetFormatter.out(baos, r);
+//
+//        logger.info(new String(baos.toByteArray()));
 
         return select;
     }
@@ -254,7 +319,8 @@ public class OntologyServerJava {
         for (Object i : individuals) {
             Thing thing = (Thing) i;
             Thing ind = (Thing) individual;
-            if (UtilsJava.extractNameFromURI(thing.getUri()).equals(ind.getUri())) {
+            // UtilsJava.extractNameFromURI(thing.getUri()).equals(ind.getUri())
+            if (thing.getUri().equals(ind.getUri())) {
                 logger.info("Getting individual: " + i.toString());
                 return (T) i;
             }
@@ -324,5 +390,11 @@ public class OntologyServerJava {
         ResultSet queryResult = executeQuery(query);
         return getResultMapFromQuery(queryResult);
     }
+
+    Map<String, String> executeQueryAndReturnMapEntitiesLiterals(String query) {
+        ResultSet queryResult = executeQuery(query);
+        return mapEntitiesLiterals(queryResult);
+    }
+
 
 }
