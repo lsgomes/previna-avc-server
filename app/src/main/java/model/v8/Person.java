@@ -1,5 +1,5 @@
 
-package model.v7;
+package model.v8;
 
 import java.util.List;
 import com.yoshtec.owl.annotations.OwlClass;
@@ -129,4 +129,20 @@ public interface Person
      */
     public void setHasUserName(String hasUserName);
 
+
+    public String getHasBloodGlucose();
+
+    public void setHasBloodGlucose(String hasBloodGlucose);
+
+    public String getHasBloodPressure();
+
+    public void setHasBloodPressure(String hasBloodPressure);
+
+    public String getHasBloodAlcoholContent();
+
+    public void setHasBloodAlcoholContent(String hasBloodAlcoholContent);
+
+    public String getHasStepsCount();
+
+    public void setHasStepsCount(String hasStepsCount);
 }

@@ -1,5 +1,5 @@
 
-package model.v7;
+package model.v8;
 
 import com.yoshtec.owl.annotations.OwlClassImplementation;
 import com.yoshtec.owl.annotations.OwlDataProperty;
@@ -8,10 +8,10 @@ import com.yoshtec.owl.annotations.OwlIndividualId;
 import com.yoshtec.owl.annotations.dprop.OwlFunctionalDataProperty;
 
 @OwlClassImplementation({
-    RiskFactor.class
+    Psychosocial_factors.class
 })
-public class RiskFactorImpl
-    implements RiskFactor
+public class Psychosocial_factorsImpl
+    implements Psychosocial_factors
 {
 
     /**
@@ -48,7 +48,7 @@ public class RiskFactorImpl
     @OwlIndividualId
     protected String uri;
 
-    public RiskFactorImpl() {
+    public Psychosocial_factorsImpl() {
     }
 
     /**
@@ -56,7 +56,7 @@ public class RiskFactorImpl
      * 
      */
     @OwlIndividualId
-    public RiskFactorImpl(String uri) {
+    public Psychosocial_factorsImpl(String uri) {
         this.uri = uri;
     }
 
@@ -124,14 +124,4 @@ public class RiskFactorImpl
         this.uri = uri;
     }
 
-    @Override
-    public String toString() {
-
-        return "RiskFactorImpl{" +
-                "hasWeight=" + hasWeight +
-                ", hasAchievement='" + hasAchievement + '\'' +
-                ", hasTip='" + hasTip + '\'' +
-                ", uri='" + uri + '\'' +
-                '}';
-    }
 }

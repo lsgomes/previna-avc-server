@@ -1,5 +1,5 @@
 
-package model.v7;
+package model.v8;
 
 import java.util.List;
 import com.yoshtec.owl.annotations.OwlClass;

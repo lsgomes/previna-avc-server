@@ -1,5 +1,5 @@
 
-package model.v7;
+package model.v8;
 
 import com.yoshtec.owl.annotations.OwlClassImplementation;
 import com.yoshtec.owl.annotations.OwlDataProperty;
@@ -8,10 +8,10 @@ import com.yoshtec.owl.annotations.OwlIndividualId;
 import com.yoshtec.owl.annotations.dprop.OwlFunctionalDataProperty;
 
 @OwlClassImplementation({
-    Psychosocial_factors.class
+    Smoking_status.class
 })
-public class Psychosocial_factorsImpl
-    implements Psychosocial_factors
+public class Smoking_statusImpl
+    implements Smoking_status
 {
 
     /**
@@ -48,7 +48,7 @@ public class Psychosocial_factorsImpl
     @OwlIndividualId
     protected String uri;
 
-    public Psychosocial_factorsImpl() {
+    public Smoking_statusImpl() {
     }
 
     /**
@@ -56,7 +56,7 @@ public class Psychosocial_factorsImpl
      * 
      */
     @OwlIndividualId
-    public Psychosocial_factorsImpl(String uri) {
+    public Smoking_statusImpl(String uri) {
         this.uri = uri;
     }
 

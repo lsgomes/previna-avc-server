@@ -14,4 +14,4 @@
 @com.yoshtec.owl.annotations.ontology.OwlImports(uris = {
     "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke"
 })
-package model.v7;
+package model.v8;

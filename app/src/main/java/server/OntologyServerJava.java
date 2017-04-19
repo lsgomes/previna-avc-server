@@ -1,28 +1,22 @@
 package server;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.*;
 import javax.annotation.PostConstruct;
 import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
 import com.clarkparsia.pellet.owlapiv3.PelletReasonerFactory;
 import com.hp.hpl.jena.query.*;
 import com.hp.hpl.jena.rdf.model.InfModel;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.yoshtec.owl.marshall.Marshaller;
 import com.yoshtec.owl.marshall.UnMarshaller;
-import model.v7.*;
+import model.v8.*;
 import org.mindswap.pellet.jena.PelletInfGraph;
 import org.semanticweb.owlapi.model.*;
-import org.semanticweb.owlapi.reasoner.InferenceType;
-import org.semanticweb.owlapi.reasoner.NodeSet;
-import uk.ac.manchester.cs.owl.owlapi.OWLClassImpl;
 
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -37,7 +31,7 @@ public class OntologyServerJava {
 
     Logger logger;
 
-    String ONTOLOGY_LOCATION = "stroke_v7.owl";
+    String ONTOLOGY_LOCATION = "stroke_v8.owl";
     String ONTOLOGY_IRI = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke";
     String QUESTION_MARK = "?";
 

@@ -1,5 +1,5 @@
 
-package model.v7;
+package model.v8;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +75,26 @@ public class PersonImpl
     @OwlFunctionalDataProperty
     @OwlDataType(uri = "http://www.w3.org/2001/XMLSchema#string")
     protected String hasUserName;
+
+    @OwlDataProperty(uri = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasBloodGlucose")
+    @OwlFunctionalDataProperty
+    @OwlDataType(uri = "http://www.w3.org/2001/XMLSchema#string")
+    protected String hasBloodGlucose;
+
+    @OwlDataProperty(uri = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasBloodPressure")
+    @OwlFunctionalDataProperty
+    @OwlDataType(uri = "http://www.w3.org/2001/XMLSchema#string")
+    protected String hasBloodPressure;
+
+    @OwlDataProperty(uri = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasBloodAlcoholContent")
+    @OwlFunctionalDataProperty
+    @OwlDataType(uri = "http://www.w3.org/2001/XMLSchema#string")
+    protected String hasBloodAlcoholContent;
+
+    @OwlDataProperty(uri = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#hasStepsCount")
+    @OwlFunctionalDataProperty
+    @OwlDataType(uri = "http://www.w3.org/2001/XMLSchema#string")
+    protected String hasStepsCount;
 
     public PersonImpl() {
     }
@@ -198,6 +218,47 @@ public class PersonImpl
         return hasUserName;
     }
 
+    /**
+     * {@inheritDoc}
+     * 
+     */
+    public void setHasUserName(String hasUserName) {
+        this.hasUserName = hasUserName;
+    }
+
+
+    public String getHasBloodGlucose() {
+        return hasBloodGlucose;
+    }
+
+    public void setHasBloodGlucose(String hasBloodGlucose) {
+        this.hasBloodGlucose = hasBloodGlucose;
+    }
+
+    public String getHasBloodPressure() {
+        return hasBloodPressure;
+    }
+
+    public void setHasBloodPressure(String hasBloodPressure) {
+        this.hasBloodPressure = hasBloodPressure;
+    }
+
+    public String getHasBloodAlcoholContent() {
+        return hasBloodAlcoholContent;
+    }
+
+    public void setHasBloodAlcoholContent(String hasBloodAlcoholContent) {
+        this.hasBloodAlcoholContent = hasBloodAlcoholContent;
+    }
+
+    public String getHasStepsCount() {
+        return hasStepsCount;
+    }
+
+    public void setHasStepsCount(String hasStepsCount) {
+        this.hasStepsCount = hasStepsCount;
+    }
+
     @Override
     public String toString() {
         return "PersonImpl{" +
@@ -208,15 +269,10 @@ public class PersonImpl
                 ", hasDevice=" + hasDevice +
                 ", uri='" + uri + '\'' +
                 ", hasUserName='" + hasUserName + '\'' +
+                ", hasBloodGlucose='" + hasBloodGlucose + '\'' +
+                ", hasBloodPressure='" + hasBloodPressure + '\'' +
+                ", hasBloodAlcoholContent='" + hasBloodAlcoholContent + '\'' +
+                ", hasStepsCount='" + hasStepsCount + '\'' +
                 '}';
     }
-
-    /**
-     * {@inheritDoc}
-     * 
-     */
-    public void setHasUserName(String hasUserName) {
-        this.hasUserName = hasUserName;
-    }
-
 }

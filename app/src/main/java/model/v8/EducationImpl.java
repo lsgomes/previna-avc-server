@@ -1,5 +1,5 @@
 
-package model.v7;
+package model.v8;
 
 import com.yoshtec.owl.annotations.OwlClassImplementation;
 import com.yoshtec.owl.annotations.OwlDataProperty;
@@ -8,10 +8,10 @@ import com.yoshtec.owl.annotations.OwlIndividualId;
 import com.yoshtec.owl.annotations.dprop.OwlFunctionalDataProperty;
 
 @OwlClassImplementation({
-    Physical_activity.class
+    Education.class
 })
-public class Physical_activityImpl
-    implements Physical_activity
+public class EducationImpl
+    implements Education
 {
 
     /**
@@ -48,7 +48,7 @@ public class Physical_activityImpl
     @OwlIndividualId
     protected String uri;
 
-    public Physical_activityImpl() {
+    public EducationImpl() {
     }
 
     /**
@@ -56,7 +56,7 @@ public class Physical_activityImpl
      * 
      */
     @OwlIndividualId
-    public Physical_activityImpl(String uri) {
+    public EducationImpl(String uri) {
         this.uri = uri;
     }
 
