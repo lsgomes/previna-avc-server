@@ -313,6 +313,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Abstain">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Alcohol_consumption"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasWeight>
         <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente beber com moderação durante a semana.</hasTip>
     </owl:NamedIndividual>
@@ -420,6 +421,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Fearful">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</hasWeight>
         <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente se sentir menos ansioso(a).</hasTip>
     </owl:NamedIndividual>
@@ -619,9 +621,30 @@
     
 
 
+    <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Matheus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Matheus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
+        <hasRiskLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.1</hasRiskLevel>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">23</hasAge>
+        <hasUserName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Matheus</hasUserName>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Abstain"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Diabetes"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Fearful"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Hypertension"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Male"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Never_smoked"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_critical_of_others"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_crying_easily"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Very_active"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Never_smoked -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Never_smoked">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Smoking_status"/>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
         <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente nunca fumar.</hasTip>
@@ -642,6 +665,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_critical_of_others">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
         <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nível de irritação sob controle</hasAchievement>
     </owl:NamedIndividual>
@@ -652,6 +676,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_crying_easily">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Psychosocial_factors"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
         <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vivendo de forma alegre</hasAchievement>
     </owl:NamedIndividual>
@@ -710,6 +735,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Very_active">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Physical_activity"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#RiskFactor"/>
         <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasWeight>
         <hasAchievement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Se exercitando 3 vezes por semana</hasAchievement>
         <hasTip rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tente manter se exercitando 3 vezes por semana.</hasTip>
