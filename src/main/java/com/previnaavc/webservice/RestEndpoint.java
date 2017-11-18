@@ -93,6 +93,18 @@ public class RestEndpoint {
     )
     public PersonImpl calculateRiskForPerson(Locale locale,
                                              @RequestBody PersonImpl person) throws Exception {
+
+        for (RiskFactor riskFactor : person.getHasRiskFactor()) {
+            if (riskFactor.getHasAchievement() != null) {
+                String achievement = Achievements.valueOf(riskFactor.getUri().split("#")[1].toUpperCase()).getTip(new Locale("pt", "br"));
+                riskFactor.setHasAchievement(achievement);
+            }
+            if (riskFactor.getHasTip() != null) {
+                String tip = RiskFactorTips.valueOf(riskFactor.getUri().split("#")[1].toUpperCase()).getTip(new Locale("pt", "br"));
+                riskFactor.setHasTip(tip);
+            }
+        }
+
         logger.info("Checking if individual with name: " + person.getUri() + " exists");
 
         logger.info("PersonFromClient" + person.toString());
