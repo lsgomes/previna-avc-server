@@ -1,5 +1,4 @@
 group 'com.lucas.previna-avc'
-version '1.0-SNAPSHOT'
 
 apply plugin: 'idea'
 apply plugin: 'java'
@@ -19,6 +18,13 @@ buildscript {
     dependencies {
         classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.4'
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE")
+    }
+}
+
+distZip {
+    into(project.name + "/bin") {
+        from '.'
+        include 'ontology/*'
     }
 }
 
