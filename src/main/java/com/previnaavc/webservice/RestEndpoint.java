@@ -5,6 +5,9 @@ import com.clarkparsia.pellet.owlapiv3.PelletReasonerFactory;
 import com.hp.hpl.jena.query.*;
 import com.hp.hpl.jena.rdf.model.InfModel;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.previnaavc.model.Achievements;
+import com.previnaavc.model.RiskFactorTips;
+import com.previnaavc.model.TypeOfEntity;
 import com.previnaavc.model.v8.*;
 import com.previnaavc.webservice.utils.QueriesJava;
 import com.previnaavc.webservice.utils.RiskCalculatorJava;
@@ -125,9 +128,9 @@ public class RestEndpoint {
             person.setHasRiskLevel(Double.valueOf(risk));
         }
 
-        mapRiskFactorTips(person, executeQueryAndReturnMapEntitiesLiterals(QueriesJava.getRiskFactorsTips()));
+        mapRiskFactorTips(person, executeQueryAndReturnMapEntitiesLiterals(locale, QueriesJava.getRiskFactorsTips(), TypeOfEntity.RISK_FACTOR));
 
-        mapRiskFactorAchievements(person, executeQueryAndReturnMapEntitiesLiterals(QueriesJava.getRiskFactorsAchievements()));
+        mapRiskFactorAchievements(person, executeQueryAndReturnMapEntitiesLiterals(locale, QueriesJava.getRiskFactorsAchievements(), TypeOfEntity.ACHIEVEMENT));
 
         logger.info("Sending Person: " + person.toString());
 
@@ -244,14 +247,25 @@ public class RestEndpoint {
         return map;
     }
 
-    Map<String, String> mapEntitiesLiterals(ResultSet result) {
+    Map<String, String> mapEntitiesLiterals(Locale locale, ResultSet result, TypeOfEntity typeOfEntity) {
         Map map = new HashMap<String, String>();
 
         result.forEachRemaining(r -> {
+            String riskFactor;
+            try {
+                if (TypeOfEntity.RISK_FACTOR.equals(typeOfEntity))
+                    riskFactor = RiskFactorTips.valueOf(r.get("entity").asResource().getLocalName().toUpperCase()).getTip(locale);
+                else if (TypeOfEntity.ACHIEVEMENT.equals(typeOfEntity))
+                    riskFactor = Achievements.valueOf(r.get("entity").asResource().getLocalName().toUpperCase()).getTip(locale);
+                else
+                    riskFactor = r.get("result").asLiteral().getString();
+            } catch (Exception error) {
+                riskFactor = r.get("result").asLiteral().getString();
+            }
 
             map.put(
                     r.get("entity").asResource().toString(),
-                    r.get("result").asLiteral().getString());
+                    riskFactor);
         });
 
         return map;
@@ -391,9 +405,9 @@ public class RestEndpoint {
         return getResultMapFromQuery(queryResult);
     }
 
-    Map<String, String> executeQueryAndReturnMapEntitiesLiterals(String query) {
+    Map<String, String> executeQueryAndReturnMapEntitiesLiterals(Locale locale, String query, TypeOfEntity typeOfEntity) {
         ResultSet queryResult = executeQuery(query);
-        return mapEntitiesLiterals(queryResult);
+        return mapEntitiesLiterals(locale, queryResult, typeOfEntity);
     }
 
 
