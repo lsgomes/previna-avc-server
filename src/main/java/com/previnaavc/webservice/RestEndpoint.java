@@ -17,22 +17,18 @@ import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Singleton;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
 import java.io.File;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Lucas on 15/04/2017.
  */
-@Singleton
-@Path("/rest")
+@RestController
+@RequestMapping("/rest")
 public class RestEndpoint {
 
     Logger logger;
@@ -87,11 +83,13 @@ public class RestEndpoint {
         individuals = loadIndividuals(ontology);
     }
 
-    @POST
-    @Path("/calculateRiskForPerson")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public PersonImpl calculateRiskForPerson(PersonImpl person) throws Exception {
+    @PostMapping(
+            value = "/calculateRiskForPerson",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public PersonImpl calculateRiskForPerson(Locale locale,
+                                             @RequestBody PersonImpl person) throws Exception {
         logger.info("Checking if individual with name: " + person.getUri() + " exists");
 
         logger.info("PersonFromClient" + person.toString());
@@ -136,10 +134,11 @@ public class RestEndpoint {
         return person;
     }
 
-    @GET
-    @Path("/getRiskLevel")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getRiskLevel(@QueryParam("name") String name) {
+    @GetMapping(
+            value = "/getRiskLevel",
+            produces = MediaType.TEXT_PLAIN_VALUE
+    )
+    public String getRiskLevel(@RequestParam("name") String name) {
 
         logger.info("Getting risk level for " + name);
 
@@ -164,9 +163,10 @@ public class RestEndpoint {
         return RiskCalculatorJava.calculateRiskPercentageRounded(total);
     }
 
-    @GET
-    @Path("/examplePerson")
-    @Produces(MediaType.APPLICATION_JSON)
+    @GetMapping(
+            value = "/examplePerson",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
     public PersonImpl examplePerson() throws Exception {
         PersonImpl john = new PersonImpl();
         john.setUri(ONTOLOGY_IRI + "#John");
@@ -174,8 +174,9 @@ public class RestEndpoint {
         return john;
     }
 
-    @GET
-    @Path("/saveIndividuals")
+    @GetMapping(
+            value = "/saveIndividuals"
+    )
     public void saveIndividuals() throws Exception {
 
         logger.info("Saving all individuals. size: " + individuals.size());

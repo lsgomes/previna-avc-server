@@ -44,9 +44,7 @@ configurations.all {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}") {
         exclude module: "spring-boot-starter-tomcat:${springBootVersion}"
-        exclude module: "spring-boot-starter-logging"
     }
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jersey', version: "${springBootVersion}"
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-jetty', version: "${springBootVersion}"
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
     compile("com.hp.hpl.jena:arq:2.8.8") {

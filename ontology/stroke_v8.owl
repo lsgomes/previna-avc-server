@@ -625,17 +625,17 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Matheus">
         <rdf:type rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Person"/>
-        <hasRiskLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.1</hasRiskLevel>
-        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">23</hasAge>
+        <hasRiskLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.2</hasRiskLevel>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">18</hasAge>
         <hasUserName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Matheus</hasUserName>
-        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Abstain"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Critical_of_others"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Cry_easily"/>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Diabetes"/>
+        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Drinker"/>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Fearful"/>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Hypertension"/>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Male"/>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Never_smoked"/>
-        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_critical_of_others"/>
-        <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Not_crying_easily"/>
         <hasRiskFactor rdf:resource="http://www.semanticweb.org/lucas/ontologies/2016/9/stroke#Very_active"/>
     </owl:NamedIndividual>
     
