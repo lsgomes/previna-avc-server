@@ -9,7 +9,9 @@ public enum Achievements {
     NOT_FEARFUL("Level of anxiety under control", "Nível de ansiedade sob controle"),
     NOT_CRITICAL_OF_OTHERS("Level of anger under control", "Nível de irritação sob controle"),
     NOT_CRYING_EASILY("Living happily", "Vivendo de forma alegre"),
-    DRINK_IN_MODERATION("Drinking in moderation", "Bebendo com moderação");
+    DRINK_IN_MODERATION("Drinking in moderation", "Bebendo com moderação"),
+    ACTIVE("Exercising twice a week", "Se exercitando 2 vezes por semana"),
+    FORMER_ALCOHOLIC("Did not go back to drinking", "Não voltou a beber");
 
     private String en;
     private String ptBr;

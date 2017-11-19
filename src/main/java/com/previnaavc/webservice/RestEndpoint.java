@@ -93,7 +93,7 @@ public class RestEndpoint {
     )
     public PersonImpl calculateRiskForPerson(Locale locale,
                                              @RequestBody PersonImpl person) throws Exception {
-
+        person.setHasRiskLevel(null);
         for (RiskFactor riskFactor : person.getHasRiskFactor()) {
             if (riskFactor.getHasAchievement() != null) {
                 String achievement = Achievements.valueOf(riskFactor.getUri().split("#")[1].toUpperCase()).getTip(new Locale("pt", "br"));
