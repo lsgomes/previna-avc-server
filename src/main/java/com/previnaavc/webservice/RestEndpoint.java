@@ -97,17 +97,19 @@ public class RestEndpoint {
         for (RiskFactor riskFactor : person.getHasRiskFactor()) {
             if (riskFactor.getHasAchievement() != null) {
                 String achievement = Achievements.valueOf(riskFactor.getUri().split("#")[1].toUpperCase()).getTip(new Locale("pt", "br"));
+                logger.info("Adding achievement translation: " + achievement);
                 riskFactor.setHasAchievement(achievement);
             }
             if (riskFactor.getHasTip() != null) {
                 String tip = RiskFactorTips.valueOf(riskFactor.getUri().split("#")[1].toUpperCase()).getTip(new Locale("pt", "br"));
+                logger.info("Adding tip translation: " + tip);
                 riskFactor.setHasTip(tip);
             }
         }
 
         logger.info("Checking if individual with name: " + person.getUri() + " exists");
 
-        logger.info("PersonFromClient" + person.toString());
+        logger.info("PersonFromClient: " + person.toString());
 
         addOntologyURI(person);
 
@@ -135,6 +137,8 @@ public class RestEndpoint {
         //ontology = loadOntology(ONTOLOGY_LOCATION);
 
         String risk = getRiskLevel(UtilsJava.extractNameFromURI(person.getHasUserName()));
+
+        logger.info("Setting person risk level to: " + risk);
 
         if (!risk.equals(QUESTION_MARK)) {
             person.setHasRiskLevel(Double.valueOf(risk));
