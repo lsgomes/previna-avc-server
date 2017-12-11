@@ -1,10 +1,10 @@
 package com.previnaavc.webservice;
 
-import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
-import com.clarkparsia.pellet.owlapiv3.PelletReasonerFactory;
-import com.hp.hpl.jena.query.*;
-import com.hp.hpl.jena.rdf.model.InfModel;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
+import openllet.jena.PelletReasoner;
+import openllet.jena.PelletReasonerFactory;
+//import com.hp.hpl.jena.query.*;
+//import com.hp.hpl.jena.rdf.model.InfModel;
+//import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.previnaavc.model.Achievements;
 import com.previnaavc.model.RiskFactorTips;
 import com.previnaavc.model.TypeOfEntity;
@@ -14,17 +14,29 @@ import com.previnaavc.webservice.utils.RiskCalculatorJava;
 import com.previnaavc.webservice.utils.UtilsJava;
 import com.yoshtec.owl.marshall.Marshaller;
 import com.yoshtec.owl.marshall.UnMarshaller;
+import org.apache.jena.ontology.OntModel;
+import org.apache.jena.query.QueryExecution;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QueryFactory;
+import org.apache.jena.query.ResultSet;
+import org.apache.jena.query.Query;
+import org.apache.jena.rdf.model.InfModel;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.log4j.Logger;
-import org.mindswap.pellet.jena.PelletInfGraph;
+import openllet.jena.PelletInfGraph;
 import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.model.*;
+import org.semanticweb.owlapi.util.OWLEntityRemover;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.apache.jena.rdf.model.Resource;
 
 import javax.annotation.PostConstruct;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.*;
 
 /**
@@ -122,7 +134,16 @@ public class RestEndpoint {
         if (personFromServer != null) {
             logger.info("PersonFromServer: " + personFromServer.toString());
             logger.info("Removing individual with name: " + person.getHasUserName() + " from list.");
-            individuals.remove(personFromServer);
+            boolean removed = individuals.remove(personFromServer);
+            logger.info("Person removed? " + removed);
+        }
+
+        logger.info("All individuals present in the list:");
+
+        for (Object i : individuals)
+        {
+            Thing thing = (Thing) i;
+            logger.info("Individual: " + thing.getUri());
         }
 
         logger.info("Adding individual with name: " + person.getHasUserName() + " to list.");
@@ -200,9 +221,38 @@ public class RestEndpoint {
 
         logger.info("Saving all individuals. size: " + individuals.size());
 
-        marshaller.marshal(individuals, ontology, true);
+        File file = new File(ONTOLOGY_LOCATION);
+
+        //{
+            //boolean deleted = file.delete();
+            //logger.info("Ontology file deleted? " + deleted);
+            //manager = OWLManager.createOWLOntologyManager();
+            //manager.removeOntology(ontology);
+        //}
+
+        OWLEntityRemover remover = new OWLEntityRemover(ontology);
+
+        for (OWLNamedIndividual ind : ontology.getIndividualsInSignature()) {
+            ind.accept(remover);
+        }
+
+        manager.applyChanges(remover.getChanges());
+
 
         manager.saveOntology(ontology);
+
+        marshaller.marshal(individuals, ontology, true);
+
+        //OWLOntology newOntology = marshaller.marshal(individuals, ontology, false);
+
+        //Set<OWLOntology> ontologies = new HashSet<>();
+        //ontologies.add(newOntology);
+
+        //OWLOntology newOntology2 = manager.createOntology(IRI.create("http://www.semanticweb.org/lucas/ontologies/2016/9/stroke"), ontologies);
+
+        //loadOntology(ONTOLOGY_LOCATION);
+        manager.saveOntology(ontology);
+        //manager.saveOntology(newOntology, IRI.create(file.toURI()));
     }
 
     String executeQueryAndReturnResult(String query) {
@@ -382,7 +432,24 @@ public class RestEndpoint {
 
         if (ontology != null) {
 
-            reasoner = PelletReasonerFactory.getInstance().createReasoner(ontology);
+            OntModel localModel = ModelFactory.createOntologyModel(PelletReasonerFactory.THE_SPEC);
+
+            InputStream targetStream = null;
+            try {
+                targetStream = new FileInputStream(ONTOLOGY_LOCATION);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            localModel.read(targetStream, null);
+
+            model = ModelFactory.createInfModel((PelletInfGraph) localModel.getGraph());
+
+            //ModelFactory.cre
+
+            //ModelFactory.createInfModel(reasoner, localModel);
+            //reasoner = PelletReasonerFactory.theInstance().create(Res)
+            //reasoner = PelletReasonerFactory.getInstance().createReasoner(ontology);
             //reasoner.prepareReasoner();
             //reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS,
             //        InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.DATA_PROPERTY_HIERARCHY);
@@ -390,8 +457,10 @@ public class RestEndpoint {
     }
 
     void loadQueryExecutor() {
-        PelletInfGraph graph = new org.mindswap.pellet.jena.PelletReasoner().bind(reasoner.getKB());
-        model = ModelFactory.createInfModel(graph);
+        //openllet.jena.PelletInfGraph graph = new openllet.jena.PelletReasoner().bind(r)
+        //PelletInfGraph graph = new org.mindswap.pellet.jena.PelletReasoner().bind(reasoner.getKB());
+        //ModelFactory.createInfModel()
+        //model = ModelFactory.createInfModel(graph);
     }
 
 
