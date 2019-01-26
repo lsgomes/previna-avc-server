@@ -52,7 +52,6 @@ public class RestEndpoint {
     String ONTOLOGY_IRI = "http://www.semanticweb.org/lucas/ontologies/2016/9/stroke";
     String QUESTION_MARK = "?";
 
-    //hashset thing
     Collection<Object> individuals;
 
     OWLOntologyManager manager;
@@ -89,11 +88,10 @@ public class RestEndpoint {
         unmarshaller.registerClass(SensorImpl.class);
         unmarshaller.registerClass(Mobile_deviceImpl.class);
         unmarshaller.registerClass(WearableImpl.class);
+
         ontology = loadOntology(ONTOLOGY_LOCATION);
 
         loadReasoner();
-
-        loadQueryExecutor();
 
         individuals = loadIndividuals(ontology);
     }
@@ -106,6 +104,7 @@ public class RestEndpoint {
     public PersonImpl calculateRiskForPerson(Locale locale,
                                              @RequestBody PersonImpl person) throws Exception {
         person.setHasRiskLevel(null);
+
         for (RiskFactor riskFactor : person.getHasRiskFactor()) {
             if (riskFactor.getHasAchievement() != null) {
                 String achievement = Achievements.valueOf(riskFactor.getUri().split("#")[1].toUpperCase()).getTip(new Locale("pt", "br"));
@@ -152,10 +151,6 @@ public class RestEndpoint {
         saveIndividuals();
 
         loadReasoner();
-
-        loadQueryExecutor();
-
-        //ontology = loadOntology(ONTOLOGY_LOCATION);
 
         String risk = getRiskLevel(UtilsJava.extractNameFromURI(person.getHasUserName()));
 
@@ -223,13 +218,6 @@ public class RestEndpoint {
 
         File file = new File(ONTOLOGY_LOCATION);
 
-        //{
-            //boolean deleted = file.delete();
-            //logger.info("Ontology file deleted? " + deleted);
-            //manager = OWLManager.createOWLOntologyManager();
-            //manager.removeOntology(ontology);
-        //}
-
         OWLEntityRemover remover = new OWLEntityRemover(ontology);
 
         for (OWLNamedIndividual ind : ontology.getIndividualsInSignature()) {
@@ -243,16 +231,7 @@ public class RestEndpoint {
 
         marshaller.marshal(individuals, ontology, true);
 
-        //OWLOntology newOntology = marshaller.marshal(individuals, ontology, false);
-
-        //Set<OWLOntology> ontologies = new HashSet<>();
-        //ontologies.add(newOntology);
-
-        //OWLOntology newOntology2 = manager.createOntology(IRI.create("http://www.semanticweb.org/lucas/ontologies/2016/9/stroke"), ontologies);
-
-        //loadOntology(ONTOLOGY_LOCATION);
         manager.saveOntology(ontology);
-        //manager.saveOntology(newOntology, IRI.create(file.toURI()));
     }
 
     String executeQueryAndReturnResult(String query) {
@@ -268,56 +247,17 @@ public class RestEndpoint {
             map.put(var, result.nextSolution().getLiteral(var).getString());
         }
 
-//        result.forEachRemaining(r -> {
-//
-//            r.varNames().forEachRemaining(v -> {
-//
-//                map.put(v, r.getLiteral(v).getString());
-//
-//            });
-//
-//        });
-
-
-//        result.forEachRemaining(r -> {
-//
-//
-//                map.put("result", r.getLiteral("result").getString());
-
-//                r.varNames().forEachRemaining(v -> {
-//
-//                    RDFNode node = r.get(v);
-//
-//                    if (node.isLiteral()) {
-//                    map.put(v, node.asLiteral().getString());
-//                    }
-//                     else if (node.isResource()) {
-//                    map.put(v, node.asResource().toString());
-//                    }
-//
-//            });
-
-        // });
-
-//        while (result.hasNext()) {
-//            QuerySolution solution = result.nextSolution();
-//            Iterator<String> varNames = solution.varNames();
-//            while (varNames.hasNext()) {
-//                String variable = solution.varNames().next();
-//
-//                String value = solution.getLiteral(variable).getString();
-//                map.put(variable, value);
-//            }
-//        }
-
         return map;
     }
 
     Map<String, String> mapEntitiesLiterals(Locale locale, ResultSet result, TypeOfEntity typeOfEntity) {
+
         Map map = new HashMap<String, String>();
 
         result.forEachRemaining(r -> {
+
             String riskFactor;
+
             try {
                 if (TypeOfEntity.RISK_FACTOR.equals(typeOfEntity))
                     riskFactor = RiskFactorTips.valueOf(r.get("entity").asResource().getLocalName().toUpperCase()).getTip(locale);
@@ -325,6 +265,7 @@ public class RestEndpoint {
                     riskFactor = Achievements.valueOf(r.get("entity").asResource().getLocalName().toUpperCase()).getTip(locale);
                 else
                     riskFactor = r.get("result").asLiteral().getString();
+
             } catch (Exception error) {
                 riskFactor = r.get("result").asLiteral().getString();
             }
@@ -349,13 +290,6 @@ public class RestEndpoint {
         ResultSet select = queryExecution.execSelect();
 
         logger.info("Query took: " + (System.currentTimeMillis() - startTime) + " ms");
-
-//        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//
-//        ResultSetRewindable r = ResultSetFactory.copyResults(select);
-//        ResultSetFormatter.out(baos, r);
-//
-//        logger.info(new String(baos.toByteArray()));
 
         return select;
     }
@@ -445,24 +379,8 @@ public class RestEndpoint {
 
             model = ModelFactory.createInfModel((PelletInfGraph) localModel.getGraph());
 
-            //ModelFactory.cre
-
-            //ModelFactory.createInfModel(reasoner, localModel);
-            //reasoner = PelletReasonerFactory.theInstance().create(Res)
-            //reasoner = PelletReasonerFactory.getInstance().createReasoner(ontology);
-            //reasoner.prepareReasoner();
-            //reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS,
-            //        InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.DATA_PROPERTY_HIERARCHY);
         }
     }
-
-    void loadQueryExecutor() {
-        //openllet.jena.PelletInfGraph graph = new openllet.jena.PelletReasoner().bind(r)
-        //PelletInfGraph graph = new org.mindswap.pellet.jena.PelletReasoner().bind(reasoner.getKB());
-        //ModelFactory.createInfModel()
-        //model = ModelFactory.createInfModel(graph);
-    }
-
 
     void mapRiskFactorTips(PersonImpl person, Map<String, String> map) {
 

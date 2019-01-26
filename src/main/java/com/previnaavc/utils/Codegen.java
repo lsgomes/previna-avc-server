@@ -14,10 +14,10 @@ public class CodegenMain {
         Codegen codegen = new Codegen();
 
         // the java package to create the classes in
-        codegen.setJavaPackageName("model.v7");
+        codegen.setJavaPackageName("model.v8");
 
         codegen.setOntologyIri("http://www.semanticweb.org/lucas/ontologies/2016/9/stroke");
-        codegen.setOntologyPhysicalIri( new File("ontology/stroke_v7.owl").toURI().toString());
+        codegen.setOntologyPhysicalIri( new File("ontology/stroke_v8.owl").toURI().toString());
 
         codegen.setJavaSourceFolder(new File("ov3test"));
 
